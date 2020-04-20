@@ -6,7 +6,19 @@ Vue.use(VueRouter)
 // 路由注册
 const routes = [
   {
-    path: 'document',
+    path: '',
+    redirect: '/dashboard'
+  },
+  {
+    path: '/dashboard', // 非嵌套路由必须包含前导斜杠字符
+    name: 'dashboard',
+    component: () => import('../views/dashboard'),
+    meta: {
+      title: '首页'
+    }
+  },
+  {
+    path: '/document',
     name: 'document',
     component: () => import('../views/document'),
     meta: {
@@ -15,7 +27,7 @@ const routes = [
   }
 ]
 
-const router = new Router({
+const router = new VueRouter({
   mode: 'history',
   routes
 })

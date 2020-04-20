@@ -1,8 +1,27 @@
 html, body {
   height: 100%;
   font-size: 16px;
+  margin: 0; // reset
 }
 
 .h100 {
   height: 100%;
+}
+
+.ld-header {
+  width: 100%;
+  height: 100px;
+
+  .ld-header_logo {
+
+  }
+  .ld-header_component {
+
+  }
+}
+
+.ld-main {
+  height: calc(100vh - 100px);
+  position: relative;
+  background: #f0f2f5;
 }

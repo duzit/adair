@@ -6,7 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // 路由
 import router from './router/router'
 // 全局样式
-import './styles'
+import './styles/index.scss'
 
 Vue.config.productionTip = false
 // 完整引用element-ui
