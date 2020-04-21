@@ -1,5 +1,5 @@
 <template>
-  <div class="ld-main">
+  <div>
     <keep-alive>
       <router-view></router-view>
     </keep-alive>

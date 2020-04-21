@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <ld-header></ld-header>
-    <ld-main></ld-main>
+    <ld-header class="ld-header"></ld-header>
+    <ld-main class="ld-main"></ld-main>
   </div>
 </template>
 
