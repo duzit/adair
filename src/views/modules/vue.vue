@@ -1,59 +1,24 @@
 <template>
-  <div>
-    <h1>Vue</h1>
-    <el-input class="w200" v-model="person.name"></el-input>
-    <span>{{ num }}</span>
-    <el-button @click="handleClick">按钮</el-button>
-  </div>
+  <ld-page>
+    <v-watch></v-watch>
+    <v-data-props book="xiaowangzi"></v-data-props>
+  </ld-page>
 </template>
 
 <script>
+import vWatch from '../../components/vue/vWatch.vue'
+import vDataProps from '../../components/vue/vData-Prop-Options'
 export default {
-  name: 'Vue',
-  data() {
+  name: 'vue',
+  components: {
+    vWatch,
+    vDataProps,
+
+  },
+  data () {
     return {
-      num: 0,
-      person: {
-        name: 'Ben',
-        age: 10
-      }
+      
     }
-  },
-  created() {
-    this.$watch('num', function(val, old) {
-      console.log(val, old, 'num')
-    })
-
-    this.$watch('person.name', function(val, old) {
-      console.log(this.person.name, 'name')
-    }, { deep: true })
-
-    this.$watch(function() {
-      return this.num + this.person.age
-    }, function(val, old) {
-      console.log(val, old, 'a + b')
-    }, { deep: true }) 
-
-    let unwatch = this.$watch('person.name', function(val, old) {
-      console.log(val, old, 'immediate') // 调用一次
-      if (unwatch) {
-        unwatch()
-      }
-    }, { immediate: true })
-
-    console.log(this.$options, '$options')
-    console.log(this.$data, '$data')
-  },
-  methods: {
-    handleClick() {
-      this.num > 10 ? this.num = 0 : this.num++
-    }
-  },
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-  .w200 {
-    width: 200px;
-  }
-</style>

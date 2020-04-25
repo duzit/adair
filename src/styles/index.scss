@@ -1,14 +1,27 @@
 @import './common.scss';  // 分号必须
 
-html, body {
+body {
   height: 100%;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0; // reset
+}
+
+html {
+  height: 100%;
 }
 
 .h100 {
   height: 100%;
 }
+
+.w200 {
+  width: 200px;
+}
+
+.pt20 {
+  padding-top: 20px;
+}
+
 
 .ld-header {
   display: flex;
@@ -38,8 +51,10 @@ html, body {
 }
 
 .ld-main {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   position: relative;
   background: #f0f2f5;
-  margin-top: -21px; // todo
+  overflow-y: auto;
+  overflow-x: hidden;
+  // margin-top: -21px; // todo
 }

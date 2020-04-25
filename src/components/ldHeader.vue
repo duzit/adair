@@ -32,6 +32,7 @@ export default {
      * 指向对应模块
      */
     pathTo(type) {
+      if (this.$route.path.indexOf(type) >= 0) return
       this.$router.push(`/${type}`)
     }
   }

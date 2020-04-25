@@ -1,15 +1,23 @@
 <template>
-  <div>
-    <h1>dashboard</h1>
+  <div class="h100">
+    <lottie :options="defaultOptions"></lottie>
   </div>
 </template>
 
 <script>
+import lottie from "../components/lottie-web/lottie";
+import animationData from "../components/lottie-web/data.json";
 export default {
   name: 'dashboard',
+  components: {
+    lottie
+  },
   data() {
     return {
-      
+      defaultOptions: {
+        animationData: animationData,
+        // loop: true,
+      }
     }
   },
   created() {

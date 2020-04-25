@@ -7,10 +7,15 @@ import 'element-ui/lib/theme-chalk/index.css';
 import router from './router/router'
 // 全局样式
 import './styles/index.scss'
+// 全局组件
+import ldPage from './components/ldPage.vue'
+Vue.component('ld-page', ldPage)
 
 Vue.config.productionTip = false
 // 完整引用element-ui
-Vue.use(ElementUI)
+Vue.use(ElementUI, {
+  size: 'mini'
+})
 
 new Vue({
   vueName: 'Vue',
