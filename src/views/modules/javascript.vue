@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <h1>js</h1>
-  </div>
+  <ld-page>
+    <var-let-const></var-let-const>
+  </ld-page>
 </template>
 
 <script>
+import varLetConst from '../../components/js/var-let-const'
 export default {
   name: 'document',
+  components: {
+    varLetConst
+  },
   data() {
     return {
       

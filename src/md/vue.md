@@ -45,3 +45,10 @@ export default {
   }
 }
 ```
+
+### router-link
+* 默认渲染成有链接的 <a> 标签，可以通过配置 tag 属性生成别的标签。
+* 相比 <a href="...">   
+   1. history 和 hash 模式下表现一致
+   2. history 模式下，router-link 会守卫点击事件，不会重新加载页面
+   3. history 模式下使用 base 选项后，所有的 to 属性都不需要写基路径了
