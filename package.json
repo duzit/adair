@@ -19,6 +19,7 @@
     "@vue/cli-service": "^3.0.0-rc.9",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "lodash": "^4.17.15",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.16",

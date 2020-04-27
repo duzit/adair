@@ -1,5 +1,14 @@
 <template>
-  <div class="pt20 fs20">var-let-const</div>
+  <div>
+    <div class="pt20 title">var-let-const</div>
+    <label for="防抖">防抖</label>
+    <el-input class="w200" v-model="inputVal0" @input="debounce"></el-input>
+    <span class="fs20">{{ inputVal0 }}</span>
+    <br/>
+    <label for="限流">限流</label>
+    <el-input class="w200" v-model="inputVal1" @input="throttle"></el-input>
+    <span class="fs20">{{ inputVal1 }}</span>
+  </div>
 </template>
 
 <script>
@@ -7,7 +16,10 @@ export default {
   name: 'var-let-const',
   data () {
     return {
-      
+      inputVal0: '',
+      inputVal1: '',
+      timer: null,
+      flag: true
     }
   },
   created () {
@@ -57,6 +69,28 @@ export default {
 
     Object.freeze(person)
     // person.name = '123' // Cannot assign to read only property 'name' of object
+  },
+  methods: {
+    debounce() {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      this.timer = setTimeout(function() {
+        console.log(123)
+      }, 1000)
+    },
+    throttle() {
+      let that = this
+      if (!this.flag) return
+      this.flag = false
+      // 箭头函数 上下文 this
+      // setTimeout(() => {
+      setTimeout(function() {
+        console.log('throttle')
+        // this.flag = true
+        that.flag = true
+      }, 1000)
+    }
   }
 }
 </script>
