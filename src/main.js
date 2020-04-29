@@ -17,6 +17,18 @@ Vue.use(ElementUI, {
   size: 'mini'
 })
 
+Vue.filter('toUpString', function(value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.toUpperCase()
+})
+
+Vue.directive('focus',{
+  inserted(el) {
+    el.focus()
+  }
+})
+
 new Vue({
   vueName: 'Vue',
   router,

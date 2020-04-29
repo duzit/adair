@@ -49,3 +49,13 @@ console.log(person, 'const person') // age 13
 Object.freeze(person)
 // person.name = '123' // Cannot assign to read only property 'name' of object
 ```
+
+### charAt(index)
+* 返回指定位置字符
+* 如果参数 index 不在 0 与 string.length 之间，该方法将返回一个空字符串
+```js
+let charatStr = 'charat'
+console.log(charatStr.charAt(0)) // c
+console.log(charatStr.charAt(1)) // h
+console.log(charatStr.charAt(-1)) // ''
+```

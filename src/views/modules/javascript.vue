@@ -21,7 +21,10 @@ export default {
     }
   },
   created() {
-    
+    let charatStr = 'charat'
+    console.log(charatStr.charAt(0))
+    console.log(charatStr.charAt(1))
+    console.log(charatStr.charAt(-1))
   },
   methods: {
     
