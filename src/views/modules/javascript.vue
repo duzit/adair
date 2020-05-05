@@ -3,17 +3,20 @@
     <var-let-const></var-let-const>
     <div class="mtb20"></div>
     <js-lodash></js-lodash>
+    <array-string></array-string>
   </ld-page>
 </template>
 
 <script>
 import varLetConst from '../../components/js/var-let-const'
 import jsLodash from '../../components/js/lodash'
+import arrayString from '../../components/js/array-string'
 export default {
   name: 'document',
   components: {
     varLetConst,
-    jsLodash
+    jsLodash,
+    arrayString
   },
   data() {
     return {

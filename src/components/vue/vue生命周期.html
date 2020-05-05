@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 生命周期</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>非根实例 tempalte {{ message }} </h1>
+  </div>
+  <script>
+    /**
+     * 渲染优先级
+     * render函数选项 > template选项 > outer HTML
+     * 
+     */
+    let vm = new Vue({
+      el: '#app',
+      template: '<template>{{ message }}</template>',
+      data: {
+        message: 'Vue 生命周期'
+      },
+      render: function (createElement, context) {
+        console.log(createElement, context, '---render---')
+        return createElement('h2', 'render element')
+      },
+      beforeCreate () {
+        // 数据监测 event watch 事件配置
+        console.log('beforeCreate')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      created () {
+        // data methods 初始化完成 可见
+        // ajax 调用 赋值data
+        // $el 不可见
+        console.log('created')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      beforeMount () {
+        // 模板编译完成 $el 可见
+        // 虚拟 DOM  虚拟占位 
+        console.log('beforeMount')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      mounted () {
+        // 替换 $el 
+        // 可第一时间操作 DOM
+        console.log('mounted')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      beforeUpdate () {
+        // 数据已经更新 DOM未更新
+        console.log('beforeUpdate')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      updated () {
+        // 数据和DOM同步
+        console.log('updated')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      beforeDestroy () {
+        // 实例销毁之前 实例完全可用 可用于清除定时器
+        console.log('beforeDestroy')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      },
+      destroyed () {
+        // 实例解绑 所有事件监听器移除
+        console.log('destroyed')
+        console.log(this.$el)
+        console.log(this.$data)
+        console.log(this.message)
+      }
+    })
+  </script>
+</body>
+</html>

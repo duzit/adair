@@ -52,3 +52,14 @@ export default {
    1. history 和 hash 模式下表现一致
    2. history 模式下，router-link 会守卫点击事件，不会重新加载页面
    3. history 模式下使用 base 选项后，所有的 to 属性都不需要写基路径了
+
+### 生命周期
+* src\components\vue\vue生命周期.html
+
+#### 可以在哪些生命周期内调用异步请求
+* created(), beforeMount(), mounted() 因为这三个钩子函数中的data已经创建，可以将服务器端的数据进行赋值
+* 建议在created()调用  
+  > 能更快的获取服务端数据，减少页面loading时间  
+  > 服务器端渲染(SSR)不支持beforeMount(), mounted()钩子函数  
+
+#### 生命周期哪个阶段获取 $el
