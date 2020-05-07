@@ -93,6 +93,15 @@ export default {
     let arrIncludes = ['ab', 'bc']
     console.log(arrIncludes.includes('ab'), 'includes')  // true
     console.log(arrIncludes.includes('a'), 'includes') // false
+
+    let strReplace = 'abcabc'
+    console.log(strReplace.replace(/a/, 'A'), '--replace') // Abcabc 
+    console.log(strReplace.replace(/a/g, 'A'), '--replace') // AbcAbc 
+    console.log(strReplace.replace('b', 'A'), '--replace substr') // aAcabc 
+    console.log(strReplace.replace(/A/i, 'B'), '--replace i') // Bbcabc 
+    console.log(strReplace.replace(/A/, 'B'), '--replace ') // abcabc  
+    
+    console.log(strReplace, '--replace') // abcabc 
   }
 }
 </script>

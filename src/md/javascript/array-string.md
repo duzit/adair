@@ -143,3 +143,14 @@ let retFilter = filterArray.filter(item => item %  2 === 0)
 console.log(retFilter, 'filter') // [2, 4, 6]
 console.log(filterArray, 'filter') // [1, 2, 3, 4, 5, 6]
 ```
+
+### String.replace(regexp/substr, replacement)
+* 替换字符串 
+* 返回新的字符串 不改变原字符串
+```js 
+let strReplace = 'abcabc'
+console.log(strReplace.replace(/a/, 'A'), '--replace') // Abcabc 
+console.log(strReplace.replace(/a/g, 'A'), '--replace') // AbcAbc 
+console.log(strReplace.replace('b', 'A'), '--replace substr') // aAcabc 
+console.log(strReplace, '--replace') // abcabc 
+```

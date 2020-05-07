@@ -63,3 +63,26 @@ export default {
   > 服务器端渲染(SSR)不支持beforeMount(), mounted()钩子函数  
 
 #### 生命周期哪个阶段获取 $el
+* beforeMount() 虚拟占位
+
+### <router-view>
+* 使用 key 防止组件复用
+
+### 父子组件生命周期钩子函数执行顺序
+* 加载渲染过程  
+  父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 子 beforeMount -> 子 mounted -> 父 mounted 
+* 子组件更新过程  
+  父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+
+### Vue 项目优化
+* v-if v-show 区分场景使用
+* v-for 遍历项带 key
+* 图片资源懒加载
+* 路由懒加载
+* webpack 对图片资源压缩
+* 生产环境不编译 console.log
+* 提取公共代码
+* 提取组件的css
+* 开启 gzip 压缩
+* 浏览器缓存 
+* cdn 使用
