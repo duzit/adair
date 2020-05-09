@@ -11,6 +11,7 @@ console.log(charatStr.charAt(-1)) // ''
 ```
 
 ### Array.concat(array0, array1, ...)
+* 返回新数组  不改变原数组
 ```js
 let arr0 = [1, 2]
 let arr1 = [2, 4]
@@ -20,6 +21,7 @@ console.log(arr0, arr1, 'arr0, arr1') // 1, 2   2, 4
 ```
 
 ### Array.join()
+* 不改变原数组
 ```js
 let arrJoin = [1, 2, 3]
 console.log(arrJoin.join(''), 'join') // 123
@@ -60,7 +62,7 @@ console.log(arrPop, 'pop') // [1, 2, 3]
 ```
 
 ### Array.slice(start, end)
-* 返回选定的元素
+* 返回选定的元素 不改变原数组
 ```js 
 let arrSlice = [1, 2, 3]
 console.log(arrSlice.slice(0, 2)) // [1, 2]
@@ -68,7 +70,7 @@ console.log(arrSlice, 'slice') // [1, 2, 3]
 ```
 
 ### Array.splice(start, length, [elements])
-* 返回被截取的元素 
+* 返回被截取的元素 改变原数组
 ```js 
 let arrSplice = [1, 2, 3, 4]
 console.log(arrSplice.splice(1, 2, 5, 6)) // [2, 3]
@@ -76,7 +78,7 @@ console.log(arrSplice, 'splice') // [1, 5, 6, 4]
 ```
 
 ### String.substr(start, length)
-* 返回截取的字符串
+* 返回截取的字符串 不改变原数组
 ```js
 let strSubstr = 'abcdefg'
 console.log(strSubstr.substr(1), 'substr') // bcdefg 
@@ -85,7 +87,7 @@ console.log(strSubstr, 'substr') // abcdefg
 ```
 
 ### String.substring(start, end)
-* 提取字符串中介于两个指定下标之间的字符
+* 提取字符串中介于两个指定下标之间的字符 不改变原数组
 ```js 
 let strSubstr = 'abcdefg'
 console.log(strSubstr.substring(1)) // bcdefg
@@ -106,11 +108,12 @@ console.log(arrSort1.sort(function(a, b) {
 ```
 
 ### Array.reverse()
+* 会改变数组本身，并返回原数组的引用
 ```js
 let arrReverse = [1, 2, 3, 4]
 let reverseStr = 'abcdefg'
-console.log(arrReverse.reverse(), 'reverse')
-console.log(arrReverse, 'reverse')
+console.log(arrReverse.reverse(), 'reverse') // [4, 3, 2, 1]
+console.log(arrReverse, 'reverse') // [4, 3, 2, 1]
 console.log(reverseStr.split('').reverse().join('')) // gfedcba
 ```
 

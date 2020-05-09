@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BASE</title>
+</head>
+<body>
+  <div class="query">querySelector</div>
+  <script>
+    let el = document.querySelector('.query')
+    el.style.width = '200px'
+    el.style.height = '100px'
+    el.style.background = 'red'
+    console.log(el, 122)
+
+    let str = '1232'
+    let reg = /^[a-z0-9]$/
+    console.log(reg.test(str), 'reg')
+  </script>
+</body>
+</html>
+<style>
+  body {
+    background: #f5f6f5;
+  }
+</style>
