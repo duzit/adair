@@ -157,3 +157,22 @@ console.log(strReplace.replace(/a/g, 'A'), '--replace') // AbcAbc
 console.log(strReplace.replace('b', 'A'), '--replace substr') // aAcabc 
 console.log(strReplace, '--replace') // abcabc 
 ```
+
+### String.search(val)
+* 检索字符串中指定的子字符串，或与正则表达式匹配的子字符串
+* 返回值 与indexOf相同
+```js
+var str="Mr. Blue has a blue house";
+document.write(str.search("blue")); // 15
+
+var str="Mr. Blue has a blue house";
+document.write(str.search(/blue/i)); // 4
+```
+
+### String.match(reg)
+* 在字符串中检索指定的值
+* 返回值 匹配结果的数组或null
+```js
+var str="The rain in SPAIN stays mainly in the plain"; 
+var n=str.match(/ain/gi); // [ain,AIN,ain,ain]
+```

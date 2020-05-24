@@ -102,6 +102,10 @@ export default {
     console.log(strReplace.replace(/A/, 'B'), '--replace ') // abcabc  
     
     console.log(strReplace, '--replace') // abcabc 
+
+    let matchString = 'abc ab def cab ABC'
+    console.log(matchString.match(/ab/gi)); // ["ab", "ab", "ab", "AB"]
+    
   }
 }
 </script>
