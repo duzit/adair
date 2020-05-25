@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .ldPage {
   height: 100%;
-  margin: 0 400px;
+  margin: 0 200px;
   background: #909399;
 }
 </style>

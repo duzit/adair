@@ -67,6 +67,9 @@ console.log(arrPop, 'pop') // [1, 2, 3]
 let arrSlice = [1, 2, 3]
 console.log(arrSlice.slice(0, 2)) // [1, 2]
 console.log(arrSlice, 'slice') // [1, 2, 3]
+// 从后往前选中数组元素
+console.log(arrSlice.slice(-1)) // 3
+console.log(arrSlice.slice(-3)) // [1, 2, 3]
 ```
 
 ### Array.splice(start, length, [elements])

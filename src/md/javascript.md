@@ -112,3 +112,12 @@ $define("web.yjcrm.components.dialogDrag", {}, function () {
     })
 });
 ```
+
+### 短语条件句
+```js
+if (condition) {
+  doSomething()
+}
+// 等价于
+condition && doSomething()
+```

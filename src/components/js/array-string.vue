@@ -43,6 +43,8 @@ export default {
     // let arrSlice = 'abc'
     console.log(arrSlice.slice(0, 2)) // [1, 2]
     console.log(arrSlice, 'slice') // [1, 2, 3]
+    console.log(arrSlice.slice(-1)) // 3
+    console.log(arrSlice.slice(-3)) // [1, 2, 3]
 
     let arrSplice = [1, 2, 3, 4]
     console.log(arrSplice.splice(1, 2, 5, 6)) // [2, 3]
