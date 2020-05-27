@@ -1,12 +1,12 @@
 <template>
-  <div class="pt20">
+  <ld-content class="pt20">
     <label for="watch">filter局部</label>
     <el-input class="w200" v-model="person.name"></el-input>
     <div>{{ person.name | capitalize }}</div>
     <label for="watch">filter全局</label>
     <el-input class="w200" v-model="person.fName"></el-input>
     <div>{{ person.fName | toUpString }}</div>
-  </div>
+  </ld-content>
 </template>
 
 <script>

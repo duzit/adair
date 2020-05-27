@@ -1,8 +1,8 @@
 <template>
-  <div class="pt20">
+  <ld-content class="pt20">
     <label for="data-props">data-props</label>
     <el-input class="w200" v-model="person.name" @input="inputChange"></el-input>
-  </div>
+  </ld-content>
 </template>
 
 <script>

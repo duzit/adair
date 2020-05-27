@@ -12,8 +12,9 @@ export default {
 
 <style lang="scss" scoped>
 .ldPage {
-  height: 100%;
-  margin: 0 200px;
-  background: #909399;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 200px;
+  justify-content: space-around;
 }
 </style>

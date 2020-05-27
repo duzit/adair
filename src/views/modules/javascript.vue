@@ -1,7 +1,6 @@
 <template>
   <ld-page>
     <var-let-const></var-let-const>
-    <div class="mtb20"></div>
     <js-lodash></js-lodash>
     <array-string></array-string>
   </ld-page>

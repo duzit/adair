@@ -1,10 +1,10 @@
 <template>
-  <div class="pt20">
+  <ld-content class="pt20">
     <label for="watch">watch</label>
     <el-input class="w200" v-model="person.name"></el-input>
     <div>{{ num }}</div>
     <el-button @click="handleClick">按钮</el-button>
-  </div>
+  </ld-content>
 </template>
 
 <script>

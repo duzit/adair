@@ -1,7 +1,7 @@
 <template>
-  <div class="pt20">
-
-  </div>
+  <ld-content>
+    Array-String
+  </ld-content>
 </template>
 
 <script>

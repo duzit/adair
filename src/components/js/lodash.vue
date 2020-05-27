@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <ld-content>
     <div class="title">lodash</div>
-  </div>
+  </ld-content>
 </template>
 <script>
 import _ from 'lodash'

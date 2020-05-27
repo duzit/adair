@@ -8,8 +8,7 @@ import router from './router/router'
 // 全局样式
 import './styles/index.scss'
 // 全局组件
-import ldPage from './components/ldPage.vue'
-Vue.component('ld-page', ldPage)
+import './components/index.js'
 
 Vue.config.productionTip = false
 // 完整引用element-ui

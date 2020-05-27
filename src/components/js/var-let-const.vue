@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <ld-content>
     <div class="pt20 title">var-let-const</div>
     <label for="防抖">防抖</label>
     <el-input class="w200" v-model="inputVal0" @input="debounce"></el-input>
@@ -8,7 +8,7 @@
     <label for="限流">限流</label>
     <el-input class="w200" v-model="inputVal1" @input="throttle"></el-input>
     <span class="fs20">{{ inputVal1 }}</span>
-  </div>
+  </ld-content>
 </template>
 
 <script>
