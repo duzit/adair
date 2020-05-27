@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>lazy load</title>
+	<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+</head>
+<body>
+	<div class="btn">
+		<button>本机延迟加载</button>
+		<button>Lozad</button>
+	</div>
+	<div class="image">
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+		<img src="./20200527.jpeg" alt="" loading='lazy'>
+	</div>
+	<div class="image2">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+		<img data-src="../../../assets/logo.png" alt="" class="lozad">
+	</div>
+
+	<script>
+		const observer = lozad();
+		observer.observe();
+
+		let btns = document.getElementsByTagName('button')
+		// 数组 取第一个元素
+		let image1 = document.getElementsByClassName('image')[0]
+		let image2 = document.getElementsByClassName('image2')[0]
+
+		btns[0].addEventListener('click', function(ele) {
+			image1.style.display = 'block'
+			image2.style.display = 'none'
+		})
+		btns[1].addEventListener('click', function(ele) {
+			image2.style.display = 'block'
+			image1.style.display = 'none'
+		})
+	</script>
+</body>
+</html>
+<style>
+	.btn {
+		margin-bottom: 20px;
+	}
+	.image, .image2 {
+		display: none;
+	}
+	.image img {
+		width: 400px;
+		height: 200px;
+	}
+</style>
