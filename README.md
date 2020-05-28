@@ -14,3 +14,5 @@
 ### 全局样式
 * main.js中import './styles'
 
+### src\md 
+* 各种记录
