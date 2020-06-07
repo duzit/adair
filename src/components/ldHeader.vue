@@ -107,7 +107,7 @@ export default {
    .current {
      color: #409eff;
      font-weight: bold;
-     background: #f1f1f1;
+    //  background: #f1f1f1;
    }
  }
 </style>
