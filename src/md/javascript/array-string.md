@@ -130,6 +130,15 @@ console.log(strIndexof.lastIndexOf('hello'), 'indexof') // -1
 ```
 
 ### Array.some()  every()
+#### some
+* 如果用空数组测试,任何情况下都是返回 false
+* 原型 Array.some(callback(element[, index[, array]])[, thisArgs])  
+  thisArgs 执行 callback 时使用的 this 值
+* 不会改变数组
+
+#### every 
+* 所有元素是否都符合某个指定函数的测试
+* 如果用空数组测试,任何情况下都是返回 true
 ```js
 let everyArray = [1, 2, 3, 4]
 console.log(everyArray.every(item => item > 0), 'every') // true
