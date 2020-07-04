@@ -56,6 +56,11 @@ const routes = [
     meta: {
       title: '文档DOC'
     }
+  },
+  {
+    path: '/modules',
+    name: 'modules',
+    component: () => import('../views/modules')
   }
 ]
 

@@ -10,6 +10,12 @@ html {
   height: 100%;
 }
 
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
 .h100 {
   height: 100%;
 }
@@ -44,16 +50,24 @@ html {
   border-bottom: 1px solid #f2f2f2;
 
   .ld-header_logo {
-    font-size: 60px;
+    font-size: 50px;
     color: $headerFontColor;
     flex: auto;
+    margin-left: 40px;
+    text-shadow: 5px 5px 5px #DCDFE6;
 
     span {
       width: 100px;
       cursor: pointer;
     }
+    span:hover {
+      color: #409EFF;
+      text-shadow: 6px 6px 10px #DCDFE6;
+    }
   }
   .ld-header_component {
+    // todo
+    display: none;
     padding-right: 40px;
     
     .el-button--text {
@@ -64,12 +78,11 @@ html {
 }
 
 .ld-main {
-  display: flex;
-  justify-content: center;
-  height: calc(100vh - 61px);
+  // height: calc(100vh - 61px);
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #f2f2f2;
+  padding: 20px;
+  // background: #f2f2f2;
   // margin-top: -21px; // todo
 }

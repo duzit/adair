@@ -23,3 +23,22 @@ let reg = /^[a-z0-9]$/g // 匹配单个数字
 let reg = /^[a-z0-9]+$/g // 匹配多个数字
 reg.test(str1)
 ```
+
+### 使用 ::before ::after 伪元素要设为块级元素
+```css
+h3 {
+  position: relative;
+  margin-bottom: 10px;
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 3px;
+    background: #409EFF;
+    margin-right: 5px;
+    position: absolute;
+    top: 3px;
+    left: -8px;
+  }
+}
+```

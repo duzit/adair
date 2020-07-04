@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      logo: 'LD',
+      logo: 'Adair',
       liLists: []
     }
   },
@@ -50,8 +50,12 @@ export default {
      * 导航首页
      */
     goIndex() {
+      // 如果当前在首页 dashboard ，则跳转模块导航页 modules
+      // 如果当前是非首页 dashboard ，则跳转 dashboard
       if (this.$route.path.indexOf('/dashboard') < 0) {
         this.$router.push('/')
+      } else {
+        this.$router.push('/modules')
       }
     },
     /**
