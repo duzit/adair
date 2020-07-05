@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// 模块详情页面 左侧item tree
 export default {
   name: 'sider-tree',
   props: ['treeData'],

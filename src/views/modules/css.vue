@@ -23,7 +23,7 @@ export default {
       title: '',
       cssTree: [
         {
-          label: '伪类',
+          label: '伪类-伪元素',
           key: 'class'
         },
         {
@@ -65,6 +65,7 @@ export default {
       height: calc(100vh - 100px);
       border-left: 1px solid #eaeaea;
       padding-left: 20px;
+      overflow-y: scroll;
 
       h3 {
         position: relative;
