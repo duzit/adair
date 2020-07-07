@@ -52,7 +52,9 @@ export default {
     goIndex() {
       // 如果当前在首页 dashboard ，则跳转模块导航页 modules
       // 如果当前是非首页 dashboard ，则跳转 dashboard
-      if (this.$route.path.indexOf('/dashboard') < 0) {
+      if (this.$route.path.indexOf('/dashboard') >= 0) {
+        this.$router.push('/modules')
+      } else if (this.$route.path.indexOf('/modules') >= 0) {
         this.$router.push('/')
       } else {
         this.$router.push('/modules')

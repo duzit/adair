@@ -11,24 +11,28 @@
 </template>
 
 <script>
-import cssClass from './css/css-class'
+import varLetConst from './es6/var-let-const'
 export default {
   name: 'css',
   components: {
-    cssClass
+    varLetConst
   },
   data() {
     return {
-      curComponent: 'class',
+      curComponent: 'var-let-const',
       title: '',
       cssTree: [
         {
-          label: '伪类-伪元素',
-          key: 'class'
+          label: 'var let const',
+          key: 'var-let-const'
         },
         {
-          label: 'css3文本效果',
-          key: 'text'
+          label: '模板字符串...',
+          key: '...'
+        },
+        {
+          label: '解构赋值',
+          key: 'deconstruction'
         }
       ]
     }
@@ -36,7 +40,7 @@ export default {
   computed: {
     // 获取当前组件
     currentComponent() {
-      return `css-${this.curComponent}`
+      return `${this.curComponent}`
     }
   },
   created() {

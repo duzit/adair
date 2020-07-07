@@ -61,6 +61,11 @@ const routes = [
     path: '/modules',
     name: 'modules',
     component: () => import('../views/modules')
+  },
+  {
+    path: '/es6',
+    name: 'es6',
+    component: () => import('../views/modules/es6.vue')
   }
 ]
 
