@@ -12,10 +12,12 @@
 
 <script>
 import varLetConst from './es6/var-let-const'
+import arrayString from './es6/array-string'
 export default {
   name: 'css',
   components: {
-    varLetConst
+    varLetConst,
+    arrayString
   },
   data() {
     return {
@@ -33,6 +35,10 @@ export default {
         {
           label: '解构赋值',
           key: 'deconstruction'
+        },
+        {
+          label: 'Array String',
+          key: 'array-string'
         }
       ]
     }
