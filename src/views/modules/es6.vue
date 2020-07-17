@@ -11,13 +11,17 @@
 </template>
 
 <script>
-import varLetConst from './es6/var-let-const'
-import arrayString from './es6/array-string'
+import varLetConst from './es6/var-let-const';
+import arrayString from './es6/array-string';
+import templateString from './es6/template-string';
+import deconstruction from './es6/deconstruction';
 export default {
   name: 'css',
   components: {
     varLetConst,
-    arrayString
+    arrayString,
+    templateString,
+    deconstruction
   },
   data() {
     return {
@@ -30,7 +34,7 @@ export default {
         },
         {
           label: '模板字符串...',
-          key: '...'
+          key: 'template-string'
         },
         {
           label: '解构赋值',

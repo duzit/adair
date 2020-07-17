@@ -6,8 +6,9 @@
 
 <script>
 import VueMarkdown from 'vue-markdown';
-import markdownData from '../../../md/javascript/var-let-const.md';
+import markdownData from '../../../md/javascript/deconstruction.md';
 export default {
+  name: 'template-string',
   components: {
     VueMarkdown
   },
@@ -15,6 +16,12 @@ export default {
     return {
       mdData: markdownData
     }
+  },
+  created() {
+    
+  },
+  methods: {
+    
   },
 }
 </script>
