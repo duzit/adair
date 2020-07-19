@@ -12,10 +12,12 @@
 
 <script>
 import cssClass from './css/css-class'
+import cssTransform from './css/css-transform'
 export default {
   name: 'css',
   components: {
-    cssClass
+    cssClass,
+    cssTransform
   },
   data() {
     return {
@@ -29,6 +31,10 @@ export default {
         {
           label: 'css3文本效果',
           key: 'text'
+        },
+        {
+          label: 'transform(origin)',
+          key: 'transform'
         }
       ]
     }

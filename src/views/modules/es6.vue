@@ -15,13 +15,19 @@ import varLetConst from './es6/var-let-const';
 import arrayString from './es6/array-string';
 import templateString from './es6/template-string';
 import deconstruction from './es6/deconstruction';
+import spreadOperator from './es6/spread-operator';
+import remindParams from './es6/remind-params';
+import promise from './es6/promise';
 export default {
   name: 'css',
   components: {
     varLetConst,
     arrayString,
     templateString,
-    deconstruction
+    deconstruction,
+    spreadOperator,
+    remindParams,
+    promise
   },
   data() {
     return {
@@ -43,6 +49,18 @@ export default {
         {
           label: 'Array String',
           key: 'array-string'
+        },
+        {
+          label: '展开操作符...',
+          key: 'spread-operator'
+        },
+        {
+          label: '剩余参数',
+          key: 'remind-params'
+        },
+        {
+          label: 'Promise',
+          key: 'promise'
         }
       ]
     }
