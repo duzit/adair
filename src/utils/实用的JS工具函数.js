@@ -1,0 +1,166 @@
+// https://mp.weixin.qq.com/s/FF_-Mi2ntESUCWsEo4BB1Q
+
+console.log("实用的JS工具函数");
+// 1. 生成一周时间
+function getWeekTime() {
+  return [...new Array(7)].map((i, index) =>
+    new Date(Date.now() + index * 8.64e7).toLocaleDateString()
+  );
+}
+console.log(getWeekTime()); // ["2020/7/22", "2020/7/23", "2020/7/24", "2020/7/25", "2020/7/26", "2020/7/27", "2020/7/28"]
+
+// 2. 类型判断
+// Object.prototype.toString.call(null); // [object Null]
+// Object.prototype.toString.call(undefined) // "[object Undefined]"
+function isType(target, type) {
+  let targetType = Object.prototype.toString
+    .call(target)
+    .slice(8, -1)
+    .toLowerCase();
+  return targetType === type.toLowerCase();
+}
+
+console.log(isType([], "Array")); // true
+console.log(isType({}, "Object")); // true
+console.log(isType(function () {}, "Function")); // true
+
+// 3. 对象属性剔除
+function delProperty(object, props = []) {
+  let res = {};
+  Object.keys(object).forEach((key) => {
+    if (props.includes(key) === false) {
+      res[key] =
+        typeof object[key] === "object" && object[key] !== "null"
+          ? JSON.parse(JSON.stringify(object[key]))
+          : object[key];
+    }
+  });
+  return res;
+}
+
+let objO = {
+  name: "xiaom",
+  age: 12,
+  Null: null,
+  other: {
+    sex: "male",
+  },
+};
+Object.keys(objO).map((key) => {
+  console.log(objO[key]);
+});
+
+console.log(delProperty(objO, "age"));
+// {
+//   name: 'xiaom',
+//   Null: null,
+//   other: {
+//     sex: 'male'
+//   }
+// }
+
+// 4. 日期格式化
+/**
+ * @param {string} format
+ * @param {number} timestamp - 时间戳
+ * @return {string}
+ */
+function formatDate(format = "Y-M-D h:m", timestamp = Date.now()) {
+  let date = new Date(timestamp);
+  let dateInfo = {
+    Y: date.getFullYear(),
+    M: date.getMonth() + 1,
+    D: date.getDate(),
+    h: date.getHours(),
+    m: date.getMinutes(),
+    s: date.getSeconds(),
+  };
+  let formatNumber = (n) => (n >= 10 ? n : "0" + n);
+  let res = format
+    .replace("Y", dateInfo.Y)
+    .replace("M", dateInfo.M)
+    .replace("D", dateInfo.D)
+    .replace("h", formatNumber(dateInfo.h))
+    .replace("m", formatNumber(dateInfo.m))
+    .replace("s", formatNumber(dateInfo.s));
+  return res;
+}
+
+console.log(formatDate()); // 2020-7-22 19:10
+console.log(formatDate("h:m Y/M/D")); // 19:10 2020/7/22
+
+// 5. 防抖 连续多次点击只触发一次
+// 性能优化方案，防抖用于减少函数请求次数，对于频繁的请求，只执行这些请求的最后一次
+function debounce(fn, time = 300) {
+  let timer = null;
+  return function () {
+    if (timer !== null) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(fn, time);
+  };
+}
+
+let debounceHandler = debounce(function () {
+  console.log("debounce");
+}, 400);
+
+// 6. 节流
+// 性能优化方案，节流用于减少函数请求次数，与防抖不同，节流是在一段时间执行一次。
+function throttle(fn, time = 300) {
+  let timer = null;
+  return function () {
+    if (!timer) {
+      timer = setTimeout(() => {
+        fn.apply(this);
+        timer = null;
+      }, time);
+    }
+  };
+}
+
+let throttleHandler = throttle(function () {
+  console.log("throttle");
+}, 400);
+
+// 6. base64数据导出文件下载
+/**
+ * @param {string} filename - 下载时的文件名
+ * @param {string} data - base64字符串
+ */
+function downloadFile(filename, data) {
+  let downloadLink = document.createElement("a");
+  if (downloadLink) {
+    document.body.appendChild(downloadLink);
+    downloadLink.style = "display: none";
+    downloadLink.download = filename;
+    downloadLink.href = data;
+    if (document.createEvent) {
+      let downloadEvt = document.createEvent("MouseEvents");
+      downloadEvt.initEvent("click", true, false);
+      downloadLink.dispatchEvent(downloadEvt);
+    } else if (document.createEventObject) {
+      downloadLink.fireEvent("onclick");
+    } else if (typeof downloadLink.onclick == "function") {
+      downloadLink.onclick();
+    }
+    document.body.removeChild(downloadLink);
+  }
+}
+
+// 7. 检测是否为PC端浏览器
+
+function isPCBroswer() {
+  let e = window.navigator.userAgent.toLowerCase()
+    , t = "ipad" == e.match(/ipad/i)
+    , i = "iphone" == e.match(/iphone/i)
+    , r = "midp" == e.match(/midp/i)
+    , n = "rv:1.2.3.4" == e.match(/rv:1.2.3.4/i)
+    , a = "ucweb" == e.match(/ucweb/i)
+    , o = "android" == e.match(/android/i)
+    , s = "windows ce" == e.match(/windows ce/i)
+    , l = "windows mobile" == e.match(/windows mobile/i);
+  return !(t || i || r || n || a || o || s || l)
+}
+
+console.log(isPCBroswer(), 'isPCBroswer');
