@@ -1,7 +1,7 @@
 <template>
   <div class="modules-content h100">
     <div class="modules-content_left h100">
-      <sider-tree :treeData="cssTree" @nodeCallback="handleBack"></sider-tree>
+      <sider-tree :treeData="trees" @nodeCallback="handleBack"></sider-tree>
     </div>
     <div class="modules-content_right">
       <h3>{{ title }}</h3>
@@ -19,7 +19,7 @@ import spreadOperator from './es6/spread-operator';
 import remindParams from './es6/remind-params';
 import promise from './es6/promise';
 export default {
-  name: 'css',
+  name: 'es6',
   components: {
     varLetConst,
     arrayString,
@@ -33,7 +33,7 @@ export default {
     return {
       curComponent: 'var-let-const',
       title: '',
-      cssTree: [
+      trees: [
         {
           label: 'var let const',
           key: 'var-let-const'

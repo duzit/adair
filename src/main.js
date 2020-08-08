@@ -9,6 +9,8 @@ import router from './router/router'
 import './styles/index.scss'
 // 全局组件
 import './components/index.js'
+// vuex
+import store from './store'
 
 import 'github-markdown-css/github-markdown.css'
 import hljs from 'highlight.js'
@@ -42,5 +44,6 @@ Vue.directive('focus',{
 new Vue({
   vueName: 'Vue',
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

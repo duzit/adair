@@ -1,29 +1,88 @@
 <template>
-  <ld-page>
-    <v-watch></v-watch>
-    <v-data-props book="xiaowangzi"></v-data-props>
-    <v-filter></v-filter>
-    <v-directive></v-directive>
-  </ld-page>
+  <div class="modules-content h100">
+    <div class="modules-content_left h100">
+      <sider-tree :treeData="trees" @nodeCallback="handleBack"></sider-tree>
+    </div>
+    <div class="modules-content_right">
+      <h3>{{ title }}</h3>
+      <component :is="currentComponent"></component>
+    </div>
+  </div>
 </template>
 
 <script>
-import vWatch from '../../components/vue/vWatch.vue'
-import vDataProps from '../../components/vue/vData-Prop-Options'
-import vFilter from '../../components/vue/filter'
-import vDirective from '../../components/vue/directive'
+import { mapState } from "vuex";
+import vWatch from "../../components/vue/vWatch.vue";
+import vDataProps from "../../components/vue/vData-Prop-Options";
+import vFilter from "../../components/vue/filter";
+import vDirective from "../../components/vue/directive";
+import Vuex from "../modules/vue/vuex";
+import liftCycle from '../modules/vue/lifecycle'
+
 export default {
-  name: 'vue',
+  name: "vue",
   components: {
-    vWatch,
-    vDataProps,
-    vFilter,
-    vDirective
+    watch: vWatch,
+    dataProp: vDataProps,
+    vfilter: vFilter,
+    directive: vDirective,
+    vuex: Vuex,
+    lifecycle: liftCycle,
   },
-  data () {
+  data() {
     return {
-      
+      curComponent: "vuex",
+      title: "",
+      trees: [
+        {
+          label: "Vuex",
+          key: "vuex",
+        },
+        {
+          label: "Watch",
+          key: "watch",
+        },
+        {
+          label: "Filter",
+          key: "vfilter",
+        },
+        {
+          label: "Directive",
+          key: "directive",
+        },
+        {
+          label: "生命周期",
+          key: "lifecycle",
+        },
+        {
+          label: "data prop options",
+          key: "dataProp",
+        },
+      ],
+    };
+  },
+  created() {
+    console.log(this.$store.state, "this.$store");
+  },
+  // computed: mapState({
+  //   name: (state) => state.name,
+  //   age: (state) => state.age,
+  //   sex: (state) => state.user.sex,
+  // }),
+  computed: {
+    // 获取当前组件
+    currentComponent() {
+      return `${this.curComponent}`
     }
-  }
-}
+  },
+  methods: {
+    /**
+     * callback
+     */
+    handleBack(data) {
+      this.curComponent = data.key;
+      this.title = data.label;
+    },
+  },
+};
 </script>
