@@ -23,6 +23,7 @@ Vue.directive('highlight', function (el) {
   })
 })
 
+// 阻止vue在启动时生成生产提示 为true时在控制台会多出提示信息
 Vue.config.productionTip = false
 // 完整引用element-ui
 Vue.use(ElementUI, {

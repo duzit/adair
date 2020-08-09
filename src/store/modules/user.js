@@ -6,14 +6,14 @@ const user = {
   },
   // 只能同步
   mutations: {
-    CHANGE_USER_AGE: (state, age) => {
-      state.age = age;
+    CHANGE_USER_USERNAME: (state, username) => {
+      state.username = username;
     }
   },
   // 支持异步
   actions: {
-    changeUserAge({ commit }, age) {
-      commit('CHANGE_USER_AGE', age);
+    changeUserUsername({ commit }, username) {
+      commit('CHANGE_USER_USERNAME', username);
     }
   }
 }

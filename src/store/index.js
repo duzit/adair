@@ -12,6 +12,17 @@ const store = new Vuex.Store({
   },
   modules: {
     user,
+  },
+  mutations: {
+    CHANGE_STORE: (state, info) => {
+      state.name = info.name;
+      state.age = info.age;
+    }
+  },
+  actions: {
+    changeStoreInfo({ commit }, info) {
+      commit('CHANGE_STORE', info);
+    }
   }
 })
  
