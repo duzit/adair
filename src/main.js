@@ -42,6 +42,11 @@ Vue.directive('focus',{
   }
 })
 
+// 获取webpack配置的全局变量
+console.log(CONFIG_ENV, 122);
+console.log(FLAG, 122);
+console.log(calc, 122);
+
 new Vue({
   vueName: 'Vue',
   router,
