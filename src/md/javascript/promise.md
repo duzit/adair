@@ -1,5 +1,5 @@
 ## Promise()
----
+
 ### resolve reject
 ### async await
 ```js

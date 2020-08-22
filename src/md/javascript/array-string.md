@@ -1,5 +1,5 @@
 ## 数组 字符串
----
+
 ### charAt(index)
 * 返回指定位置字符
 * 如果参数 index 不在 0 与 string.length 之间，该方法将返回一个空字符串
@@ -187,4 +187,11 @@ document.write(str.search(/blue/i)); // 4
 ```js
 var str="The rain in SPAIN stays mainly in the plain"; 
 var n=str.match(/ain/gi); // [ain,AIN,ain,ain]
+```
+
+### 两个数组的交集
+```js 
+duplicatedValues(arr1, arr2) {
+  return [...new Set(arr1)].filter(item => arr2.includes(item));
+}
 ```

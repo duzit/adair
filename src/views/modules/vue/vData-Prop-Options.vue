@@ -1,15 +1,23 @@
 <template>
-  <ld-content class="pt20">
-    <label for="data-props">data-props</label>
-    <el-input class="w200" v-model="person.name" @input="inputChange"></el-input>
-  </ld-content>
+  <div>
+    <div class="markdown-body">
+      <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
+    </div>
+  </div>
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown';
+import markdownData from '../../../md/vue/$data-$props.md';
+
 export default {
   name: 'data-prop',
+  components: {
+    VueMarkdown
+  },
   data () {
     return {  
+      mdData: markdownData,
       num: 1,
       person: {
         name: 'Data',

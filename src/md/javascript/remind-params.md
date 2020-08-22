@@ -1,5 +1,5 @@
 ## 剩余参数
----
+
 ### 将剩余的参数收入数列
 ```js
 let sum = this.remindParamsFn(1, 2, 3, 4, 5);

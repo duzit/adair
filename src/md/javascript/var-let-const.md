@@ -1,5 +1,5 @@
 ## var let const
----
+
 * var 重新赋值 重新定义 作用域是 function scope
 ```js
 var name = 'Hel'

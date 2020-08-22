@@ -16,6 +16,18 @@ export default {
       mdData: markdownData
     }
   },
+  created() {
+    // 两个数组的交集
+    let arr1 = [1,2,3,4,5,6];
+    let arr2 = [2,3,4,5,6,7,8,9];
+    let retArr = this.duplicatedValues(arr1, arr2);
+    console.log(retArr, '数组交集'); // [2, 3, 4, 5, 6]
+  },
+  methods: {
+    duplicatedValues(arr1, arr2) {
+      return [...new Set(arr1)].filter(item => arr2.includes(item));
+    }
+  },
 }
 </script>
 

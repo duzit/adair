@@ -12,10 +12,10 @@
 
 <script>
 import { mapState } from "vuex";
-import vWatch from "../../components/vue/vWatch.vue";
-import vDataProps from "../../components/vue/vData-Prop-Options";
-import vFilter from "../../components/vue/filter";
-import vDirective from "../../components/vue/directive";
+import vWatch from "../modules/vue/vWatch.vue";
+import vDataProps from "../modules/vue/vData-Prop-Options";
+import vFilter from "../modules/vue/filter";
+import vDirective from "../modules/vue/directive";
 import Vuex from "../modules/vue/vuex";
 import liftCycle from '../modules/vue/lifecycle'
 
