@@ -30,6 +30,7 @@ Vue.use(ElementUI, {
   size: 'mini'
 })
 
+// 全局注册过滤器
 Vue.filter('toUpString', function(value) {
   if (!value) return ''
   value = value.toString()

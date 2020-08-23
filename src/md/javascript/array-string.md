@@ -195,3 +195,11 @@ duplicatedValues(arr1, arr2) {
   return [...new Set(arr1)].filter(item => arr2.includes(item));
 }
 ```
+
+### 数组对象化
+* key 对象数组的下标
+```js
+let strArr = ['zhangsan', 'xiaoming', 'xiaoli']
+let strObj = { ...strArr }
+console.log(strObj, 'arr -> strObj'); // { 0: 'zhangsan', 1: 'xiaoming', 2: 'xiaoli' }
+```
