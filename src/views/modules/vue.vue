@@ -17,7 +17,8 @@ import vDataProps from "../modules/vue/vData-Prop-Options";
 import vFilter from "../modules/vue/filter";
 import vDirective from "../modules/vue/directive";
 import Vuex from "../modules/vue/vuex";
-import liftCycle from '../modules/vue/lifecycle'
+import liftCycle from '../modules/vue/lifecycle';
+import freeze from '../modules/vue/freeze';
 
 export default {
   name: "vue",
@@ -28,6 +29,7 @@ export default {
     directive: vDirective,
     vuex: Vuex,
     lifecycle: liftCycle,
+    freeze,
   },
   data() {
     return {
@@ -57,6 +59,10 @@ export default {
         {
           label: "data prop options",
           key: "dataProp",
+        },
+        {
+          label: "Object.freeze()",
+          key: "freeze",
         },
       ],
     };
