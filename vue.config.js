@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   chainWebpack: config => {
@@ -16,6 +17,11 @@ module.exports = {
         }
       ]
     },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/')
+      }
+    },
     plugins: [
       new webpack.DefinePlugin({
         // 定义时不能直接定义为 ‘hello’ 需使用 JSON.stringify
@@ -25,7 +31,7 @@ module.exports = {
       })
     ]
   }
-  // 另一中写法 定义全局变量
+  // 另一种写法 定义全局变量
   // configureWebpack: config => {
   //   config.plugins.push(
   //     new webpack.DefinePlugin({

@@ -66,6 +66,11 @@ const routes = [
     path: '/es6',
     name: 'es6',
     component: () => import('../views/modules/es6.vue')
+  },
+  {
+    path: '/webpack',
+    name: 'webpack',
+    component: () => import('../views/modules/webpack.vue')
   }
 ]
 

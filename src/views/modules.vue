@@ -66,6 +66,11 @@ export default {
           des: '面试题，面试技巧...',
           path: '/interview'
         },
+        {
+          title: 'webpack',
+          des: 'webpack相关',
+          path: '/webpack'
+        }
       ]
     }
   },
