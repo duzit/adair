@@ -28,6 +28,8 @@ module.exports = {
         'CONFIG_ENV': JSON.stringify('hello'),
         FLAG: 'true', // true
         calc: '1+1', // 2
+        'process.env': (process.env),
+        'npm_package_name': JSON.stringify(process.env.npm_package_name)
       })
     ]
   }

@@ -47,6 +47,9 @@ Vue.directive('focus',{
 console.log(CONFIG_ENV, 122);
 console.log(FLAG, 122);
 console.log(calc, 122);
+// 获取 package.json 中参数
+console.log(process.env, 'process.env');
+console.log(npm_package_name, 'npm_package_name'); // adair
 
 new Vue({
   vueName: 'Vue',
