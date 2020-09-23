@@ -38,7 +38,7 @@ console.log(pushArr, 'pushArr') // [1,2,3]
 ```
 
 ### Array.unshift()
-* 返回新的长度 改变原数组
+* 返回新的长度 改变原数组 在数组首位添加元素
 ```js
 let arrUnshift = [1, 2]
 console.log(arrUnshift.unshift(3)) // 3
@@ -46,7 +46,7 @@ console.log(arrUnshift, 'unshift') // [3, 1, 2]
 ```
 
 ### Array.shift()
-* 返回第一个元素 改变原数组
+* 删除并返回第一个元素 改变原数组
 ```js
 let arrShift = [1, 2, 3]
 console.log(arrShift.shift()) // 1
@@ -62,7 +62,7 @@ console.log(arrPop, 'pop') // [1, 2, 3]
 ```
 
 ### Array.slice(start, end)
-* 返回选定的元素 不改变原数组
+* 返回选定的元素 不改变原数组 不包含end
 ```js 
 let arrSlice = [1, 2, 3]
 console.log(arrSlice.slice(0, 2)) // [1, 2]
@@ -70,6 +70,8 @@ console.log(arrSlice, 'slice') // [1, 2, 3]
 // 从后往前选中数组元素
 console.log(arrSlice.slice(-1)) // 3
 console.log(arrSlice.slice(-3)) // [1, 2, 3]
+// 如果为负数 不包含-3  包含-1
+console.log(arrSlice.slice(-3, -1)) // [2, 3]
 ```
 
 ### Array.splice(start, length, [elements])
@@ -78,6 +80,9 @@ console.log(arrSlice.slice(-3)) // [1, 2, 3]
 let arrSplice = [1, 2, 3, 4]
 console.log(arrSplice.splice(1, 2, 5, 6)) // [2, 3]
 console.log(arrSplice, 'splice') // [1, 5, 6, 4]
+// 如果 elements 长度大于 第二个参数length 直接覆盖
+console.log(arrSplice.splice(1, 2, 1, 1, 1, 1)) // [2, 3]
+console.log(arrSplice, 'splice') // [1, 1, 1, 1, 1, 4]
 ```
 
 ### String.substr(start, length)
