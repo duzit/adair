@@ -208,3 +208,8 @@ let strArr = ['zhangsan', 'xiaoming', 'xiaoli']
 let strObj = { ...strArr }
 console.log(strObj, 'arr -> strObj'); // { 0: 'zhangsan', 1: 'xiaoming', 2: 'xiaoli' }
 ```
+
+### 类数组转为数组方法
+* Array.from()  new Set() 后的数组是类数组 Array.from(new Set(arr))
+* 扩展运算符 ...  [...new Set(arr)]
+* Array.prototype.slice.call()
