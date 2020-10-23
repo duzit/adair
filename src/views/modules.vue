@@ -73,7 +73,8 @@ export default {
           des: 'webpack相关',
           path: '/webpack'
         }
-      ]
+      ],
+      mixinVal: 'mixin'
     }
   },
   created() {
@@ -92,6 +93,12 @@ export default {
      */
     itemDetail(item) {
       this.$router.push(`${item.path}`)
+    },
+    mixinCall() {
+      console.log('mixinCall');
+    },
+    emitMethod(param) {
+      console.log(param, 'emit call');
     }
   },
 }
