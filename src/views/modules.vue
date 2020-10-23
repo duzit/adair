@@ -17,9 +17,11 @@
 
 <script>
 import ldContent from '../components/ldContent'
+import helloMixin from '../mixins/hello'
 
 export default {
   name: 'document',
+  mixins: [helloMixin],
   components: {
     ldContent
   },
@@ -79,6 +81,10 @@ export default {
     console.log(charatStr.charAt(0))
     console.log(charatStr.charAt(1))
     console.log(charatStr.charAt(-1))
+
+    // mixin 测试
+    console.log(this.message, 'mixin message');
+    this.helloFn();
   },
   methods: {
     /**
