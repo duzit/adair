@@ -18,6 +18,9 @@
 <script>
 import ldContent from '../components/ldContent'
 import helloMixin from '../mixins/hello'
+import {
+  myClass
+} from '../components/js/es6-class'
 
 export default {
   name: 'document',
@@ -74,7 +77,9 @@ export default {
           path: '/webpack'
         }
       ],
-      mixinVal: 'mixin'
+      // mixins
+      mixinVal: 'mixin',
+      classTest: null
     }
   },
   created() {
@@ -86,6 +91,9 @@ export default {
     // mixin 测试
     console.log(this.message, 'mixin message');
     this.helloFn();
+
+    // es6 class
+    this.es6ClassFn();
   },
   methods: {
     /**
@@ -99,6 +107,18 @@ export default {
     },
     emitMethod(param) {
       console.log(param, 'emit call');
+    },
+    // es6 class test
+    es6ClassFn() {
+      this.classTest = new myClass({
+        name: 'Ben',
+        age: 12
+      })
+      console.log(this.classTest, 'es6 class');
+
+      this.classTest.init();
+
+      this.classTest.setGname('Lee');
     }
   },
 }
