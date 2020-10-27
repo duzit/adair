@@ -26,6 +26,11 @@ export default {
     let strArr = ['zhangsan', 'xiaoming', 'xiaoli']
     let strObj = { ...strArr }
     console.log(strObj, 'arr -> strObj'); // { 0: 'zhangsan', 1: 'xiaoming', 2: 'xiaoli' }
+
+    // Array.from
+    console.log('Array.from');
+    console.log(Array.from('foo')); // ["f", "o", "o"] 
+    console.log(Array.from([1, 2, 3], x => x * 2)); // [2, 4, 6]
   },
   methods: {
     duplicatedValues(arr1, arr2) {

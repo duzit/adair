@@ -213,3 +213,32 @@ console.log(strObj, 'arr -> strObj'); // { 0: 'zhangsan', 1: 'xiaoming', 2: 'xia
 * Array.from()  new Set() 后的数组是类数组 Array.from(new Set(arr))
 * 扩展运算符 ...  [...new Set(arr)]
 * Array.prototype.slice.call()
+
+### Array.from
+* 从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例
+* Array.from(arrayLike[, mapFn[,thisArg]])  
+  arrayLike 想要转换成数组的伪数组或可迭代对象  
+  mapFn 如果指定了该参数，数组中每个元素都会执行该函数  
+  thisArg 可选参数 执行 mapFn 时 this 对象  
+  等价于 Array.from(obj).map(mapFn, thisArg)
+```js
+console.log(Array.from('foo')); // ["f", "o", "o"] 
+console.log(Array.from([1, 2, 3], x => x * 2)); // [2, 4, 6]
+
+// new Set() 返回的是可迭代对象 通过 Array.from 转为数组
+const set = new Set(['foo', 'bar', 'baz', 'foo']);
+Array.from(set); // [ "foo", "bar", "baz" ]
+
+// 从 Map 生成数组
+const map = new Map([[1,2], [2, 4], [4, 8]]);
+Array.from(map); // [[1,2], [2, 4], [4, 8]]
+
+Array.from(map.values()) // [2, 4, 8]
+Array.from(map.keys()) // [1, 2, 4]
+
+// 从类数组对象（arguments）生成数组
+function fn() {
+  return Array.from(arguments)
+}
+fn(1, 2, 3) // [1, 2, 3]
+```
