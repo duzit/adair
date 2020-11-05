@@ -164,3 +164,50 @@ function isPCBroswer() {
 }
 
 console.log(isPCBroswer(), 'isPCBroswer');
+
+// 获取当前页面滚动位置
+const getScrollPosition = (el = window) => ({  
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,  
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop  
+});  
+// Example  
+// getScrollPosition(); // {x: 0, y: 200}
+
+// 平滑的滚动到顶部
+const scrollToTop = () => {  
+  const c = document.documentElement.scrollTop || document.body.scrollTop;  
+  if (c > 0) {  
+    // requestAnimationFrame IE10 开始支持
+    window.requestAnimationFrame(scrollToTop);  
+    window.scrollTo(0, c - c / 8);  
+  }  
+};  
+// Example  
+// scrollToTop();
+
+// 判断元素是否在窗口可见
+const elementIsVisibleInViewport = (el, partiallyVisible = false) => {  
+  const { top, left, bottom, right } = el.getBoundingClientRect();  
+  const { innerHeight, innerWidth } = window;  
+  return partiallyVisible  
+    ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&  
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))  
+    : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;  
+};  
+// Examples  
+// elementIsVisibleInViewport(el); // (不完全可见)  
+// elementIsVisibleInViewport(el, true); // (部分可见)
+
+// 判断当前设备类型 移动 or PC
+const detectDeviceType = () =>  
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)  
+        ? 'Mobile'  
+        : 'Desktop';  
+// Example  
+// detectDeviceType(); // "Mobile" or "Desktop"
+
+// 获取两个日期之间的天数
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>  
+      (dateFinal - dateInitial) / (1000 * 3600 * 24);  
+// Example  
+// getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
