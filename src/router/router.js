@@ -71,6 +71,11 @@ const routes = [
     path: '/webpack',
     name: 'webpack',
     component: () => import('../views/modules/webpack.vue')
+  },
+  {
+    path: '/sometime',
+    name: 'sometime',
+    component: () => import('../views/modules/sometime.vue')
   }
 ]
 

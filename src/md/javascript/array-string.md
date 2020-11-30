@@ -39,6 +39,7 @@ console.log(pushArr, 'pushArr') // [1,2,3]
 
 ### Array.unshift()
 * 返回新的长度 改变原数组 在数组首位添加元素
+* 如果不传参数 则返回数组的长度
 ```js
 let arrUnshift = [1, 2]
 console.log(arrUnshift.unshift(3)) // 3
