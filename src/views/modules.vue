@@ -89,7 +89,7 @@ export default {
     console.log(charatStr.charAt(-1))
 
     // mixin 测试
-    console.log(this.message, 'mixin message');
+    console.log(this.message, 'mixin defined message');
     this.helloFn();
 
     // es6 class

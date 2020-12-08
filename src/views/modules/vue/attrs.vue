@@ -9,9 +9,9 @@
 
 <script>
 /**
- * <HelloWorld msg="Welcome to Your Vue.js App" name="hello" age="12" v-bind="$attrs"/>
- * 父组件传递了三个值 分别是 msg name age 
- * 其中 name age 在 props 中已经包含了 
+ * <Attrs msg="Welcome to Your Vue.js App" name="hello" age="12" v-bind="$attrs" />
+ * 父组件调用该组件时传递了三个值 分别是 msg name age 
+ * 其中 name age 在该组件中的 props 中已经包含了 
  * msg 未在props中包含，所以 vm.$attrs 包含了 msg 
  * vm.$attrs.msg 则是父组件中的 msg 值
  * 官方解释
