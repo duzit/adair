@@ -8,6 +8,9 @@
     <div v-local.a.b='message'></div>
     <div v-local2:[argument].a.b='message'></div>
     <div v-local3="{name: 'Ben', age: 12}"></div>
+    <h3>Copy</h3>
+    <p>{{ copyMsg }}</p>
+    <el-button v-copy="copyMsg">一键复制</el-button>
   </div>
 </template>
 
@@ -76,7 +79,8 @@ export default {
   data () {
     return {
       message: 'hello directive',
-      argument: '100'
+      argument: '100',
+      copyMsg: 'this is copy message'
     }
   }
 }

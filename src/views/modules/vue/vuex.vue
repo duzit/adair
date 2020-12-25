@@ -27,7 +27,7 @@
 <script>
 import { mapState } from 'vuex';
 import VueMarkdown from 'vue-markdown';
-import markdownData from '../../../md/vuex.md';
+import markdownData from '../../../md/vue/vuex.md';
 export default {
   name: 'vuex',
   data() {

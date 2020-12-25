@@ -37,11 +37,15 @@ Vue.filter('toUpString', function(value) {
   return value.toUpperCase()
 })
 
-Vue.directive('focus',{
-  inserted(el) {
-    el.focus()
-  }
-})
+// Vue.directive('focus',{
+//   inserted(el) {
+//     el.focus()
+//   }
+// })
+
+// 注册全局指令
+import directives from './directive';
+Vue.use(directives);
 
 // 获取webpack配置的全局变量
 console.log(CONFIG_ENV, 122);
