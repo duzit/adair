@@ -1,9 +1,15 @@
 import copy from './copy.js';
 import focus from './focus.js';
+import debounce from './debounce.js';
+import permission from './permission.js';
+import draggable from './draggable';
 
 const directives = {
   copy,
-  focus
+  focus,
+  debounce,
+  permission,
+  draggable
 };
 
 export default {

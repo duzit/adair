@@ -11,10 +11,21 @@
     <h3>Copy</h3>
     <p>{{ copyMsg }}</p>
     <el-button v-copy="copyMsg">一键复制</el-button>
+    <h3>debounce</h3>
+    <el-button v-debounce:[debounceTime]="debounceClick">延迟点击</el-button>
+    <h3>permission</h3>
+    <el-button v-permission='5'>无权限</el-button>
+    <el-button v-permission='1'>有权限</el-button>
+    <h3>draggable</h3>
+    <div class="draggable">
+      <el-button class="draggable-btn" v-draggable>拖拽</el-button>
+    </div>
   </div>
 </template>
 
 <script>
+// 参考 https://mp.weixin.qq.com/s/7iX1lZfJMzkGeX3Qp8i3Yg
+
 export default {
   name: 'directive',
   directives: {
@@ -80,8 +91,25 @@ export default {
     return {
       message: 'hello directive',
       argument: '100',
-      copyMsg: 'this is copy message'
+      copyMsg: 'this is copy message',
+      debounceTime: 1000
     }
-  }
+  },
+  methods: {
+    debounceClick() {
+      this.$message.warning('点击延迟');
+    }
+  },
 }
 </script>
+
+<style>
+  .draggable {
+    position: absolute;
+    top: 50%;
+    right: 200px;
+  }
+  .draggable-btn {
+    position: relative;
+  }
+</style>
