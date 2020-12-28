@@ -36,6 +36,7 @@ let tree = [
 // 广度优先遍历
 function treeForEach(tree, func) {
   let node, list = [...tree];
+  // eslint-disable-next-line no-cond-assign
   while (node = list.shift()) {
     func(node)
     node.children && list.push(...node.children)
