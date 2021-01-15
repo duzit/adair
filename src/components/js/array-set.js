@@ -43,4 +43,27 @@ const arrFilterFn = arr => {
 let arrFilter = arrFilterFn(arr);
 console.log(arrFilter, 'arr filter');
 
+// 根据 key 去重数组
+const filterByKeyArr = [
+  {
+    label: 'a',
+    value: 1
+  },
+  {
+    label: 'a',
+    value: 12
+  },
+  {
+    label: 'b',
+    value: 3
+  }
+];
+
+const filterByKeyFn = (arr, key) => {
+  const map = new Map();
+  return arr.filter(item => !map.has(item[key]) && map.set(item[key], 1));
+}
+console.log(filterByKeyFn(filterByKeyArr, 'label'), 'filterByKeyFn');
+
+
 console.log('---数组去重 end---');

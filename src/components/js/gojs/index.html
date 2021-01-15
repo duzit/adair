@@ -1,0 +1,85 @@
+<div id="sample">
+  <div style="width: 100%; display: flex; justify-content: space-between">
+    <div id="myPaletteDiv" style="width: 100px; margin-right: 2px; background-color: #282c34;"></div>
+    <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; background-color: #282c34;"></div>
+  </div>
+  <p>
+  The FlowChart sample demonstrates several key features of GoJS,
+  namely <a href="../intro/palette.html">Palette</a>s,
+  <a href="../intro/links.html">Linkable nodes</a>, Drag/Drop behavior,
+  <a href="../intro/textBlocks.html">Text Editing</a>, and the use of
+  <a href="../intro/templateMaps.html">Node Template Maps</a> in Diagrams.
+  </p>
+  <p>
+  Mouse-over a Node to view its ports.
+  Drag from these ports to create new Links.
+  Selecting Links allows you to re-shape and re-link them.
+  Selecting a Node and then clicking its TextBlock will allow
+  you to edit text (except on the Start and End Nodes).
+  </p>
+  <button id="SaveButton" onclick="save()">Save</button>
+  <button onclick="load()">Load</button>
+  Diagram Model saved in JSON format:
+  <textarea id="mySavedModel" style="width:100%;height:300px">{ "class": "go.GraphLinksModel",
+  "linkFromPortIdProperty": "fromPort",
+  "linkToPortIdProperty": "toPort",
+  "nodeDataArray": [
+{"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
+{"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
+{"key":0, "loc":"-5 75", "text":"Preheat oven to 375 F"},
+{"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
+{"key":2, "loc":"175 200", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+{"key":3, "loc":"175 290", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+{"key":4, "loc":"175 380", "text":"Press evenly into ungreased 15x10x1 pan"},
+{"key":5, "loc":"355 85", "text":"Finely chop 1/2 cup of your choice of nuts"},
+{"key":6, "loc":"175 450", "text":"Sprinkle nuts on top"},
+{"key":7, "loc":"175 515", "text":"Bake for 25 minutes and let cool"},
+{"key":8, "loc":"175 585", "text":"Cut into rectangular grid"},
+{"key":-2, "category":"End", "loc":"175 660", "text":"Enjoy!"}
+ ],
+  "linkDataArray": [
+{"from":1, "to":2, "fromPort":"B", "toPort":"T"},
+{"from":2, "to":3, "fromPort":"B", "toPort":"T"},
+{"from":3, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":4, "to":6, "fromPort":"B", "toPort":"T"},
+{"from":6, "to":7, "fromPort":"B", "toPort":"T"},
+{"from":7, "to":8, "fromPort":"B", "toPort":"T"},
+{"from":8, "to":-2, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":0, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":1, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":5, "fromPort":"B", "toPort":"T"},
+{"from":5, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":0, "to":4, "fromPort":"B", "toPort":"T"}
+ ]}
+  </textarea>
+  <button onclick="printDiagram()">Print Diagram Using SVG</button>
+</div>
+
+<!-- vue -->
+<div id="sample">
+  <diagram ref="diag" v-bind:model-data="diagramData" v-on:model-changed="modelChanged" v-on:changed-selection="changedSelection" style="border: solid 1px black; width:100%; height:400px"></diagram>
+  <button v-on:click="addNode">Add Child to Gamma</button>
+  <button v-on:click="modifyStuff">Modify view model data without undo</button>
+  <br>Current Node:
+  <input v-model.lazy="currentNodeText" v-bind:disabled="currentNode === null">
+  <br>The saved GoJS Model:
+  <textarea style="width:100%;height:250px">{{ savedModelText }}</textarea>
+  <p class="box bg-info">
+    This is a <a href="https://vuejs.org">Vue.js</a> sample.
+  </p>
+  <p>
+    The GoJS Diagram is held in a "diagram" component, and only exposes a small fraction of the functionality of <a>Diagram</a>.
+    That includes the "modelData" property, to initialize the Diagram to show a model, and
+    the "diagram" property, to get access to the <a>Diagram</a>.
+  </p>
+  <p>
+    That component also raises two events: "model-changed" corresponding to <a>Model.addChangedListener</a>, and
+    "changed-selection" for the "ChangedSelection" <a>DiagramEvent</a>.
+  </p>
+  <p>
+    That component also supports two different ways of modifying the diagram: access to the <a>Model</a> via the "model" method
+    so that code can call Model methods such as <a>Model.setDataProperty</a>, and an "updateDiagramFromData" method.
+    The latter permits data changes without calling Model methods to notify Diagrams showing the model,
+    but at the cost of not being able to support undo and redo.
+  </p>
+</div>

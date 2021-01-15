@@ -1,4 +1,5 @@
 ## var let const
+* https://mp.weixin.qq.com/s/w49SXN2ceSW0ZSEH7v4oZw
 
 * var 重新赋值 重新定义 作用域是 function scope
 ```js

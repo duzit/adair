@@ -1,79 +1,55 @@
 <template>
-  <ld-page>
-    <el-row>
-      <el-col v-for="item of moduleList" :key="item.path" :span="11" :offset="1">
-        <ld-content>
-          <h3 class="content-header">
-            {{ item.title }}
-          </h3>
-          <div class="content-main">
-            {{ item.des }}
-          </div>
-          <footer class="content-footer">
-            <i class="el-icon-right"></i>
-          </footer>
-        </ld-content>
-      </el-col>
-    </el-row>
-  </ld-page>
+  <div class="modules-content h100">
+    <div class="modules-content_left h100">
+      <sider-tree :treeData="trees" @nodeCallback="handleBack"></sider-tree>
+    </div>
+    <div class="modules-content_right">
+      <h3>{{ title }}</h3>
+      <component :is="currentComponent"></component>
+    </div>
+  </div>
 </template>
 
 <script>
-import ldContent from '../../components/ldContent'
-
+import gojs from './js/gojs';
 export default {
-  name: 'document',
+  name: 'javascript',
   components: {
-    ldContent
+    gojs
   },
   data() {
     return {
-      // javascript 模块列表
-      moduleList: [
+      curComponent: 'gojs',
+      title: '',
+      trees: [
         {
-          title: 'ES6 Plus',
-          des: 'let const 使用方法，数组/字符串新方法，箭头函数等',
-          path: '/es6'
-        },
-        {
-          title: 'Lodash',
-          des: '高性能的 JavaScript 实用工具库',
-          path: '/lodash'
-        },
-        {
-          title: '偶遇小技巧',
-          des: '工作中，公众号中偶遇的知识点',
-          path: '/sometime'
+          label: 'gojs',
+          key: 'gojs'
         },
       ]
     }
   },
+  computed: {
+    // 获取当前组件
+    currentComponent() {
+      return `${this.curComponent}`
+    }
+  },
   created() {
-    let charatStr = 'charat'
-    console.log(charatStr.charAt(0))
-    console.log(charatStr.charAt(1))
-    console.log(charatStr.charAt(-1))
+    
   },
   methods: {
-    
+    /**
+     * callback
+     */
+    handleBack(data) {
+      this.curComponent = data.key;
+      this.title = data.label
+    }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-  .content-header {
-    border-bottom: 1px solid #f2f2f2;
-  }
-  .content-main {
-    height: 45%;
-  }
-  .content-footer {
-    border-top: 1px solid #f2f2f2;
-    i {
-      font-size: 20px;
-      line-height: 25px;
-      float: right;
-      margin-right: 10px;
-    }
-  }
+  
 </style>
