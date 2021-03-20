@@ -8,13 +8,20 @@
 <script>
 import ldHeader from './components/ldHeader'
 import ldMain from './components/ldMain'
+import {
+  isPCBroswer
+} from 'du-utils/src/common'
 
 export default {
   name: 'app',
   components: {
     ldHeader,
     ldMain
-  }
+  },
+  created() {
+    // 测试 du-utils 
+    console.log(isPCBroswer(), '123');
+  },
 }
 </script>
 
