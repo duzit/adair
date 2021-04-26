@@ -1,5 +1,6 @@
 // Map 
 // 参考 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map
+// https://mp.weixin.qq.com/s/YdBVplz7bUrcyXrPk5-oVQ
 /**
  * Map 对象保存键值对，并且能够记住键的原始插入顺序，任何值都可以作为一个键或一个值
  */

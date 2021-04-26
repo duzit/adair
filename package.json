@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "du-utils": "^1.0.0",
+    "echarts": "^5.0.2",
     "element-ui": "^2.12.0",
     "github-markdown-css": "^4.0.0",
     "gojs": "^2.1.33",

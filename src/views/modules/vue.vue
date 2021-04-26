@@ -69,6 +69,9 @@ export default {
   },
   created() {
     console.log(this.$store.state, "this.$store");
+
+    const files = require.context('../../md/vue', false, /\.md$/);
+    console.log(files.keys(), 123);
   },
   // computed: mapState({
   //   name: (state) => state.name,
