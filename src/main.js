@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Vue from 'vue'
 import App from './App.vue'
 // 安装后引用 npm i element-ui -S
@@ -22,6 +23,10 @@ Vue.directive('highlight', function (el) {
     hljs.highlightBlock(block)
   })
 })
+
+// 引入 CKEditor
+import CKEditor from 'ckeditor4-vue';
+Vue.use(CKEditor);
 
 // 阻止vue在启动时生成生产提示 为true时在控制台会多出提示信息
 Vue.config.productionTip = false

@@ -12,10 +12,13 @@
 
 <script>
 import gojs from './js/gojs';
+import CKEditor from './js/ckeditor';
+
 export default {
   name: 'javascript',
   components: {
-    gojs
+    gojs,
+    CKEditor
   },
   data() {
     return {
@@ -25,6 +28,10 @@ export default {
         {
           label: 'gojs',
           key: 'gojs'
+        },
+        {
+          label: 'CKEditor.js',
+          key: 'CKEditor'
         },
       ]
     }
