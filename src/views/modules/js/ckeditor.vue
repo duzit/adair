@@ -6,16 +6,26 @@
       :config="editorConfig"
       @namespaceloaded="onNamespaceLoaded" />
       <!-- editor-url="/node_modules/ckeditor4-vue/ckeditor.js" -->
+    
+    <div class="markdown-body">
+      <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
+    </div>
   </div>
 </template>
 
 <script>
   // import wordcount from '@/components/ckeditorPlugins/wordcount/plugin.js';
+  import VueMarkdown from 'vue-markdown';
+import markdownData from '../../../md/vue/ckeditor4-vue.md';
 
   export default {
     name: 'CKEditor',
+    components: {
+      VueMarkdown
+    },
     data() {
       return {
+        mdData: markdownData,
         editorData: '<h1><span style="color:#e74c3c">ckeditor</span></h1>',
         editorConfig: {
           width: '50%', // 宽 支持百分比

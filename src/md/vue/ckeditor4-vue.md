@@ -157,8 +157,8 @@ CKEDITOR.plugins.addExternal('wordcount', '/ckeditor/plugins/wordcount/', 'plugi
 ```
 
 3. 插件不放 public 方法 
-  下载的插件放到 @/components/ckeditorPlugins/wordcount/plugin.js
-  需修改部分源码 
+  下载的插件放到 @/components/ckeditorPlugins/wordcount/plugin.js  
+  需修改部分源码 [参考](https://github.com/duzit/adair/blob/main/src/components/ckeditorPlugins/wordcount/plugin.js)
 
 ```js
 // 引入
@@ -169,3 +169,7 @@ onNamespaceLoaded(CKEDITOR) {
   wordcount.init();
 }
 ```
+
+### 参考
+* [github](https://github.com/duzit/adair/blob/main/src/views/modules/js/ckeditor.vue)
+* [csdn](https://blog.csdn.net/gao_grace/article/details/113739734)
