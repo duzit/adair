@@ -13,12 +13,14 @@
 <script>
 import gojs from './js/gojs';
 import CKEditor from './js/ckeditor';
+import CKEditorOrg from './js/CKEditorOrg';
 
 export default {
   name: 'javascript',
   components: {
     gojs,
-    CKEditor
+    CKEditor,
+    CKEditorOrg
   },
   data() {
     return {
@@ -30,8 +32,12 @@ export default {
           key: 'gojs'
         },
         {
-          label: 'CKEditor.js',
+          label: 'CKEditor-vue.js',
           key: 'CKEditor'
+        },
+        {
+          label: 'CKEditor-org.js',
+          key: 'CKEditorOrg'
         },
       ]
     }
