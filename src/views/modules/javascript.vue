@@ -14,13 +14,15 @@
 import gojs from './js/gojs';
 import CKEditor from './js/ckeditor';
 import CKEditorOrg from './js/CKEditorOrg';
+import imgSrc from './js/imgSrc';
 
 export default {
   name: 'javascript',
   components: {
     gojs,
     CKEditor,
-    CKEditorOrg
+    CKEditorOrg,
+    imgSrc
   },
   data() {
     return {
@@ -39,6 +41,10 @@ export default {
           label: 'CKEditor-org.js',
           key: 'CKEditorOrg'
         },
+        {
+          label: 'img动态src',
+          key: 'imgSrc'
+        }
       ]
     }
   },
