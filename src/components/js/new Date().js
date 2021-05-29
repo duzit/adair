@@ -5,9 +5,9 @@
  * new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
  */
 
-// 实例方法 
+// 实例方法
 // getter setter
-let date = new Date();
+const date = new Date();
 
 // 月份中的第几天 （1-31）
 date.getDate();

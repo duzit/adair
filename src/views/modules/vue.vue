@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import vWatch from "../modules/vue/vWatch.vue";
-import vDataProps from "../modules/vue/vData-Prop-Options";
-import vFilter from "../modules/vue/filter";
-import vDirective from "../modules/vue/directive";
-import Vuex from "../modules/vue/vuex";
+import { mapState } from 'vuex';
+import vWatch from '../modules/vue/vWatch.vue';
+import vDataProps from '../modules/vue/vData-Prop-Options';
+import vFilter from '../modules/vue/filter';
+import vDirective from '../modules/vue/directive';
+import Vuex from '../modules/vue/vuex';
 import liftCycle from '../modules/vue/lifecycle';
 import freeze from '../modules/vue/freeze';
 
 export default {
-  name: "vue",
+  name: 'vue',
   components: {
     watch: vWatch,
     dataProp: vDataProps,
@@ -33,42 +33,42 @@ export default {
   },
   data() {
     return {
-      curComponent: "vuex",
-      title: "",
+      curComponent: 'vuex',
+      title: '',
       trees: [
         {
-          label: "Vuex",
-          key: "vuex",
+          label: 'Vuex',
+          key: 'vuex',
         },
         {
-          label: "Watch",
-          key: "watch",
+          label: 'Watch',
+          key: 'watch',
         },
         {
-          label: "Filter",
-          key: "vfilter",
+          label: 'Filter',
+          key: 'vfilter',
         },
         {
-          label: "Directive",
-          key: "directive",
+          label: 'Directive',
+          key: 'directive',
         },
         {
-          label: "生命周期",
-          key: "lifecycle",
+          label: '生命周期',
+          key: 'lifecycle',
         },
         {
-          label: "data prop options",
-          key: "dataProp",
+          label: 'data prop options',
+          key: 'dataProp',
         },
         {
-          label: "Object.freeze()",
-          key: "freeze",
+          label: 'Object.freeze()',
+          key: 'freeze',
         },
       ],
     };
   },
   created() {
-    console.log(this.$store.state, "this.$store");
+    console.log(this.$store.state, 'this.$store');
 
     const files = require.context('../../md/vue', false, /\.md$/);
     console.log(files.keys(), 123);
@@ -81,8 +81,8 @@ export default {
   computed: {
     // 获取当前组件
     currentComponent() {
-      return `${this.curComponent}`
-    }
+      return `${this.curComponent}`;
+    },
   },
   methods: {
     /**

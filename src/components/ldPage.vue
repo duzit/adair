@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'ldpage',
-}
+};
 </script>
 
 <style lang="scss" scoped>

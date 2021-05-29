@@ -22,7 +22,7 @@ export default {
     gojs,
     CKEditor,
     CKEditorOrg,
-    imgSrc
+    imgSrc,
   },
   data() {
     return {
@@ -31,31 +31,31 @@ export default {
       trees: [
         {
           label: 'gojs',
-          key: 'gojs'
+          key: 'gojs',
         },
         {
           label: 'CKEditor-vue.js',
-          key: 'CKEditor'
+          key: 'CKEditor',
         },
         {
           label: 'CKEditor-org.js',
-          key: 'CKEditorOrg'
+          key: 'CKEditorOrg',
         },
         {
           label: 'img动态src',
-          key: 'imgSrc'
-        }
-      ]
-    }
+          key: 'imgSrc',
+        },
+      ],
+    };
   },
   computed: {
     // 获取当前组件
     currentComponent() {
-      return `${this.curComponent}`
-    }
+      return `${this.curComponent}`;
+    },
   },
   created() {
-    
+
   },
   methods: {
     /**
@@ -63,12 +63,12 @@ export default {
      */
     handleBack(data) {
       this.curComponent = data.key;
-      this.title = data.label
-    }
+      this.title = data.label;
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

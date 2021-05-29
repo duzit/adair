@@ -17,18 +17,18 @@ import markdownData from '../../../md/vue/lifecycle.md';
 export default {
   name: 'lifecycle',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
       message: 'Hello Vue 生命周期',
       name: 'du',
-      mdData: markdownData
-    }
+      mdData: markdownData,
+    };
   },
   beforeCreate() {
     console.log('this is beforeCreate');
-    let element = document.getElementById('liftcycle')
+    const element = document.getElementById('liftcycle');
     console.log(element, 'DOM 元素'); // null
     console.log(this.$data, '$data'); // undefined
     console.log(this.message, 'data message'); // undefined
@@ -36,7 +36,7 @@ export default {
   },
   created() {
     console.log('this is created');
-    let element = document.getElementById('liftcycle')
+    const element = document.getElementById('liftcycle');
     console.log(element, 'DOM 元素'); // null
     console.log(this.$data, '$data'); // { message: 'xxx' }
     console.log(this.message, 'data message'); // Hello Vue 生命周期
@@ -44,7 +44,7 @@ export default {
   },
   beforeMount() {
     console.log('this is beforeMount');
-    let element = document.getElementById('liftcycle')
+    const element = document.getElementById('liftcycle');
     console.log(element, 'DOM 元素'); // null
     console.log(this.$data, '$data'); // { message: 'xxx' }
     console.log(this.message, 'data message'); // Hello Vue 生命周期
@@ -52,7 +52,7 @@ export default {
   },
   mounted() {
     console.log('this is mounted');
-    let element = document.getElementById('liftcycle')
+    const element = document.getElementById('liftcycle');
     console.log(element, 'DOM 元素'); // 获取到元素
     console.log(this.$data, '$data'); // { message: 'xxx' }
     console.log(this.message, 'data message'); // Hello Vue 生命周期
@@ -78,11 +78,11 @@ export default {
   methods: {
     getName() {
       return this.name;
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

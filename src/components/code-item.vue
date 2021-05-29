@@ -1,5 +1,5 @@
 <template>
-  <div class="codes" :style="`width:${width}px;`"> 
+  <div class="codes" :style="`width:${width}px;`">
     <pre>
       {{ codes }}
     </pre>
@@ -12,14 +12,14 @@ export default {
     codes: {
       type: String,
       required: true,
-      default: '暂无codes'
+      default: '暂无codes',
     },
     width: {
       type: Number,
       default: 400,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

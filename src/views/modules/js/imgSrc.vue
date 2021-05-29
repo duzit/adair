@@ -2,7 +2,7 @@
   <div class="img-src">
     <el-button
       class="mb20"
-      v-for="(item, index) in list" 
+      v-for="(item, index) in list"
       :key="index"
       @click="handleClick(item)">
       {{ item.label }}
@@ -24,18 +24,18 @@ export default {
           value: '1',
           imgName: 'adair.png',
           imgUrl: '@/assets/adair.png',
-          imgHalfUrl: '/assets/adair.png'
+          imgHalfUrl: '/assets/adair.png',
         },
         {
           label: '示例2',
           value: '1',
           imgName: 'th1129.jpeg',
           imgUrl: '@/assets/th1129.jpeg',
-          imgHalfUrl: '/assets/th1129.jpeg'
-        }
+          imgHalfUrl: '/assets/th1129.jpeg',
+        },
       ],
-      img: ''
-    }
+      img: '',
+    };
   },
   methods: {
     handleClick(item) {
@@ -45,16 +45,16 @@ export default {
     },
     getImg() {
       if (!this.img) return;
-      return require('@/assets/' + this.img);
+      return require(`@/assets/${ this.img}`);
     },
     getImgHalf() {
       const url1 = '/assets/th1129.jpeg';
       const url2 = 'th1129.jpeg';
       // return require('@' + url1);
-      return require('@/assets/' + url2);
-    }
-  }
-}
+      return require(`@/assets/${ url2}`);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

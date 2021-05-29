@@ -1,6 +1,7 @@
 ## 剩余参数
 
 ### 将剩余的参数收入数列
+
 ```js
 let sum = this.remindParamsFn(1, 2, 3, 4, 5);
 console.log(sum, 'remind params'); // 15
@@ -11,6 +12,7 @@ remindParamsFn(a, b, ...params) {
 ```
 
 ### es5 arguments
+
 ```js
 this.argumentsFn(1, 2, 3);
 
@@ -23,6 +25,7 @@ argumentsFn() {
 ```
 
 ### 对象中定义方法
+
 ```js
 // 对象中定义方法
 let obj0 = {

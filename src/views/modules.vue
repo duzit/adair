@@ -12,21 +12,21 @@
         <i class="el-icon-right"></i>
       </footer>
     </div>
-  </div>      
+  </div>
 </template>
 
 <script>
-import ldContent from '../components/ldContent'
-import helloMixin from '../mixins/hello'
+import ldContent from '../components/ldContent';
+import helloMixin from '../mixins/hello';
 import {
-  myClass
-} from '../components/js/es6-class'
+  myClass,
+} from '../components/js/es6-class';
 
 export default {
   name: 'document',
   mixins: [helloMixin],
   components: {
-    ldContent
+    ldContent,
   },
   data() {
     return {
@@ -34,59 +34,59 @@ export default {
         {
           title: 'JavaScript',
           des: 'JavaScript基础知识，概念，方法等',
-          path: '/javascript'
+          path: '/javascript',
         },
         {
           title: 'HTML(5)',
           des: 'HTML(5)',
-          path: '/html'
+          path: '/html',
         },
         {
           title: 'CSS(3)',
           des: 'Cascading Style Sheets 层叠样式表',
-          path: '/css'
+          path: '/css',
         },
         {
           title: 'Vue',
           des: 'Vue基础知识，Router，Vuex，vue-cli...',
-          path: '/vue'
+          path: '/vue',
         },
         {
           title: 'ES6 Plus',
           des: 'let const 使用方法，数组/字符串新方法，箭头函数等',
-          path: '/es6'
+          path: '/es6',
         },
         {
           title: 'Lodash',
           des: '高性能的 JavaScript 实用工具库',
-          path: '/lodash'
+          path: '/lodash',
         },
         {
           title: '偶遇小技巧',
           des: '工作中，公众号中偶遇的知识点',
-          path: '/sometime'
+          path: '/sometime',
         },
         {
           title: '面试相关',
           des: '面试题，面试技巧...',
-          path: '/interview'
+          path: '/interview',
         },
         {
           title: 'webpack',
           des: 'webpack相关',
-          path: '/webpack'
-        }
+          path: '/webpack',
+        },
       ],
       // mixins
       mixinVal: 'mixin',
-      classTest: null
-    }
+      classTest: null,
+    };
   },
   created() {
-    let charatStr = 'charat'
-    console.log(charatStr.charAt(0))
-    console.log(charatStr.charAt(1))
-    console.log(charatStr.charAt(-1))
+    const charatStr = 'charat';
+    console.log(charatStr.charAt(0));
+    console.log(charatStr.charAt(1));
+    console.log(charatStr.charAt(-1));
 
     // mixin 测试
     console.log(this.message, 'mixin defined message');
@@ -100,7 +100,7 @@ export default {
      * 跳转到相应模块
      */
     itemDetail(item) {
-      this.$router.push(`${item.path}`)
+      this.$router.push(`${item.path}`);
     },
     mixinCall() {
       console.log('mixinCall');
@@ -112,16 +112,16 @@ export default {
     es6ClassFn() {
       this.classTest = new myClass({
         name: 'Ben',
-        age: 12
-      })
+        age: 12,
+      });
       console.log(this.classTest, 'es6 class');
 
       this.classTest.init();
 
       this.classTest.setGname('Lee');
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

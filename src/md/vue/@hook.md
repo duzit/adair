@@ -1,7 +1,9 @@
 ## @hook
 
 ### 处理组建内定时器的方法
+
 * 一般操作
+
 ```js
 export default {
   mounted() {
@@ -12,7 +14,9 @@ export default {
   }
 };
 ```
+
 * @hook操作
+
 ```js
 export default {
   mounted() {
@@ -23,6 +27,7 @@ export default {
 ```
 
 ### v-on='hook:xxx'设置loading
+
 ```html
 <v-chart
   @hook:mounted="loading = false"

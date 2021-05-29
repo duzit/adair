@@ -1,4 +1,5 @@
 ## $data $props
+
 ```js
 export default {
   data() {

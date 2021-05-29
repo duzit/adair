@@ -1,13 +1,16 @@
 ## 模板字符串
 
 ### 变量
+
 ```js
 let name = 'xiaoming';
 let age = 12;
 let str1 = `${name} is ${age} years old.`;
 console.log(str1, 111); // xiaoming is 12 years old.
 ```
+
 ### 对象
+
 ```js
 let obj1 = {
   name: 'xiaozhang',
@@ -18,6 +21,7 @@ console.log(str2, 222); // xiaozhang is 13 years old.
 ```
 
 ### 模板 template
+
 ```js
 let template = `
   <div>
@@ -28,6 +32,7 @@ console.log(template, 333);
 ```
 
 ### 函数
+
 ```js
 tmpStrFn(str) {
   return `${str} Moto.`

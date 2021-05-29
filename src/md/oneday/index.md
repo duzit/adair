@@ -1,12 +1,15 @@
 ## 小记录的整理
 
 ### git回退到某个版本
+
 * git log命令查看所有的历史版本，获取某个历史版本的id，例如139dcfaa558e3276b30b6b2e5cbbb9c00bbdca96
 * git reset --hard 139dcfaa558e3276b30b6b2e5cbbb9c00bbdca96
 * git push -f -u origin master
 
 ### 禁用Chrome浏览器默认保存密码提示
+
 * 大部分浏览器是根据表单域的type='password'判断密码域的，使用'动态设置密码域'方法解决
+
 ```js
 el-input( 
   v-model="facInitForm.dbPassword", 
@@ -15,8 +18,9 @@ el-input(
   @focus="inputType = 'password'", 
   autocomplete="off")
 ```
- 
+
 ### 数组遍历 判断条件成立即终止遍历 for of使用break
+
 ```js
   for (const child of item.children) {
     if (this.getUserMenus(child.code)) {
@@ -27,6 +31,7 @@ el-input(
 ```
 
 ### 设置指定行隐藏显示
+
 ```css
 overflow: hidden;
 text-overflow: ellipsis;
@@ -36,14 +41,18 @@ display: -webkit-box;
 ```
 
 ### vue.config.js配置
-* devServer 
+
+* devServer
+
 ```
 devServer: {
   port: 9001, // 启动端口号，默认8080
   proxy: 'http://localhost:4000', // 将任何未知请求代理到
 }
 ```
+
 * 使用chainWebpack独立打包单个组件
+
 ```
 chainWebpack: config => {
   config
@@ -56,12 +65,14 @@ chainWebpack: config => {
 }
 ```
 
-### http-server
+### HTTP
+
 * 全局安装 npm i -g serve
 * 启动 serve 在dist目录下
 * 点击项目文件夹
 
 ### 字体颜色渐变
+
 ```
 .description {
   font-size: 18px;
@@ -72,9 +83,9 @@ chainWebpack: config => {
 }
 ```
 
+### 打包后的ES6语法
 
-### 打包后的chunk-vendors.xxx.js文件中含有es6语法
-* android低版本加载es6语法失败，使用babel-loader转义后依然存在es6
+* Android
 
 ```
 module: {
@@ -92,16 +103,17 @@ module: {
 }
 ```
 
-* 使用 transpileDependencies 包含 @pillarjs 后依然存在es6，可以是其他依赖中还是会有es6的写法，
-  排查后发现代码中有单独引用element-ui组件，
+* 使用 transpileDependencies 包含 @pillarjs 后依然存在ES6的写法，
+  排查后发现代码中有单独引用UI组件，
   `import ElDialog from 'element-ui/packages/dialog'`
-  最后加上 element-ui/src
+  最后加上 UI
   `transpileDependencies: ['@pillarjs', 'element-ui/src'],`
 
-* transpileDependencies，默认情况下 babel-loader 会忽略所有 node_modules 中的文件。
+* transpileDependencies，默认情况下 Babel 会忽略所有 node_modules 中的文件。
   如果你想要通过 Babel 显式转译一个依赖，可以在这个选项中列出来。
 
-### h5页面调用
+### H5页面调用
+
 * 引用dsbridge.js
 * 注册回调方法
 
@@ -126,10 +138,10 @@ dsBridge.call("UIApi.toast", toastData, function(info) {
 })
 ```
 
-* h5页面容器设置，项目代码中设置了html，body的最小宽度1400px，
-  会影响h5页面的宽度，判断如果窗口宽度小于500px时不设置html和
-  body的最小宽度。如果项目没有html和body的最小宽度或其他设置，
-  h5页面设置宽高100%即可。
+* HTML，
+  会影响HTML和
+  HTML的最小宽度或其他设置，
+  H5%即可。
 
 ```
 @media screen and (min-width: 500px) {
@@ -144,6 +156,7 @@ dsBridge.call("UIApi.toast", toastData, function(info) {
   使用的是低版本，代码逻辑取值会报错，回退低版本解决。
 
 ### require.context
+
 * require.context(directory, useSubdirectories = false, regExp = /^\.\//)
   directory: 要搜索的文件夹目录
   Boolean: 是否搜索子目录
@@ -152,8 +165,10 @@ dsBridge.call("UIApi.toast", toastData, function(info) {
  （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 `.test.js` 结尾的、能被 require 请求到的文件的上下文。
 
 ### 懒加载
-* const Foo = () => Promise.resolve({ /* 组件定义对象 */ })
+
+* const Foo = () => Promise.resolve({ /*组件定义对象*/ })
 * const Foo = () => import('./Foo.vue') import返回Promise()对象
+
 ```
 const router = new VueRouter({
   routes: [
@@ -163,7 +178,9 @@ const router = new VueRouter({
 ```
 
 ### element.scrollInfoView() 让当前元素滚动到浏览器窗口的可视区域内
+
 #### 参数
+
 > alignToTop Boolean
   true 元素的顶部将和其所在滚动区的可视区域的顶端对齐
   false 元素的底端将和其所在滚动区的可视区域的底端对齐
@@ -176,6 +193,7 @@ const router = new VueRouter({
     start center end nearest
 
 ### 本地使用monaco-editor遇到的问题
+
 > vue.config.js添加配置
 
 ```
@@ -200,14 +218,17 @@ Vue.use(MonacoEditor, {
 ```
 
 ### 拖拽 改变顺序
-> https://github.com/SortableJS/Vue.Draggable
+
+> <https://github.com/SortableJS/Vue.Draggable>
 
 ### flex-shrink
+
 > flex-shrink 属性只能是一个 <number>，不为负值，值越大，收缩越大。
 > 属性指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，
   其收缩的大小是依据 flex-shrink 的值。
 
 ### 根据当前节点的id，查询出所有父级节点
+
 ```
 export function getParent(data2, nodeId2) {
   let arrRes = [];
@@ -237,7 +258,8 @@ export function getParent(data2, nodeId2) {
 }
 ```
 
-### window.history 
+### window.history
+
 > history.back() 浏览器后退功能相同
 > history.forward() 浏览器向前功能相同
 > history.go(n) 接收一个整数作为参数，移动到该整数指定的页面
@@ -246,6 +268,7 @@ export function getParent(data2, nodeId2) {
   go(0) 刷新当前页面
 
 ### el-autocomplete
+
 ```
 <el-autocomplete
     v-model="state4"
@@ -257,6 +280,7 @@ export function getParent(data2, nodeId2) {
 ```
 
 ### vue 如何获取拉回数据后图片的高度
+
 ```
 <img
   :src="userInfo.profilePicture"
@@ -273,6 +297,7 @@ export function getParent(data2, nodeId2) {
 ```
 
 ### 如何设置body背景色，height:100%,不生效
+
 ```
 同时设置html，body的高度
 html,body{
@@ -285,14 +310,17 @@ body{
 ```
 
 ### 设置input 文本框的 placeholder 的颜色
+
 ```
 input::-webkit-input-placeholder{
   color:rgba(144,147,153,1);
 }
 ```
 
-### hasOwnProperty 
+### hasOwnProperty
+
 * 返回一个布尔值，指示对象自身是否具有指定的属性
+
 ```
 let object = {
   name: ''
@@ -301,22 +329,27 @@ object.hasOwnProperty('name') // true
 object.hasOwnProperty('code') // false
 ```
 
-### 指定安装element-ui版本
-* npm i element-ui@2.6.3
+### 指定安装UI版本
 
-### 本地起生产环境 serve 
-* npm i -g serve 全局安装  
+* npm i UI
+
+### 本地起生产环境 serve
+
+* npm i -g serve 全局安装
   启动命令 serve  在dist目录启动
 
 ### 审查项目的 webpack 配置
-* vue inspect --mode production > production.js  
+
+* vue inspect --mode production > production.js
 * vue inspect > output.js
 
 ### npm 查看和设置源
-* npm config get registry
-* npm config set registry http://10.0.53.132/artifactory/api/npm/npm/
 
-### filter() 创建一个新数组，
+* npm config get registry
+* npm config set registry <http://10.0.53.132/artifactory/api/npm/npm/>
+
+### filter() 创建一个新数组
+
 ```
 let newArray = arr.filter(callback(element, index, array), thisArg)
 callback 
@@ -329,14 +362,18 @@ thisArg
 ```
 
 ### 紫光云npm源配置
-* http://10.0.53.147/pages/viewpage.action?pageId=8127733
 
-### 新增菜单 路由 
+* <http://10.0.53.147/pages/viewpage.action?pageId=8127733>
+
+### 新增菜单 路由
+
 * baseConfig\src\views\layout\components\Sidebar\index.vue  routerMap
 * baseConfig\src\permission.js  pathFnMap
 
 ### 左侧菜单完全显示
+
 * 问题现象：菜单展开过多时不能完全显示展开的菜单
+
 ```
 .el-scrollbar__wrap {
   height: calc(100% - 60px)

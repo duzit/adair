@@ -1,6 +1,7 @@
 ## filter
 
 ### 全局注册
+
 ```js
 // 全局注册过滤器
 Vue.filter('toUpString', function(value) {
@@ -11,6 +12,7 @@ Vue.filter('toUpString', function(value) {
 ```
 
 ### 多个过滤器全局注册
+
 ```js
 // 多个过滤器全局注册
 // /src/common/filters.js
@@ -22,6 +24,7 @@ Object.keys(custom).forEach(key => Vue.filter(key, custom[key]))
 ```
 
 ### 局部注册
+
 ```js
 filters: {
   // 局部过滤器
@@ -39,6 +42,7 @@ filters: {
 ```
 
 ### 使用
+
 ```html
 <div>{{ person.fName | toUpString }}</div>
 <div :id="widthBind | bindFilter"></div>

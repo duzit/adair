@@ -12,24 +12,24 @@ import childForm from '../../components/sometime/childForm';
 export default {
   name: 'sometime',
   components: {
-    childForm
+    childForm,
   },
   data() {
     return {
 
-    }
+    };
   },
   methods: {
     submit() {
-      this.$refs.childForm.$refs.form.validate(flag => {
+      this.$refs.childForm.$refs.form.validate((flag) => {
         if (flag) {
           console.log('hello');
         } else {
           console.log('false');
-          return false
+          return false;
         }
-      })
-    }
+      });
+    },
   },
-}
+};
 </script>

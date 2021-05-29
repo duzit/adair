@@ -1,18 +1,18 @@
 // es6 class
 class myClass {
-  gName = "";
+  gName = '';
   str1 = '123';
   sex = 0;
   // constructor 方法默认返回实例对象（this）
   constructor(params) {
-    this.name = params.name || "";
-    this.age = params.age || "";
+    this.name = params.name || '';
+    this.age = params.age || '';
   }
 
   init() {
-    console.log("es6 class init.");
+    console.log('es6 class init.');
     console.log(
-      `my name is ${this.name || "-"} and age is ${this.age || "-"}.`
+      `my name is ${this.name || '-'} and age is ${this.age || '-'}.`,
     );
   }
 
@@ -23,7 +23,7 @@ class myClass {
   }
 
   clear() {
-    this.name = this.age = "";
+    this.name = this.age = '';
   }
 
   get gsex() {
@@ -32,52 +32,52 @@ class myClass {
 
   set gsex(sex) {
     this.sex = sex;
-    console.log("set sex");
+    console.log('set sex');
   }
 
   callOtherFn() {
-    console.log("call other function");
+    console.log('call other function');
     this.otherFn();
   }
 
   otherFn() {
-    console.log("other function");
+    console.log('other function');
   }
 
   // 静态方法 不会被实例继承
   static staticFn() {
-    console.log("static fn.");
+    console.log('static fn.');
     // 同样调用 static 方法 如果未定义静态方法 staticFn2 会报错
     this.staticFn2();
   }
 
   static staticFn2() {
-    console.log("static fn 2.");
+    console.log('static fn 2.');
   }
 
   staticFn2() {
-    console.log("un static fn 2.");
+    console.log('un static fn 2.');
   }
 }
 
-let tClass = new myClass({});
+const tClass = new myClass({});
 // name 和 age 都是实例对象 myClass 自身的属性（因为定义在this变量上），所以hasOwnProperty方法返回true，
 // 而 init 是原型对象的属性（因为定义在 myClass 类上），所以hasOwnProperty方法返回false
-console.log(tClass.hasOwnProperty("name"), "hasOwnProperty('name')"); // true
-console.log(tClass.hasOwnProperty("age"), "hasOwnProperty('age')"); // true
-console.log(tClass.hasOwnProperty("init"), "hasOwnProperty('init()')"); // false
+console.log(tClass.hasOwnProperty('name'), "hasOwnProperty('name')"); // true
+console.log(tClass.hasOwnProperty('age'), "hasOwnProperty('age')"); // true
+console.log(tClass.hasOwnProperty('init'), "hasOwnProperty('init()')"); // false
 console.log(
-  tClass.__proto__.hasOwnProperty("init"),
-  "tClass.__proto__.hasOwnProperty('init')"
+  tClass.__proto__.hasOwnProperty('init'),
+  "tClass.__proto__.hasOwnProperty('init')",
 ); // true
 
 tClass.gsex = 1;
-console.log(tClass.gsex, "tClass.set"); // 1
+console.log(tClass.gsex, 'tClass.set'); // 1
 
 tClass.setGname('lala');
 
 // name 属性
-console.log(myClass.name, "myClass.name");
+console.log(myClass.name, 'myClass.name');
 
 // this 调用其他函数
 tClass.callOtherFn(); // 这样调用没问题
@@ -116,7 +116,7 @@ class A {
   }
 
   fn1() {
-    return "fn1---";
+    return 'fn1---';
   }
 
   getNum() {
@@ -147,8 +147,8 @@ class B extends A {
 
     this.num = 1;
     super.num = 3; // 等价于 this.num
-    console.log(super.num, "super.num"); // undefined 无法获取父类中构造函数定义的 num
-    console.log(this.num, "this.num"); // 3
+    console.log(super.num, 'super.num'); // undefined 无法获取父类中构造函数定义的 num
+    console.log(this.num, 'this.num'); // 3
 
     this.age = 11;
   }
@@ -165,17 +165,17 @@ class B extends A {
   }
 
   sonFn2() {
-    console.log("un getter fn");
+    console.log('un getter fn');
   }
 
   static sonMethod1(msg) {
     console.log(`${msg} -- static son methods`);
-    super.method1("static son");
+    super.method1('static son');
   }
 
   sonMethod1(msg) {
     console.log(`${msg} -- normal son methods`);
-    super.method1("normal son");
+    super.method1('normal son');
   }
 
   static getAge() {
@@ -185,7 +185,7 @@ class B extends A {
 }
 
 new A(); // A
-let b = new B(); // B
+const b = new B(); // B
 b.sonFn1;
 b.sonFn2();
 
@@ -195,9 +195,9 @@ b.getNum(); // 1
 // 静态方法通过类调用 不是在实例上
 // super 在静态方法中指向父类 在普通方法中指向父类的原型对象
 // 调用父类的 static method1
-B.sonMethod1("son static");
+B.sonMethod1('son static');
 // 调用父类 method1
-b.sonMethod1("son instance");
+b.sonMethod1('son instance');
 
 console.log(B.age, 'B.age'); // 12
 // B.age = 15; // 另一种定义静态属性的方法 使用类名直接定义

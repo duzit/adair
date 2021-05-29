@@ -23,40 +23,40 @@ import markdownData from '../../../md/vue/filter.md';
 export default {
   name: 'filters',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
       person: {
         name: '',
-        fName: ''
+        fName: '',
       },
       widthBind: '',
-      mdData: markdownData
-    }
+      mdData: markdownData,
+    };
   },
   filters: {
     // 局部过滤器
     // 首字母大写
-    capitalize: function(value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
+    capitalize(value) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
     },
-    bindFilter: function(value) {
-      if (!value) return ''
-      return value + '-bind'
-    }
+    bindFilter(value) {
+      if (!value) return '';
+      return `${value }-bind`;
+    },
   },
   created() {
-    
+
   },
   methods: {
-    
+
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

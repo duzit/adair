@@ -33,24 +33,24 @@ export default {
       // 被绑定元素被插入到父元素时调用
       inserted(el, binding) {
         console.log(binding, 'binding');
-        let template = `
+        const template = `
           <h3>v-local.a.b='message'</h3>
           name:${binding.name}<br/>
           value:${binding.value}<br/>
           expression:${binding.expression}<br/>
           argument:${binding.arg}<br/>
           modifiers:${JSON.stringify(binding.modifiers)}<br/>
-        `
+        `;
 
-        el.innerHTML = template
+        el.innerHTML = template;
       },
       // 只调用一次 指令第一次绑定到元素时调用
       bind(el) {
-        
+
       },
       // 所在组件Vnode更新时调用
-      updated (el) {
-        
+      updated(el) {
+
       },
       // 指令所在组件的 Vnode 及其子 Vnode 全部更新后调用
       componentUpdated(el) {
@@ -59,48 +59,48 @@ export default {
       // 只调用一次 指令与元素解绑时调用
       unbind(el) {
 
-      }
+      },
     },
     local2: {
       // 被绑定元素被插入到父元素时调用
       inserted(el, binding) {
         console.log(binding, 'binding');
-        let template = `
+        const template = `
           <h3>v-local2:[argument].a.b='message'</h3>
           name:${binding.name}<br/>
           value:${binding.value}<br/>
           expression:${binding.expression}<br/>
           argument:${binding.arg}<br/>
           modifiers:${JSON.stringify(binding.modifiers)}<br/>
-        `
+        `;
 
-        el.innerHTML = template
+        el.innerHTML = template;
       },
     },
     local3: {
       bind(el, binding) {
-        let template = `
+        const template = `
           <h3>v-local3="{name: 'Ben', age: 12}"</h3>
           ${JSON.stringify(binding.value)}
-        `
-        el.innerHTML = template
-      }
-    }
+        `;
+        el.innerHTML = template;
+      },
+    },
   },
-  data () {
+  data() {
     return {
       message: 'hello directive',
       argument: '100',
       copyMsg: 'this is copy message',
-      debounceTime: 1000
-    }
+      debounceTime: 1000,
+    };
   },
   methods: {
     debounceClick() {
       this.$message.warning('点击延迟');
-    }
+    },
   },
-}
+};
 </script>
 
 <style>

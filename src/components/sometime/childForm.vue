@@ -12,14 +12,14 @@ export default {
   data() {
     return {
       form: {
-        name
+        name,
       },
       rules: {
         name: [
-          { required: true, trigger: 'blur', message: 'hello'}
-        ]
-      }
-    }
+          { required: true, trigger: 'blur', message: 'hello' },
+        ],
+      },
+    };
   },
-}
+};
 </script>

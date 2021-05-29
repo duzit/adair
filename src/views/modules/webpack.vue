@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import alias from './webpack/alias'
+import alias from './webpack/alias';
+
 export default {
   name: 'css',
   components: {
@@ -24,19 +25,19 @@ export default {
       cssTree: [
         {
           label: 'resolve.alias',
-          key: 'alias'
+          key: 'alias',
         },
-      ]
-    }
+      ],
+    };
   },
   computed: {
     // 获取当前组件
     currentComponent() {
-      return `${this.curComponent}`
-    }
+      return `${this.curComponent}`;
+    },
   },
   created() {
-    
+
   },
   methods: {
     /**
@@ -44,12 +45,12 @@ export default {
      */
     handleBack(data) {
       this.curComponent = data.key;
-      this.title = data.label
-    }
+      this.title = data.label;
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

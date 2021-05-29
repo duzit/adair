@@ -13,27 +13,27 @@ import markdownData from '../../../md/vue/freeze.md';
 export default {
   name: 'filters',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
       person: {
         name: '',
-        fName: ''
+        fName: '',
       },
       widthBind: '',
-      mdData: markdownData
-    }
+      mdData: markdownData,
+    };
   },
   created() {
-    
+
   },
   methods: {
-    
+
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

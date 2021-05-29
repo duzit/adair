@@ -1,6 +1,7 @@
 ## 展开操作符
 
 ### 数组
+
 ```js
 let arr0 = [1, 2, 3];
 let arr1 = [4, 5];
@@ -9,6 +10,7 @@ console.log(spreadArr0, 'array'); // [1,2,3,4,5]
 ```
 
 ### 对象
+
 ```js
 let obj0 = {
   name: 'xiaoming',

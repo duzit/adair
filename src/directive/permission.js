@@ -12,7 +12,7 @@ const permission = {
     if (!hasPermission) {
       el.parentNode && el.parentNode.removeChild(el);
     }
-  }
-}
+  },
+};
 
 export default permission;

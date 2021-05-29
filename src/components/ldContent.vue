@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'ldcontent',
-}
+};
 </script>
 
 <style lang="scss" scoped>

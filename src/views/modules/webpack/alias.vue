@@ -19,20 +19,20 @@ import markdownData from '../../../md/webpack/alias.md';
 export default {
   name: 'alias',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
-      mdData: markdownData
-    }
+      mdData: markdownData,
+    };
   },
   created() {
-    
+
   },
   methods: {
-    
+
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

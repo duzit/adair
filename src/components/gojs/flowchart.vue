@@ -1,15 +1,15 @@
 <template>
   <div id="myDiagramDiv">
-    
+
     <div id="mySavedModel">111</div>
   </div>
 </template>
 
 <script>
-import go from "gojs";
+import go from 'gojs';
 
 export default {
-  name: "gojsComponent",
+  name: 'gojsComponent',
   data() {
     return {
       $Go: null,
@@ -22,33 +22,33 @@ export default {
     this.$Go = go.GraphObject.make;
     this.myDiagram = this.$Go(
       go.Diagram,
-      "myDiagramDiv", // must name or refer to the DIV HTML element
+      'myDiagramDiv', // must name or refer to the DIV HTML element
       {
         LinkDrawn: this.showLinkLabel, // this DiagramEvent listener is defined below
         LinkRelinked: this.showLinkLabel,
-        "undoManager.isEnabled": true, // enable undo & redo
-      }
+        'undoManager.isEnabled': true, // enable undo & redo
+      },
     );
 
     // when the document is modified, add a "*" to the title and enable the "Save" button
     // 有改动的情况 保存按钮 可点击 且document.title 增加 * 提示当前未保存；没有改动的情况 则不可点击
-    this.myDiagram.addDiagramListener("Modified", (e) => this.saveBtnStatus(e));
+    this.myDiagram.addDiagramListener('Modified', (e) => this.saveBtnStatus(e));
 
     this.myDiagram.nodeTemplateMap.add(
-      "", // the default category
+      '', // the default category
       this.$Go(
         go.Node,
-        "Table",
+        'Table',
         this.nodeStyle(),
         // the main object is a Panel that surrounds a TextBlock with a rectangular Shape
         this.$Go(
           go.Panel,
-          "Auto",
+          'Auto',
           this.$Go(
             go.Shape,
-            "Rectangle",
-            { fill: "#282c34", stroke: "#00A9C9", strokeWidth: 3.5 },
-            new go.Binding("figure", "figure")
+            'Rectangle',
+            { fill: '#282c34', stroke: '#00A9C9', strokeWidth: 3.5 },
+            new go.Binding('figure', 'figure'),
           ),
           this.$Go(
             go.TextBlock,
@@ -59,32 +59,32 @@ export default {
               wrap: go.TextBlock.WrapFit,
               editable: true,
             },
-            new go.Binding("text").makeTwoWay()
-          )
+            new go.Binding('text').makeTwoWay(),
+          ),
         ),
         // four named ports, one on each side:
-        this.makePort("T", go.Spot.Top, go.Spot.TopSide, false, true),
-        this.makePort("L", go.Spot.Left, go.Spot.LeftSide, true, true),
-        this.makePort("R", go.Spot.Right, go.Spot.RightSide, true, true),
-        this.makePort("B", go.Spot.Bottom, go.Spot.BottomSide, true, false)
-      )
+        this.makePort('T', go.Spot.Top, go.Spot.TopSide, false, true),
+        this.makePort('L', go.Spot.Left, go.Spot.LeftSide, true, true),
+        this.makePort('R', go.Spot.Right, go.Spot.RightSide, true, true),
+        this.makePort('B', go.Spot.Bottom, go.Spot.BottomSide, true, false),
+      ),
     );
 
     this.myDiagram.nodeTemplateMap.add(
-      "Conditional",
+      'Conditional',
       this.$Go(
         go.Node,
-        "Table",
+        'Table',
         this.nodeStyle(),
         // the main object is a Panel that surrounds a TextBlock with a rectangular Shape
         this.$Go(
           go.Panel,
-          "Auto",
+          'Auto',
           this.$Go(
             go.Shape,
-            "Diamond",
-            { fill: "#282c34", stroke: "#00A9C9", strokeWidth: 3.5 },
-            new go.Binding("figure", "figure")
+            'Diamond',
+            { fill: '#282c34', stroke: '#00A9C9', strokeWidth: 3.5 },
+            new go.Binding('figure', 'figure'),
           ),
           this.$Go(
             go.TextBlock,
@@ -95,85 +95,85 @@ export default {
               wrap: go.TextBlock.WrapFit,
               editable: true,
             },
-            new go.Binding("text").makeTwoWay()
-          )
+            new go.Binding('text').makeTwoWay(),
+          ),
         ),
         // four named ports, one on each side:
-        this.makePort("T", go.Spot.Top, go.Spot.Top, false, true),
-        this.makePort("L", go.Spot.Left, go.Spot.Left, true, true),
-        this.makePort("R", go.Spot.Right, go.Spot.Right, true, true),
-        this.makePort("B", go.Spot.Bottom, go.Spot.Bottom, true, false)
-      )
+        this.makePort('T', go.Spot.Top, go.Spot.Top, false, true),
+        this.makePort('L', go.Spot.Left, go.Spot.Left, true, true),
+        this.makePort('R', go.Spot.Right, go.Spot.Right, true, true),
+        this.makePort('B', go.Spot.Bottom, go.Spot.Bottom, true, false),
+      ),
     );
 
     this.myDiagram.nodeTemplateMap.add(
-      "Start",
+      'Start',
       this.$Go(
         go.Node,
-        "Table",
+        'Table',
         this.nodeStyle(),
         this.$Go(
           go.Panel,
-          "Spot",
-          this.$Go(go.Shape, "Circle", {
+          'Spot',
+          this.$Go(go.Shape, 'Circle', {
             desiredSize: new go.Size(70, 70),
-            fill: "#282c34",
-            stroke: "#09d3ac",
+            fill: '#282c34',
+            stroke: '#09d3ac',
             strokeWidth: 3.5,
           }),
           this.$Go(
             go.TextBlock,
-            "Start",
+            'Start',
             this.textStyle(),
-            new go.Binding("text")
-          )
+            new go.Binding('text'),
+          ),
         ),
         // three named ports, one on each side except the top, all output only:
-        this.makePort("L", go.Spot.Left, go.Spot.Left, true, false),
-        this.makePort("R", go.Spot.Right, go.Spot.Right, true, false),
-        this.makePort("B", go.Spot.Bottom, go.Spot.Bottom, true, false)
-      )
+        this.makePort('L', go.Spot.Left, go.Spot.Left, true, false),
+        this.makePort('R', go.Spot.Right, go.Spot.Right, true, false),
+        this.makePort('B', go.Spot.Bottom, go.Spot.Bottom, true, false),
+      ),
     );
 
     this.myDiagram.nodeTemplateMap.add(
-      "End",
+      'End',
       this.$Go(
         go.Node,
-        "Table",
+        'Table',
         this.nodeStyle(),
         this.$Go(
           go.Panel,
-          "Spot",
-          this.$Go(go.Shape, "Circle", {
+          'Spot',
+          this.$Go(go.Shape, 'Circle', {
             desiredSize: new go.Size(60, 60),
-            fill: "#282c34",
-            stroke: "#DC3C00",
+            fill: '#282c34',
+            stroke: '#DC3C00',
             strokeWidth: 3.5,
           }),
           this.$Go(
             go.TextBlock,
-            "End",
+            'End',
             this.textStyle(),
-            new go.Binding("text")
-          )
+            new go.Binding('text'),
+          ),
         ),
         // three named ports, one on each side except the bottom, all input only:
-        this.makePort("T", go.Spot.Top, go.Spot.Top, false, true),
-        this.makePort("L", go.Spot.Left, go.Spot.Left, false, true),
-        this.makePort("R", go.Spot.Right, go.Spot.Right, false, true)
-      )
+        this.makePort('T', go.Spot.Top, go.Spot.Top, false, true),
+        this.makePort('L', go.Spot.Left, go.Spot.Left, false, true),
+        this.makePort('R', go.Spot.Right, go.Spot.Right, false, true),
+      ),
     );
 
     // taken from ../extensions/Figures.js:
-    go.Shape.defineFigureGenerator("File", function(shape, w, h) {
-      var geo = new go.Geometry();
-      var fig = new go.PathFigure(0, 0, true); // starting point
+    go.Shape.defineFigureGenerator('File', (shape, w, h) => {
+      const geo = new go.Geometry();
+      const fig = new go.PathFigure(0, 0, true); // starting point
       geo.add(fig);
       fig.add(new go.PathSegment(go.PathSegment.Line, 0.75 * w, 0));
       fig.add(new go.PathSegment(go.PathSegment.Line, w, 0.25 * h));
       fig.add(new go.PathSegment(go.PathSegment.Line, w, h));
       fig.add(new go.PathSegment(go.PathSegment.Line, 0, h).close());
-      var fig2 = new go.PathFigure(0.75 * w, 0, false);
+      const fig2 = new go.PathFigure(0.75 * w, 0, false);
       geo.add(fig2);
       // The Fold
       fig2.add(new go.PathSegment(go.PathSegment.Line, 0.75 * w, 0.25 * h));
@@ -184,14 +184,14 @@ export default {
     });
 
     this.myDiagram.nodeTemplateMap.add(
-      "Comment",
+      'Comment',
       this.$Go(
         go.Node,
-        "Auto",
+        'Auto',
         this.nodeStyle(),
-        this.$Go(go.Shape, "File", {
-          fill: "#282c34",
-          stroke: "#DEE0A3",
+        this.$Go(go.Shape, 'File', {
+          fill: '#282c34',
+          stroke: '#DEE0A3',
           strokeWidth: 3,
         }),
         this.$Go(
@@ -201,13 +201,13 @@ export default {
             margin: 8,
             maxSize: new go.Size(200, NaN),
             wrap: go.TextBlock.WrapFit,
-            textAlign: "center",
+            textAlign: 'center',
             editable: true,
           },
-          new go.Binding("text").makeTwoWay()
-        )
+          new go.Binding('text').makeTwoWay(),
+        ),
         // no ports, because no links are allowed to connect with a comment
-      )
+      ),
     );
 
     // replace the default Link template in the linkTemplateMap
@@ -223,62 +223,62 @@ export default {
         reshapable: true,
         resegmentable: true,
         // mouse-overs subtly highlight links:
-        mouseEnter: function(e, link) {
-          link.findObject("HIGHLIGHT").stroke = "rgba(30,144,255,0.2)";
+        mouseEnter(e, link) {
+          link.findObject('HIGHLIGHT').stroke = 'rgba(30,144,255,0.2)';
         },
-        mouseLeave: function(e, link) {
-          link.findObject("HIGHLIGHT").stroke = "transparent";
+        mouseLeave(e, link) {
+          link.findObject('HIGHLIGHT').stroke = 'transparent';
         },
         selectionAdorned: false,
       },
-      new go.Binding("points").makeTwoWay(),
+      new go.Binding('points').makeTwoWay(),
       this.$Go(
         go.Shape, // the highlight shape, normally transparent
         {
           isPanelMain: true,
           strokeWidth: 8,
-          stroke: "transparent",
-          name: "HIGHLIGHT",
-        }
+          stroke: 'transparent',
+          name: 'HIGHLIGHT',
+        },
       ),
       this.$Go(
         go.Shape, // the link path shape
-        { isPanelMain: true, stroke: "gray", strokeWidth: 2 },
-        new go.Binding("stroke", "isSelected", function(sel) {
-          return sel ? "dodgerblue" : "gray";
-        }).ofObject()
+        { isPanelMain: true, stroke: 'gray', strokeWidth: 2 },
+        new go.Binding('stroke', 'isSelected', ((sel) => {
+          return sel ? 'dodgerblue' : 'gray';
+        })).ofObject(),
       ),
       this.$Go(
         go.Shape, // the arrowhead
-        { toArrow: "standard", strokeWidth: 0, fill: "gray" }
+        { toArrow: 'standard', strokeWidth: 0, fill: 'gray' },
       ),
       this.$Go(
         go.Panel,
-        "Auto", // the link label, normally not visible
+        'Auto', // the link label, normally not visible
         {
           visible: false,
-          name: "LABEL",
+          name: 'LABEL',
           segmentIndex: 2,
           segmentFraction: 0.5,
         },
-        new go.Binding("visible", "visible").makeTwoWay(),
+        new go.Binding('visible', 'visible').makeTwoWay(),
         this.$Go(
           go.Shape,
-          "RoundedRectangle", // the label shape
-          { fill: "#F8F8F8", strokeWidth: 0 }
+          'RoundedRectangle', // the label shape
+          { fill: '#F8F8F8', strokeWidth: 0 },
         ),
         this.$Go(
           go.TextBlock,
-          "Yes", // the label
+          'Yes', // the label
           {
-            textAlign: "center",
-            font: "10pt helvetica, arial, sans-serif",
-            stroke: "#333333",
+            textAlign: 'center',
+            font: '10pt helvetica, arial, sans-serif',
+            stroke: '#333333',
             editable: true,
           },
-          new go.Binding("text").makeTwoWay()
-        )
-      )
+          new go.Binding('text').makeTwoWay(),
+        ),
+      ),
     );
     // temporary links used by LinkingTool and RelinkingTool are also orthogonal:
     this.myDiagram.toolManager.linkingTool.temporaryLink.routing =
@@ -288,33 +288,33 @@ export default {
     this.load(); // load an initial diagram from some JSON text
 
     // initialize the Palette that is on the left side of the page
-  this.myPalette =
-    this.$Go(go.Palette, "myPaletteDiv",  // must name or refer to the DIV HTML element
+    this.myPalette =
+    this.$Go(go.Palette, 'myPaletteDiv', // must name or refer to the DIV HTML element
       {
         // Instead of the default animation, use a custom fade-down
-        "animationManager.initialAnimationStyle": go.AnimationManager.None,
-        "InitialAnimationStarting": this.animateFadeDown, // Instead, animate with this function
+        'animationManager.initialAnimationStyle': go.AnimationManager.None,
+        InitialAnimationStarting: this.animateFadeDown, // Instead, animate with this function
 
-        nodeTemplateMap: this.myDiagram.nodeTemplateMap,  // share the templates used by myDiagram
-        model: new go.GraphLinksModel([  // specify the contents of the Palette
-          { category: "Start", text: "Start" },
-          { text: "Step" },
-          { category: "Conditional", text: "???" },
-          { category: "End", text: "End" },
-          { category: "Comment", text: "Comment" }
-        ])
+        nodeTemplateMap: this.myDiagram.nodeTemplateMap, // share the templates used by myDiagram
+        model: new go.GraphLinksModel([ // specify the contents of the Palette
+          { category: 'Start', text: 'Start' },
+          { text: 'Step' },
+          { category: 'Conditional', text: '???' },
+          { category: 'End', text: 'End' },
+          { category: 'Comment', text: 'Comment' },
+        ]),
       });
   },
   methods: {
     load() {
       this.myDiagram.model = go.Model.fromJson(
-        document.getElementById("mySavedModel").value
+        document.getElementById('mySavedModel').value,
       );
     },
     // This is a re-implementation of the default animation, except it fades in from downwards, instead of upwards.
     animateFadeDown(e) {
-      var diagram = e.diagram;
-      var animation = new go.Animation();
+      const { diagram } = e;
+      const animation = new go.Animation();
       animation.isViewportUnconstrained = true; // So Diagram positioning rules let the animation start off-screen
       animation.easing = go.Animation.EaseOutExpo;
       animation.duration = 900;
@@ -325,24 +325,21 @@ export default {
     },
     // Show the diagram's model in JSON format that the user may edit
     save() {
-      document.getElementById("mySavedModel").value = this.myDiagram.model.toJson();
+      document.getElementById('mySavedModel').value = this.myDiagram.model.toJson();
       this.myDiagram.isModified = false;
     },
     // Make link labels visible if coming out of a "conditional" node.
     // This listener is called by the "LinkDrawn" and "LinkRelinked" DiagramEvents.
     showLinkLabel(e) {
-      var label = e.subject.findObject("LABEL");
-      if (label !== null)
-        label.visible = e.subject.fromNode.data.category === "Conditional";
+      const label = e.subject.findObject('LABEL');
+      if (label !== null) label.visible = e.subject.fromNode.data.category === 'Conditional';
     },
     saveBtnStatus(e) {
       this.isSaveBtnDisable = !this.myDiagram.isModified;
-      const idx = document.title.indexOf("*");
+      const idx = document.title.indexOf('*');
       if (this.myDiagram.isModified) {
-        if (idx < 0) document.title += "*";
-      } else {
-        if (idx >= 0) document.title = document.title.substr(0, idx);
-      }
+        if (idx < 0) document.title += '*';
+      } else if (idx >= 0) document.title = document.title.substr(0, idx);
     },
     nodeStyle() {
       return [
@@ -350,8 +347,8 @@ export default {
         // converted by the Point.parse static method.
         // If the Node.location is changed, it updates the "loc" property of the node data,
         // converting back using the Point.stringify static method.
-        new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
-          go.Point.stringify
+        new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(
+          go.Point.stringify,
         ),
         {
           // the Node.location is at the center of each node
@@ -360,12 +357,12 @@ export default {
       ];
     },
     makePort(name, align, spot, output, input) {
-      var horizontal =
+      const horizontal =
         align.equals(go.Spot.Top) || align.equals(go.Spot.Bottom);
       // the port is basically just a transparent rectangle that stretches along the side of the node,
       // and becomes colored when the mouse passes over it
       return this.$Go(go.Shape, {
-        fill: "transparent", // changed to a color in the mouseEnter event handler
+        fill: 'transparent', // changed to a color in the mouseEnter event handler
         strokeWidth: 0, // no stroke
         width: horizontal ? NaN : 8, // if not stretching horizontally, just 8 wide
         height: !horizontal ? NaN : 8, // if not stretching vertically, just 8 tall
@@ -378,33 +375,33 @@ export default {
         fromLinkable: output, // declare whether the user may draw links from here
         toSpot: spot, // declare where links may connect at this port
         toLinkable: input, // declare whether the user may draw links to here
-        cursor: "pointer", // show a different cursor to indicate potential link point
-        mouseEnter: function(e, port) {
+        cursor: 'pointer', // show a different cursor to indicate potential link point
+        mouseEnter(e, port) {
           // the PORT argument will be this Shape
-          if (!e.diagram.isReadOnly) port.fill = "rgba(255,0,255,0.5)";
+          if (!e.diagram.isReadOnly) port.fill = 'rgba(255,0,255,0.5)';
         },
-        mouseLeave: function(e, port) {
-          port.fill = "transparent";
+        mouseLeave(e, port) {
+          port.fill = 'transparent';
         },
       });
     },
     textStyle() {
       return {
-        font: "bold 11pt Lato, Helvetica, Arial, sans-serif",
-        stroke: "#F8F8F8",
+        font: 'bold 11pt Lato, Helvetica, Arial, sans-serif',
+        stroke: '#F8F8F8',
       };
     },
     // print the diagram by opening a new window holding SVG images of the diagram contents for each page
     printDiagram() {
-      var svgWindow = window.open();
+      const svgWindow = window.open();
       if (!svgWindow) return; // failure to open a new Window
-      var printSize = new go.Size(700, 960);
-      var bnds = this.myDiagram.documentBounds;
-      var x = bnds.x;
-      var y = bnds.y;
+      const printSize = new go.Size(700, 960);
+      const bnds = this.myDiagram.documentBounds;
+      let { x } = bnds;
+      let { y } = bnds;
       while (y < bnds.bottom) {
         while (x < bnds.right) {
-          var svg = this.myDiagram.makeSvg({
+          const svg = this.myDiagram.makeSvg({
             scale: 1.0,
             position: new go.Point(x, y),
             size: printSize,
@@ -415,7 +412,7 @@ export default {
         x = bnds.x;
         y += printSize.height;
       }
-      setTimeout(function() {
+      setTimeout(() => {
         svgWindow.print();
       }, 1);
     },

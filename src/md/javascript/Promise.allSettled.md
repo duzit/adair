@@ -1,4 +1,5 @@
 ## Promise.allSettled
+
 * 接受一组Promise，并且返回所有的结果，不管是resolved还是rejected
 
 ```js

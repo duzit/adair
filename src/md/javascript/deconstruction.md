@@ -1,6 +1,7 @@
 ## 解构赋值
 
 ### 对象解构
+
 ```js
 let res = {
   name: "xiaozhang",
@@ -23,6 +24,7 @@ deconstructFn(res) {
 ```
 
 ### 数组解构
+
 ```js
 let arr = [1,2,3,4,5,6];
 // 注意有空格
@@ -31,6 +33,7 @@ console.log(a, c, reminds); // 1 3 [4,5,6]
 ```
 
 ### 方法参数解构
+
 ```js
 let obj = {
   name: 'haha',

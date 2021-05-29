@@ -1,7 +1,11 @@
 ## JavaScript
+
 -----------
+
 ### var let const
+
 * var 重新赋值 重新定义 作用域是 function scope
+
 ```js
 var name = 'Hel'
 name = 'llo'
@@ -28,7 +32,9 @@ if (count > 2) {
 // 这里可以访问到 if 语句中定义的 discount 
 console.log(discount, 'dicount') // 10
 ```
+
 * let const 作用域 block scope  let 可重新赋值 const 定义的非对象不行 变量私有化
+
 ```js
 let fName = 'du'
 if (fName) {
@@ -51,8 +57,10 @@ Object.freeze(person)
 ```
 
 ### charAt(index)
+
 * 返回指定位置字符
 * 如果参数 index 不在 0 与 string.length 之间，该方法将返回一个空字符串
+
 ```js
 let charatStr = 'charat'
 console.log(charatStr.charAt(0)) // c
@@ -61,6 +69,7 @@ console.log(charatStr.charAt(-1)) // ''
 ```
 
 ### 弹窗拖拽
+
 ```js
 $define("web.yjcrm.components.dialogDrag", {}, function () {
     // v-dialogDrag: 弹窗拖拽
@@ -114,6 +123,7 @@ $define("web.yjcrm.components.dialogDrag", {}, function () {
 ```
 
 ### 短语条件句
+
 ```js
 if (condition) {
   doSomething()
@@ -123,5 +133,6 @@ condition && doSomething()
 ```
 
 ### js的默认行为 默认事件
+
 * 默认事件是指js中事件本身具有的属性，比如a标签点击会跳转
 * 默认行为是指文本框可以输入，鼠标右击会出现菜单等

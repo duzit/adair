@@ -54,15 +54,15 @@ h1, h2, pre {
     color: $headerFontColor;
     flex: auto;
     margin-left: 40px;
-    text-shadow: 5px 5px 5px #DCDFE6;
+    text-shadow: 5px 5px 5px #dcdfe6;
 
     span {
       width: 100px;
       cursor: pointer;
     }
     span:hover {
-      color: #409EFF;
-      text-shadow: 6px 6px 10px #DCDFE6;
+      color: #409eff;
+      text-shadow: 6px 6px 10px #dcdfe6;
     }
   }
   .ld-header_component {
@@ -107,7 +107,7 @@ h1, h2, pre {
         display: inline-block;
         height: 1rem;
         width: 3px;
-        background: #409EFF;
+        background: #409eff;
         margin-right: 5px;
         position: absolute;
         top: 3px;

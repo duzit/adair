@@ -8,7 +8,7 @@ export default {
     return {
       message: 'hello',
 
-    }
+    };
   },
   created() {
     console.log('hello mixin');
@@ -27,6 +27,6 @@ export default {
     // 如果对应组件没有定义 mixinCall 则使用 mixin 的 mixinCall
     mixinCall() {
 
-    }
+    },
   },
-}
+};

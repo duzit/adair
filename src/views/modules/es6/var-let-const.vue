@@ -7,18 +7,19 @@
 <script>
 import VueMarkdown from 'vue-markdown';
 import markdownData from '../../../md/javascript/var-let-const.md';
+
 export default {
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
-      mdData: markdownData
-    }
+      mdData: markdownData,
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

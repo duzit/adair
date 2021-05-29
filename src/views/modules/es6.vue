@@ -18,6 +18,7 @@ import deconstruction from './es6/deconstruction';
 import spreadOperator from './es6/spread-operator';
 import remindParams from './es6/remind-params';
 import promise from './es6/promise';
+
 export default {
   name: 'es6',
   components: {
@@ -27,7 +28,7 @@ export default {
     deconstruction,
     spreadOperator,
     remindParams,
-    promise
+    promise,
   },
   data() {
     return {
@@ -36,43 +37,43 @@ export default {
       trees: [
         {
           label: 'var let const',
-          key: 'var-let-const'
+          key: 'var-let-const',
         },
         {
           label: '模板字符串...',
-          key: 'template-string'
+          key: 'template-string',
         },
         {
           label: '解构赋值',
-          key: 'deconstruction'
+          key: 'deconstruction',
         },
         {
           label: 'Array String',
-          key: 'array-string'
+          key: 'array-string',
         },
         {
           label: '展开操作符...',
-          key: 'spread-operator'
+          key: 'spread-operator',
         },
         {
           label: '剩余参数',
-          key: 'remind-params'
+          key: 'remind-params',
         },
         {
           label: 'Promise',
-          key: 'promise'
-        }
-      ]
-    }
+          key: 'promise',
+        },
+      ],
+    };
   },
   computed: {
     // 获取当前组件
     currentComponent() {
-      return `${this.curComponent}`
-    }
+      return `${this.curComponent}`;
+    },
   },
   created() {
-    
+
   },
   methods: {
     /**
@@ -80,12 +81,12 @@ export default {
      */
     handleBack(data) {
       this.curComponent = data.key;
-      this.title = data.label
-    }
+      this.title = data.label;
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

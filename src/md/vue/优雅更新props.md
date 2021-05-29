@@ -1,6 +1,7 @@
 ## 优雅更新props
 
 ### 一般做法
+
 ```js
 // child.vue
 export default {
@@ -31,7 +32,9 @@ export default {
 ```
 
 ### 优雅做法
+
 * 只需要在绑定属性上添加 .sync，在子组件内部就可以触发 update:属性名 来更新 prop
+
 ```js
 // parent.vue
 <child :title.sync="title" ></child>

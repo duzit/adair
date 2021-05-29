@@ -1,6 +1,6 @@
 
 const debounce = {
-  inserted: function(el, { value, arg = 1000}) {
+  inserted(el, { value, arg = 1000 }) {
     let timer = null;
 
     el.addEventListener('click', () => {
@@ -9,12 +9,12 @@ const debounce = {
       }
       timer = setTimeout(() => {
         value();
-      }, arg)
-    })
+      }, arg);
+    });
   },
-  unbind: function(el) {
+  unbind(el) {
     el.removeEventListener('click');
-  } 
-}
+  },
+};
 
 export default debounce;

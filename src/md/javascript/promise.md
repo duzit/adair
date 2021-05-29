@@ -1,7 +1,9 @@
 ## Promise()
 
 ### resolve reject
+
 ### async await
+
 ```js
 this.promiseFn()
   .then(res => {

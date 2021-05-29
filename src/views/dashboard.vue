@@ -5,30 +5,31 @@
 </template>
 
 <script>
-import lottie from "../components/lottie-web/lottie";
-import animationData from "../components/lottie-web/data.json";
+import lottie from '../components/lottie-web/lottie';
+import animationData from '../components/lottie-web/data.json';
+
 export default {
   name: 'dashboard',
   components: {
-    lottie
+    lottie,
   },
   data() {
     return {
       defaultOptions: {
-        animationData: animationData,
+        animationData,
         // loop: true,
-      }
-    }
+      },
+    };
   },
   created() {
-    
+
   },
   methods: {
-    
+
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

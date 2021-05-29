@@ -5,53 +5,54 @@
 </template>
 
 <script>
-import VueMarkdown from "vue-markdown";
-import markdownData from "../../../md/javascript/deconstruction.md";
+import VueMarkdown from 'vue-markdown';
+import markdownData from '../../../md/javascript/deconstruction.md';
+
 export default {
-  name: "template-string",
+  name: 'template-string',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
-      mdData: markdownData
+      mdData: markdownData,
     };
   },
   created() {
-    let res = {
-      name: "xiaozhang",
+    const res = {
+      name: 'xiaozhang',
       age: 12,
       body: {
-        type: 1
-      }
+        type: 1,
+      },
     };
 
     this.deconstructFn(res);
 
-    let arr = [1,2,3,4,5,6];
+    const arr = [1, 2, 3, 4, 5, 6];
     // 注意有空格
-    let [a, , c, ...reminds] = arr;
+    const [a, , c, ...reminds] = arr;
     console.log(a, c, reminds); // 1 3 [4,5,6]
 
-    let obj = {
+    const obj = {
       name: 'haha',
-      age: 12
+      age: 12,
     };
     this.fnDeconstruct(obj);
   },
   methods: {
     deconstructFn(res) {
-      let { name, age } = res;
-      console.log(name, age, "deconstruct"); // xiaozhang 12
-      let {
-        body: { type }
+      const { name, age } = res;
+      console.log(name, age, 'deconstruct'); // xiaozhang 12
+      const {
+        body: { type },
       } = res;
-      console.log(type, "deconstruct"); // 1
+      console.log(type, 'deconstruct'); // 1
     },
     fnDeconstruct({ name, age }) {
       console.log(name, age); // haha 12
-    }
-  }
+    },
+  },
 };
 </script>
 

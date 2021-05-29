@@ -1,5 +1,5 @@
 import {
-  Message
+  Message,
 } from 'element-ui';
 
 export default {
@@ -25,7 +25,7 @@ export default {
       }
 
       document.body.removeChild(textarea);
-    }
+    };
 
     el.addEventListener('click', el.handler);
   },
@@ -35,5 +35,5 @@ export default {
   },
   unbind(el) {
     el.removeEventListener('click');
-  }
-}
+  },
+};

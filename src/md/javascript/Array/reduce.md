@@ -1,2 +1,3 @@
-## reduce 
-* arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+## reduce
+
+* arr.reduce[callback(accumulator, currentValue[, index[, array]]](, initialValue))

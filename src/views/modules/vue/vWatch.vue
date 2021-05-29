@@ -15,40 +15,40 @@ export default {
       num: 0,
       person: {
         name: 'Ben',
-        age: 10
-      }
-    }
+        age: 10,
+      },
+    };
   },
   created() {
-    this.$watch('num', function(val, old) {
-      console.log(val, old, 'num')
-    })
+    this.$watch('num', (val, old) => {
+      console.log(val, old, 'num');
+    });
 
-    this.$watch('person.name', function(val, old) {
-      console.log(this.person.name, 'name')
-    }, { deep: true })
+    this.$watch('person.name', function (val, old) {
+      console.log(this.person.name, 'name');
+    }, { deep: true });
 
-    this.$watch(function() {
-      return this.num + this.person.age
-    }, function(val, old) {
-      console.log(val, old, 'a + b')
-    }, { deep: true }) 
+    this.$watch(function () {
+      return this.num + this.person.age;
+    }, (val, old) => {
+      console.log(val, old, 'a + b');
+    }, { deep: true });
 
-    let unwatch = this.$watch('person.name', function(val, old) {
-      console.log(val, old, 'immediate') // 调用一次
+    const unwatch = this.$watch('person.name', (val, old) => {
+      console.log(val, old, 'immediate'); // 调用一次
       if (unwatch) {
-        unwatch()
+        unwatch();
       }
-    }, { immediate: true })
+    }, { immediate: true });
   },
   methods: {
     handleClick() {
-      this.num > 10 ? this.num = 0 : this.num++
-    }
+      this.num > 10 ? this.num = 0 : this.num++;
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

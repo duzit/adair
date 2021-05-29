@@ -7,38 +7,39 @@
 <script>
 import VueMarkdown from 'vue-markdown';
 import markdownData from '../../../md/javascript/promise.md';
+
 export default {
   name: 'remind-params',
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
       mdData: markdownData,
-      resData: []
-    }
+      resData: [],
+    };
   },
   created() {
     this.promiseFn()
-      .then(res => {
+      .then((res) => {
         console.log(res);
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
 
     this.getUser()
-      .then(res => {
+      .then((res) => {
         this.resData.push(res);
         this.getOtherUser()
-          .then(res => {
+          .then((res) => {
             this.resData.push(res);
             console.log(this.resData, 'promise'); // [{},{}]
-          })
-      })
+          });
+      });
 
     this.getItems()
-      .then(res => {
+      .then((res) => {
         console.log(res, 'promise2'); // [{},{}]
-      })
+      });
   },
   methods: {
     promiseFn() {
@@ -46,39 +47,39 @@ export default {
         resolve({
           name: 'hello',
           age: 12,
-          status: 200
+          status: 200,
         });
-      })
+      });
     },
     getUser() {
       return new Promise((resolve, reject) => {
         resolve({
           name: 'zhansan',
-          age: 11
-        })
-      })
+          age: 11,
+        });
+      });
     },
     getOtherUser() {
       return new Promise((resolve, reject) => {
         resolve({
           name: 'xiaozhang',
-          age: 12
-        })
-      })
+          age: 12,
+        });
+      });
     },
     async getItems() {
       try {
-        let item0 = await this.getUser();
-        let item1 = await this.getOtherUser();
+        const item0 = await this.getUser();
+        const item1 = await this.getOtherUser();
         return [item0, item1];
       } catch (error) {
-        
+
       }
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

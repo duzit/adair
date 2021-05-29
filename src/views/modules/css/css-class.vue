@@ -81,20 +81,20 @@ import {
   class_a,
   class_checked,
   firstOfType,
-  nthChildOfType
-} from '../../../utils/tips'
+  nthChildOfType,
+} from '../../../utils/tips';
 
 export default {
   data() {
     return {
-      class_a: class_a,
-      class_checked: class_checked,
-      firstOfType: firstOfType,
-      nthChildOfType: nthChildOfType,
+      class_a,
+      class_checked,
+      firstOfType,
+      nthChildOfType,
 
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -164,7 +164,7 @@ export default {
         }
       }
       .nth-of-type {
-        // 将 span 也算进奇偶数中 
+        // 将 span 也算进奇偶数中
         // li:nth-child(2n) {
         //   font-weight: bold;
         // }

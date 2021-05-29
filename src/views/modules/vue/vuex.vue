@@ -28,6 +28,7 @@
 import { mapState } from 'vuex';
 import VueMarkdown from 'vue-markdown';
 import markdownData from '../../../md/vue/vuex.md';
+
 export default {
   name: 'vuex',
   data() {
@@ -38,11 +39,11 @@ export default {
         age: '',
         username: '',
       },
-      storeInfo: ''
-    }
+      storeInfo: '',
+    };
   },
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   created() {
     this.vuexForm.name = this.name;
@@ -51,12 +52,12 @@ export default {
     this.storeInfo = JSON.stringify(this.vuexForm);
   },
   mounted() {
-    
+
   },
   computed: mapState({
-    name: state => state.name,
-    age: state => state.age,
-    username: state => state.user.username,
+    name: (state) => state.name,
+    age: (state) => state.age,
+    username: (state) => state.user.username,
   }),
   methods: {
     /**
@@ -66,9 +67,9 @@ export default {
       this.$store.dispatch('changeStoreInfo', this.vuexForm);
       this.$store.dispatch('changeUserUsername', this.vuexForm.username);
       this.storeInfo = JSON.stringify(this.vuexForm);
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

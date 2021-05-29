@@ -1,7 +1,9 @@
 ## CKEditor4-Vue 使用小结
 
 ### 安装 及 引用
+
 [官网参考](https://ckeditor.com/docs/ckeditor4/latest/guide/dev_vue.html)
+
 ```js
 // install
 npm install ckeditor4-vue
@@ -35,7 +37,9 @@ Vue.use( CKEditor );
 ```
 
 ### 配置
+
 [官网参考](https://ckeditor.com/docs/ckeditor4/latest/features/index.html)
+
 ```js
 editorConfig: {
   width: '50%', // 宽 支持百分比
@@ -114,10 +118,13 @@ editorConfig: {
 }
 ```
 
-### 添加插件  
-#### 注入插件时机 
-* onNamespaceLoaded 中注入  
+### 添加插件
+
+#### 注入插件时机
+
+* onNamespaceLoaded 中注入
 [参考](https://ckeditor.com/docs/ckeditor4/latest/guide/dev_vue.html#namespaceloaded)
+
 ```js
 <ckeditor
   ref="refCKEditor"
@@ -136,12 +143,14 @@ onNamespaceLoaded(CKEDITOR) {
 ```
 
 #### 添加 wordcount 插件遇到的问题
-* 下载 [wordcount](https://ckeditor.com/cke4/addon/wordcount) 插件 
 
-1. 将插件放到 src 下某一目录 比如 /src/assets/ckeditor/wordcount  
-  使用 [CKEDITOR.plugins.addExternal](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins.html#method-addExternal) 注入 如下  
-  但是这种注入是无效的，有报错，使用相对路径也不行   
+* 下载 [wordcount](https://ckeditor.com/cke4/addon/wordcount) 插件
+
+1. 将插件放到 src 下某一目录 比如 /src/assets/ckeditor/wordcount
+  使用 [CKEDITOR.plugins.addExternal](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins.html#method-addExternal) 注入 如下
+  但是这种注入是无效的，有报错，使用相对路径也不行
   路径如果使用cdn ，例如 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/plugins/timestamp/' 是可行的
+
 ```js
 CKEDITOR.plugins.addExternal(
   'wordcount', 
@@ -150,14 +159,15 @@ CKEDITOR.plugins.addExternal(
 );
 ```
 
-2. 将插件放到 public 路径下 /public/ckeditor/plugins/wordcount/plugin.js 可行  
-  引用时使用 /ckeditor/plugins/wordcount/plugin.js  
+2. 将插件放到 public 路径下 /public/ckeditor/plugins/wordcount/plugin.js 可行
+  引用时使用 /ckeditor/plugins/wordcount/plugin.js
+
 ```js
 CKEDITOR.plugins.addExternal('wordcount', '/ckeditor/plugins/wordcount/', 'plugin.js');
 ```
 
-3. 插件不放 public 方法 
-  下载的插件放到 @/components/ckeditorPlugins/wordcount/plugin.js  
+3. 插件不放 public 方法
+  下载的插件放到 @/components/ckeditorPlugins/wordcount/plugin.js
   需修改部分源码 [参考](https://github.com/duzit/adair/blob/main/src/components/ckeditorPlugins/wordcount/plugin.js)
 
 ```js
@@ -171,5 +181,6 @@ onNamespaceLoaded(CKEDITOR) {
 ```
 
 ### 参考
-* [github](https://github.com/duzit/adair/blob/main/src/views/modules/js/ckeditor.vue)
+
+* [GitHub](https://github.com/duzit/adair/blob/main/src/views/modules/js/ckeditor.vue)
 * [csdn](https://blog.csdn.net/gao_grace/article/details/113739734)

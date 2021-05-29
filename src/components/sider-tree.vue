@@ -1,7 +1,7 @@
 <template>
-  <el-tree ref="tree" 
-    :data="treeData" 
-    node-key="key" 
+  <el-tree ref="tree"
+    :data="treeData"
+    node-key="key"
     highlight-current
     @node-click="nodeClick">
   </el-tree>
@@ -15,10 +15,10 @@ export default {
   data() {
     return {
 
-    }
+    };
   },
   created() {
-    
+
   },
   mounted() {
     // 使用 this.$refs 不能在 created ,获取不到 dom
@@ -31,9 +31,9 @@ export default {
      */
     nodeClick(data, node) {
       this.$emit('nodeCallback', data);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -12,15 +12,15 @@ console.log(!!NaN); // false
 console.log(!!'hello'); // true
 
 // 转换为数值
- let str = '12';
- let num = +str;
- // or 
- // ~~str
- console.log(num); // 12
- let s1 = '12a';
- console.log(+s1); // NaN
+const str = '12';
+const num = +str;
+// or
+// ~~str
+console.log(num); // 12
+const s1 = '12a';
+console.log(+s1); // NaN
 
- // 浮点数转为整数
+// 浮点数转为整数
 console.log(22.22 | 0); // 22
 console.log(22.9 | 0); // 22
 console.log(-22.9 | 0); // -22

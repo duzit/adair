@@ -1,6 +1,7 @@
-## Object 
+## Object
 
 ### Object,entries()
+
 * 返回一个给定对象自身可枚举属性的键值对数组
 
 ```js

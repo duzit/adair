@@ -5,18 +5,18 @@ console.log('---es6 数组 新增扩展---');
 // 转为用逗号分隔的参数序列
 console.log(...[1, 2, 3]); // 1 2 3
 // 数组的合并 浅拷贝
-console.log([...[1, 2,], ...[3, 4, 5]]); [1, 2, 3, 4, 5]
+console.log([...[1, 2], ...[3, 4, 5]]); [1, 2, 3, 4, 5];
 
 function es6ArrPush(array, items) {
   array.push(...items); // [1, 2, 3, 4]
   console.log(array, 'push');
 }
 
-es6ArrPush([], [1, 2, 3, 4])
+es6ArrPush([], [1, 2, 3, 4]);
 
 // 与解构赋值结合
-const [es6Arr1, ...es6Arr2] = [1, 2, 3, 4]
-const [es6Arr3, ...es6Arr4] = []
+const [es6Arr1, ...es6Arr2] = [1, 2, 3, 4];
+const [es6Arr3, ...es6Arr4] = [];
 console.log(es6Arr1, es6Arr2, '解构赋值结合'); // 1 [2, 3, 4]
 console.log(es6Arr3, es6Arr4, '解构赋值结合'); // undefined []
 
@@ -27,8 +27,8 @@ console.log([...'hello'], '将字符串转为数组'); // ["h", "e", "l", "l", "
 const es6ArrMap = new Map([
   [1, 'a'],
   [2, 'b'],
-  [3, 'c']
-])
+  [3, 'c'],
+]);
 console.log(es6ArrMap.keys(), 'map keys');
 console.log(...es6ArrMap.keys(), '...map keys'); // 1 2 3
 
@@ -40,13 +40,13 @@ const es6ArrLike = {
   0: '0',
   1: 'a',
   2: 'b',
-  length: 3
-}
+  length: 3,
+};
 console.log(Array.from(es6ArrLike), 'arr like'); // ['0', 'a', 'b']
 // 支持第二个参数 用于对每一个元素做处理
 console.log(Array.from(es6ArrLike, (item) => {
-  return item + 'xx'
-}), 'arr like'); // ["0xx", "axx", "bxx"] 
+  return `${item }xx`;
+}), 'arr like'); // ["0xx", "axx", "bxx"]
 
 console.log(Array.of(), 'of 无参数'); // []
 console.log(Array.of(2), 'of 一个参数'); // [2]
@@ -75,10 +75,10 @@ console.log([1, 2, 3, 4, 5].copyWithin(2, 3), 'copyWithin 两个参数'); // [1,
 // }
 
 function es6ArrFn(v) {
-  return v > this.age
+  return v > this.age;
 }
 
-const es6ArrFind = [1, 12, 23, 14].find(es6ArrFn, { name: 'he', age: 14})
+const es6ArrFind = [1, 12, 23, 14].find(es6ArrFn, { name: 'he', age: 14 });
 console.log(es6ArrFind, 'es6ArrFind');
 
 /**

@@ -1,6 +1,9 @@
 ## transform(origin)
+
 ---
+
 ### 属性值
+
 * translate(x, y) 单位不是角度，而是像素类似的值，如px。2D转换
 * translate(x, y, z) 3D
 * translatX() translateY() translateZ()
@@ -11,4 +14,5 @@
 * perspective(n) 为3D转换元素定义透视视图
 
 ### 实例
+
 * [参考](https://github.com/duzit/du-css/blob/master/src/transform-2.html)

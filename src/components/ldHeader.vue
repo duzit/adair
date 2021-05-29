@@ -23,27 +23,27 @@ export default {
   data() {
     return {
       logo: 'Adair',
-      liLists: []
-    }
+      liLists: [],
+    };
   },
   mounted() {
     // mounted 阶段可以获取 li 元素
-    this.liLists = document.getElementsByTagName('li')
-    let localIndex = window.localStorage.getItem('currentIndex')
-    if (localIndex + '') {
-      this.addClass(Number(localIndex))
+    this.liLists = document.getElementsByTagName('li');
+    const localIndex = window.localStorage.getItem('currentIndex');
+    if (`${localIndex }`) {
+      this.addClass(Number(localIndex));
     }
   },
   watch: {
-    '$route': {
-      handler: function(path, old) {
+    $route: {
+      handler(path, old) {
         if (path.path.indexOf('/dashboard') >= 0) {
           // 监听路由变化 dashboard 页面则清除 current 样式
-          this.removeClass()
+          this.removeClass();
         }
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   methods: {
     /**
@@ -53,30 +53,30 @@ export default {
       // 如果当前在首页 dashboard ，则跳转模块导航页 modules
       // 如果当前是非首页 dashboard ，则跳转 dashboard
       if (this.$route.path.indexOf('/dashboard') >= 0) {
-        this.$router.push('/modules')
+        this.$router.push('/modules');
       } else if (this.$route.path.indexOf('/modules') >= 0) {
-        this.$router.push('/')
+        this.$router.push('/');
       } else {
-        this.$router.push('/modules')
+        this.$router.push('/modules');
       }
     },
     /**
      * 指向对应模块
      */
     pathTo(type, index) {
-      if (this.$route.path.indexOf(type) >= 0) return
-      window.localStorage.setItem('currentIndex', index)
-      this.addClass(index)
-      this.$router.push(`/${type}`)
+      if (this.$route.path.indexOf(type) >= 0) return;
+      window.localStorage.setItem('currentIndex', index);
+      this.addClass(index);
+      this.$router.push(`/${type}`);
     },
     /**
      * 当前选项添加高亮 class
      */
     addClass(index) {
-      this.liLists[index].classList.add('current')
+      this.liLists[index].classList.add('current');
       for (let i = 0; i < this.liLists.length; i++) {
         if (index != i) {
-          this.liLists[i].classList.remove('current')
+          this.liLists[i].classList.remove('current');
         }
       }
     },
@@ -85,11 +85,11 @@ export default {
      */
     removeClass() {
       for (let i = 0; i < this.liLists.length; i++) {
-        this.liLists[i].classList.remove('current')
+        this.liLists[i].classList.remove('current');
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

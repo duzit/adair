@@ -14,16 +14,16 @@ export default {
   name: 'home',
   data() {
     return {
-      
-    }
+
+    };
   },
   created() {
-    
+
   },
   methods: {
-    
+
   },
-}
+};
 </script>
 <style lang="scss" scoped>
   .header {
