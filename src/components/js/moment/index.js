@@ -7,7 +7,7 @@ console.log(moment().format('L'), '--L');
 
 //  获取 年月日
 const val0 = moment('2022-10-22'); // new Date(string)
-console.log(val0, "moment('2020-10-22')");
+console.log(val0, 'moment(\'2020-10-22\')');
 console.log(val0.get('year'), 'get year');
 console.log(val0.get('month') + 1, 'get month + 1');
 console.log(val0.get('date'), 'get date');

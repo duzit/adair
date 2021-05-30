@@ -1,3 +1,4 @@
+/* eslint-disable */
 function init() {
   if (window.goSamples) goSamples(); // init for these samples -- you don't need to call this
   const $ = go.GraphObject.make; // for conciseness in defining templates
@@ -53,7 +54,7 @@ function init() {
         width: horizontal ? NaN : 8, // if not stretching horizontally, just 8 wide
         height: !horizontal ? NaN : 8, // if not stretching vertically, just 8 tall
         alignment: align, // align the port on the main Shape
-        stretch: (horizontal ? go.GraphObject.Horizontal : go.GraphObject.Vertical),
+        stretch: horizontal ? go.GraphObject.Horizontal : go.GraphObject.Vertical,
         portId: name, // declare this object to be a "port"
         fromSpot: spot, // declare where links may connect at this port
         fromLinkable: output, // declare whether the user may draw links from here
@@ -179,7 +180,6 @@ function init() {
       // no ports, because no links are allowed to connect with a comment
     ));
 
-
   // replace the default Link template in the linkTemplateMap
   myDiagram.linkTemplate =
     $(go.Link, // the whole link panel
@@ -202,7 +202,7 @@ function init() {
         { isPanelMain: true, strokeWidth: 8, stroke: 'transparent', name: 'HIGHLIGHT' }),
       $(go.Shape, // the link path shape
         { isPanelMain: true, stroke: 'gray', strokeWidth: 2 },
-        new go.Binding('stroke', 'isSelected', ((sel) => { return sel ? 'dodgerblue' : 'gray'; })).ofObject()),
+        new go.Binding('stroke', 'isSelected', (sel) => { return sel ? 'dodgerblue' : 'gray'; }).ofObject()),
       $(go.Shape, // the arrowhead
         { toArrow: 'standard', strokeWidth: 0, fill: 'gray' }),
       $(go.Panel, 'Auto', // the link label, normally not visible
@@ -223,7 +223,7 @@ function init() {
   // This listener is called by the "LinkDrawn" and "LinkRelinked" DiagramEvents.
   function showLinkLabel(e) {
     const label = e.subject.findObject('LABEL');
-    if (label !== null) label.visible = (e.subject.fromNode.data.category === 'Conditional');
+    if (label !== null) label.visible = e.subject.fromNode.data.category === 'Conditional';
   }
 
   // temporary links used by LinkingTool and RelinkingTool are also orthogonal:
@@ -263,7 +263,6 @@ function init() {
     animation.start();
   }
 } // end init
-
 
 // Show the diagram's model in JSON format that the user may edit
 function save() {

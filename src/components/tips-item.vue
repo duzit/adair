@@ -1,24 +1,26 @@
 <template>
-  <div class="tips" :style="`width:${width}px;`">
+  <div
+    class="tips"
+    :style="`width:${width}px;`">
     {{ tips }}
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    tips: {
-      type: String,
-      required: true,
-      default: '暂无tips',
+  export default {
+    props: {
+      tips: {
+        type: String,
+        required: true,
+        default: '暂无tips',
+      },
+      width: {
+        type: Number,
+        required: true,
+        default: 200,
+      },
     },
-    width: {
-      type: Number,
-      required: true,
-      default: 200,
-    },
-  },
-};
+  };
 </script>
 
 <style lang="scss" scoped>

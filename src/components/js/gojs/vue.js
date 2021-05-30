@@ -1,11 +1,14 @@
+/* eslint-disable */
 function init() {
   if (window.goSamples) goSamples(); // init for these samples -- you don't need to call this
 
   const $ = go.GraphObject.make;
 
-  Vue.component('diagram', {
-    template: '', // just a plain DIV
-    props: ['modelData'], // accept model data as a parameter
+  Vue.component('diagram', { // just a plain DIV
+    props: ['modelData'],
+    watch: {
+      modelData(val) { this.updateModel(val); },
+    }, // accept model data as a parameter
     mounted() {
       const self = this;
       const myDiagram =
@@ -44,9 +47,6 @@ function init() {
 
       this.updateModel(this.modelData);
     },
-    watch: {
-      modelData(val) { this.updateModel(val); },
-    },
     methods: {
       model() { return this.diagram.model; },
       updateModel(val) {
@@ -73,8 +73,8 @@ function init() {
         this.diagram.commitTransaction('updated');
       },
     },
+    template: '',
   });
-
 
   myApp = new Vue({
     el: '#sample',

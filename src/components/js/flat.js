@@ -43,5 +43,4 @@ const arrDeep2 = flatten(arrDepth);
 console.log(arrDeep, 'arr deep');
 console.log(arrDeep2, 'arr deep');
 
-
 console.log('---flat end---');

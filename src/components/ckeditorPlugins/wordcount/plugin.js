@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 
 export default {
   init() {
@@ -37,8 +37,7 @@ export default {
         let timeoutId = 0;
         let notification = null;
 
-
-        const dispatchEvent = function (type, currentLength, maxLength) {
+        const dispatchEvent = function(type, currentLength, maxLength) {
           if (typeof document.dispatchEvent === 'undefined') {
             return;
           }
@@ -155,20 +154,20 @@ export default {
           if (config.maxCharCount > -1) {
             if (config.showRemaining) {
               defaultFormat += `%charCount% ${
-                            editor.lang.wordcount[config.countHTML
-                              ? 'CharCountWithHTMLRemaining'
-                              : 'CharCountRemaining']}`;
+                editor.lang.wordcount[config.countHTML
+                  ? 'CharCountWithHTMLRemaining'
+                  : 'CharCountRemaining']}`;
             } else {
               defaultFormat += `${editor.lang.wordcount[config.countHTML
                 ? 'CharCountWithHTML'
                 : 'CharCount']
-                            } %charCount%`;
+              } %charCount%`;
 
               defaultFormat += `/${ config.maxCharCount}`;
             }
           } else {
             defaultFormat += `${editor.lang.wordcount[config.countHTML ? 'CharCountWithHTML' : 'CharCount']
-                        } %charCount%`;
+            } %charCount%`;
           }
         }
 
@@ -265,8 +264,8 @@ export default {
         }
 
         function countParagraphs(text) {
-          return (text.replace(/&nbsp;/g, ' ').replace(/(<([^>]+)>)/ig, '').replace(/^\s*$[\n\r]{1,}/gm, '++')
-            .split('++').length);
+          return text.replace(/&nbsp;/g, ' ').replace(/(<([^>]+)>)/ig, '').replace(/^\s*$[\n\r]{1,}/gm, '++')
+            .split('++').length;
         }
 
         function countWords(text) {
@@ -285,7 +284,7 @@ export default {
             }
           }
 
-          return (words.length);
+          return words.length;
         }
 
         function limitReached(editorInstance, notify) {
@@ -414,9 +413,9 @@ export default {
           }
 
           // Check for word limit and/or char limit
-          if ((config.maxWordCount > -1 && wordCount > config.maxWordCount && deltaWord > 0) ||
-                    (config.maxCharCount > -1 && charCount > config.maxCharCount && deltaChar > 0) ||
-                    (config.maxParagraphs > -1 && paragraphs > config.maxParagraphs && deltaParagraphs > 0)) {
+          if (config.maxWordCount > -1 && wordCount > config.maxWordCount && deltaWord > 0 ||
+                    config.maxCharCount > -1 && charCount > config.maxCharCount && deltaChar > 0 ||
+                    config.maxParagraphs > -1 && paragraphs > config.maxParagraphs && deltaParagraphs > 0) {
             limitReached(editorInstance, limitReachedNotified);
           } else if ((config.maxWordCount == -1 || wordCount <= config.maxWordCount) &&
                     (config.maxCharCount == -1 || charCount <= config.maxCharCount) &&
@@ -433,7 +432,6 @@ export default {
                   wordCount,
                   charCount,
                 };
-
 
           // Fire Custom Events
           if (config.charCountGreaterThanMaxLengthEvent && config.charCountLessThanMaxLengthEvent) {
@@ -472,7 +470,7 @@ export default {
         }
 
         editor.on('key',
-          function (event) {
+          function(event) {
             const ms = isCloseToLimits() ? 5 : 250;
 
             if (editor.mode === 'source') {
@@ -494,7 +492,7 @@ export default {
           editor);
 
         editor.on('change',
-          function (event) {
+          function(event) {
             const ms = isCloseToLimits() ? 5 : 250;
             clearTimeout(timeoutId);
             timeoutId = setTimeout(
@@ -516,19 +514,19 @@ export default {
               if (event.data.space == 'top') {
                 event.data.html += `<div class="${ wordcountClass }" style=""` +
                                 ` title="${
-                                editor.lang.wordcount.title
+                                  editor.lang.wordcount.title
                                 }"` +
                                 `><span id="${
-                                counterId(event.editor)
+                                  counterId(event.editor)
                                 }" class="cke_path_item">&nbsp;</span></div>`;
               }
             } else if (event.data.space == 'bottom') {
               event.data.html += `<div class="${wordcountClass }" style=""` +
                                 ` title="${
-                                editor.lang.wordcount.title
+                                  editor.lang.wordcount.title
                                 }"` +
                                 `><span id="${
-                                counterId(event.editor)
+                                  counterId(event.editor)
                                 }" class="cke_path_item">&nbsp;</span></div>`;
             }
           },
@@ -555,7 +553,6 @@ export default {
               const mySelection = event.editor.getSelection();
               const selectedText = mySelection.getNative().toString().trim();
 
-
               // BeforeGetData and getData events are fired when calling
               // getData(). We can prevent this by passing true as an
               // argument to getData(). This allows us to fire the events
@@ -574,7 +571,6 @@ export default {
                 }
               }
 
-
               text += event.data.dataValue;
 
               if (config.showCharCount) {
@@ -588,7 +584,6 @@ export default {
               if (config.showParagraphs) {
                 paragraphs = countParagraphs(text);
               }
-
 
               // Instantiate the notification when needed and only have one instance
               if (notification === null) {

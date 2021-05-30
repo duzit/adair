@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <ld-header class="ld-header"></ld-header>
-    <ld-main class="ld-main"></ld-main>
+    <ld-header class="ld-header" />
+    <ld-main class="ld-main" />
   </div>
 </template>
 
 <script>
-import ldHeader from './components/ldHeader';
-import ldMain from './components/ldMain';
-import {
-  isPCBroswer,
-} from 'du-utils/src/common';
+  import ldHeader from './components/ldHeader';
+  import ldMain from './components/ldMain';
+  // import { isPCBroswer } from 'du-utils/src/common';
 
-export default {
-  name: 'app',
-  components: {
-    ldHeader,
-    ldMain,
-  },
-  created() {
+  export default {
+    name: 'App',
+    components: {
+      ldHeader,
+      ldMain,
+    },
+    created() {
     // 测试 du-utils
-    console.log(isPCBroswer(), '123');
-  },
-};
+    // console.log(isPCBroswer(), '123');
+    },
+  };
 </script>
 
 <style>

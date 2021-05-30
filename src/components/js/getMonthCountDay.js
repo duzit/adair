@@ -14,7 +14,6 @@ function getMonthCountDay2(year, month) {
 console.log(`2014-2: ${getMonthCountDay2(2020, 2)}天`);
 console.log(`2015-2: ${getMonthCountDay2(2021, 2)}天`);
 
-
 // 获取月初是周几
 function getMonthStartWeekDay(year, month) {
   return new Date(year, month - 1, 1).getDay();

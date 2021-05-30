@@ -1,4 +1,5 @@
 // es6 class
+/* eslint-disable */
 class myClass {
   gName = '';
   str1 = '123';
@@ -63,12 +64,12 @@ class myClass {
 const tClass = new myClass({});
 // name 和 age 都是实例对象 myClass 自身的属性（因为定义在this变量上），所以hasOwnProperty方法返回true，
 // 而 init 是原型对象的属性（因为定义在 myClass 类上），所以hasOwnProperty方法返回false
-console.log(tClass.hasOwnProperty('name'), "hasOwnProperty('name')"); // true
-console.log(tClass.hasOwnProperty('age'), "hasOwnProperty('age')"); // true
-console.log(tClass.hasOwnProperty('init'), "hasOwnProperty('init()')"); // false
+console.log(tClass.hasOwnProperty('name'), 'hasOwnProperty(\'name\')'); // true
+console.log(tClass.hasOwnProperty('age'), 'hasOwnProperty(\'age\')'); // true
+console.log(tClass.hasOwnProperty('init'), 'hasOwnProperty(\'init()\')'); // false
 console.log(
   tClass.__proto__.hasOwnProperty('init'),
-  "tClass.__proto__.hasOwnProperty('init')",
+  'tClass.__proto__.hasOwnProperty(\'init\')',
 ); // true
 
 tClass.gsex = 1;

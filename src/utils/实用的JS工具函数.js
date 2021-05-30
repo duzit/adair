@@ -74,7 +74,7 @@ function formatDate(format = 'Y-M-D h:m', timestamp = Date.now()) {
     m: date.getMinutes(),
     s: date.getSeconds(),
   };
-  const formatNumber = (n) => (n >= 10 ? n : `0${ n}`);
+  const formatNumber = (n) => n >= 10 ? n : `0${ n}`;
   const res = format
     .replace('Y', dateInfo.Y)
     .replace('M', dateInfo.M)
@@ -92,7 +92,7 @@ console.log(formatDate('h:m Y/M/D')); // 19:10 2020/7/22
 // 性能优化方案，防抖用于减少函数请求次数，对于频繁的请求，只执行这些请求的最后一次
 function debounce(fn, time = 300) {
   let timer = null;
-  return function () {
+  return function() {
     if (timer !== null) {
       clearTimeout(timer);
     }
@@ -100,7 +100,7 @@ function debounce(fn, time = 300) {
   };
 }
 
-const debounceHandler = debounce(() => {
+export const debounceHandler = debounce(() => {
   console.log('debounce');
 }, 400);
 
@@ -108,7 +108,7 @@ const debounceHandler = debounce(() => {
 // 性能优化方案，节流用于减少函数请求次数，与防抖不同，节流是在一段时间执行一次。
 function throttle(fn, time = 300) {
   let timer = null;
-  return function () {
+  return function() {
     if (!timer) {
       timer = setTimeout(() => {
         fn.apply(this);
@@ -118,7 +118,7 @@ function throttle(fn, time = 300) {
   };
 }
 
-const throttleHandler = throttle(() => {
+export const throttleHandler = throttle(() => {
   console.log('throttle');
 }, 400);
 
@@ -127,7 +127,7 @@ const throttleHandler = throttle(() => {
  * @param {string} filename - 下载时的文件名
  * @param {string} data - base64字符串
  */
-function downloadFile(filename, data) {
+export function downloadFile(filename, data) {
   const downloadLink = document.createElement('a');
   if (downloadLink) {
     document.body.appendChild(downloadLink);
@@ -165,7 +165,7 @@ function isPCBroswer() {
 console.log(isPCBroswer(), 'isPCBroswer');
 
 // 获取当前页面滚动位置
-const getScrollPosition = (el = window) => ({
+export const getScrollPosition = (el = window) => ({
   x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
   y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
 });
@@ -173,7 +173,7 @@ const getScrollPosition = (el = window) => ({
 // getScrollPosition(); // {x: 0, y: 200}
 
 // 平滑的滚动到顶部
-const scrollToTop = () => {
+export const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c > 0) {
     // requestAnimationFrame IE10 开始支持
@@ -185,12 +185,12 @@ const scrollToTop = () => {
 // scrollToTop();
 
 // 判断元素是否在窗口可见
-const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+export const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
   const { innerHeight, innerWidth } = window;
   return partiallyVisible
-    ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
-        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+    ? (top > 0 && top < innerHeight || bottom > 0 && bottom < innerHeight) &&
+        (left > 0 && left < innerWidth || right > 0 && right < innerWidth)
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
 // Examples
@@ -198,15 +198,15 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 // elementIsVisibleInViewport(el, true); // (部分可见)
 
 // 判断当前设备类型 移动 or PC
-const detectDeviceType = () =>
-  (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+export const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ? 'Mobile'
-    : 'Desktop');
+    : 'Desktop';
 // Example
 // detectDeviceType(); // "Mobile" or "Desktop"
 
 // 获取两个日期之间的天数
-const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
+export const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
 // Example
 // getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9

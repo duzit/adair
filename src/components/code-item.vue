@@ -1,5 +1,7 @@
 <template>
-  <div class="codes" :style="`width:${width}px;`">
+  <div
+    class="codes"
+    :style="`width:${width}px;`">
     <pre>
       {{ codes }}
     </pre>
@@ -7,19 +9,19 @@
 </template>
 
 <script>
-export default {
-  props: {
-    codes: {
-      type: String,
-      required: true,
-      default: '暂无codes',
+  export default {
+    props: {
+      codes: {
+        type: String,
+        required: true,
+        default: '暂无codes',
+      },
+      width: {
+        type: Number,
+        default: 400,
+      },
     },
-    width: {
-      type: Number,
-      default: 400,
-    },
-  },
-};
+  };
 </script>
 
 <style lang="scss" scoped>

@@ -1,23 +1,25 @@
 <template>
   <div class="markdown-body">
-    <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
+    <VueMarkdown
+      v-highlight
+      :source="mdData" />
   </div>
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown';
-import markdownData from '../../../md/javascript/var-let-const.md';
+  import VueMarkdown from 'vue-markdown';
+  import markdownData from '../../../md/javascript/var-let-const.md';
 
-export default {
-  components: {
-    VueMarkdown,
-  },
-  data() {
-    return {
-      mdData: markdownData,
-    };
-  },
-};
+  export default {
+    components: {
+      VueMarkdown,
+    },
+    data() {
+      return {
+        mdData: markdownData,
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

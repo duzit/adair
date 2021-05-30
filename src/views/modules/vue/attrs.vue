@@ -19,22 +19,22 @@
  * 当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 (class 和 style 除外)，
  * 并且可以通过 v-bind="$attrs" 传入内部组件
  */
-export default {
-  name: 'helloworld',
-  props: ['name', 'age'],
-  data() {
-    return {
+  export default {
+    name: 'Helloworld',
+    props: ['name', 'age'],
+    data() {
+      return {
 
-    };
-  },
-  created() {
-    const attrs = this.$attrs;
-    this.msg = attrs.msg;
-  },
-  methods: {
+      };
+    },
+    created() {
+      const attrs = this.$attrs;
+      this.msg = attrs.msg;
+    },
+    methods: {
 
-  },
-};
+    },
+  };
 </script>
 
 <style>

@@ -4,19 +4,33 @@
     <div class="css-class_a">
       <a href="#">链接1</a>
       <a href="#">链接2</a>
-      <tips-item :tips="class_a" :width="300"></tips-item>
+      <tips-item
+        :tips="class_a"
+        :width="300" />
     </div>
     <hr>
     <h4>checked disabled</h4>
     <div class="css-class_checked">
-      <input type="radio" name="input" value="0" id="yes">
+      <input
+        id="yes"
+        type="radio"
+        name="input"
+        value="0">
       <label for="yes">Yes</label>
-      <input type="radio" name="input" value="1" id="no">
+      <input
+        id="no"
+        type="radio"
+        name="input"
+        value="1">
       <label for="no">No</label>
       <br>
       <label for="">disabled</label>
-      <input type="text" disabled>
-      <tips-item :tips="class_checked" :width="300"></tips-item>
+      <input
+        type="text"
+        disabled>
+      <tips-item
+        :tips="class_checked"
+        :width="300" />
     </div>
     <hr>
     <h4>first-letter first-child nth-child nth-of-type only-child...</h4>
@@ -27,19 +41,25 @@
         <li>第二个</li>
         <li>第三个last child</li>
       </ul>
-      <tips-item tips="first last child" :width="300"></tips-item>
+      <tips-item
+        tips="first last child"
+        :width="300" />
       <ul class="not-first-last">
         <li>not 1</li>
         <li>not 2</li>
         <p>not p</p>
       </ul>
-      <tips-item tips="not(li)" :width="300"></tips-item>
+      <tips-item
+        tips="not(li)"
+        :width="300" />
       <ul class="first-of-child">
         <span>ul 第一个元素是 span 不是 li</span>
         <li>li 1</li>
         <li>li 2</li>
       </ul>
-      <tips-item :tips="firstOfType" :width="300"></tips-item>
+      <tips-item
+        :tips="firstOfType"
+        :width="300" />
       <ul class="nth-child">
         <li>nth child 1</li>
         <li>nth child 2</li>
@@ -64,37 +84,41 @@
         <li>only child</li>
         <span>only child span</span>
       </ul>
-      <tips-item :tips="nthChildOfType" :width="500"></tips-item>
+      <tips-item
+        :tips="nthChildOfType"
+        :width="500" />
     </div>
     <hr>
     <h4>伪元素 ::before ::after</h4>
     <div class="before-after">
       <p>Hello ::before</p>
       <p>Bye ::after</p>
-      <tips-item tips="before after 需设置为块级元素" :width="200"></tips-item>
+      <tips-item
+        tips="before after 需设置为块级元素"
+        :width="200" />
     </div>
   </div>
 </template>
 
 <script>
-import {
-  class_a,
-  class_checked,
-  firstOfType,
-  nthChildOfType,
-} from '../../../utils/tips';
+  import {
+    class_a,
+    class_checked,
+    firstOfType,
+    nthChildOfType,
+  } from '../../../utils/tips';
 
-export default {
-  data() {
-    return {
-      class_a,
-      class_checked,
-      firstOfType,
-      nthChildOfType,
+  export default {
+    data() {
+      return {
+        class_a,
+        class_checked,
+        firstOfType,
+        nthChildOfType,
 
-    };
-  },
-};
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

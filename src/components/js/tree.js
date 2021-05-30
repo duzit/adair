@@ -35,8 +35,9 @@ const tree = [
 
 // 广度优先遍历
 function treeForEach(tree, func) {
-  let node; const
-    list = [...tree];
+  // eslint-disable-next-line init-declarations
+  let node; 
+  const list = [...tree];
   // eslint-disable-next-line no-cond-assign
   while (node = list.shift()) {
     func(node);
@@ -135,7 +136,7 @@ console.log(treeToList(treeList));
 function treeFilter(tree, func) {
   return tree.map((node) => ({ ...node })).filter((node) => {
     node.children = node.children && treeFilter(node.children, func);
-    return func(node) || (node.children && node.children.length);
+    return func(node) || node.children && node.children.length;
   });
 }
 
@@ -143,6 +144,7 @@ console.log(treeFilter(tree, (node) => node.id === '1'), 'treeFilter');
 
 // 树节点查找
 function treeFind(tree, func) {
+  // eslint-disable-next-line no-unused-vars
   for (const data of tree) {
     if (func(data)) return data;
     if (data.children && data.children.length) {

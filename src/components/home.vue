@@ -1,29 +1,25 @@
 <template>
   <div class="h100">
-    <div class="header">
-
-    </div>
-    <div class="description">
-
-    </div>
+    <div class="header" />
+    <div class="description" />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home',
-  data() {
-    return {
+  export default {
+    name: 'Home',
+    data() {
+      return {
 
-    };
-  },
-  created() {
+      };
+    },
+    created() {
 
-  },
-  methods: {
+    },
+    methods: {
 
-  },
-};
+    },
+  };
 </script>
 <style lang="scss" scoped>
   .header {

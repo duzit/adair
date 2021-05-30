@@ -1,13 +1,13 @@
 <template>
   <div class="ldContent">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'ldcontent',
-};
+  export default {
+    name: 'Ldcontent',
+  };
 </script>
 
 <style lang="scss" scoped>

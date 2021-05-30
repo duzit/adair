@@ -2,12 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  chainWebpack: config => {
-    // config.module
-    //   .rule('md')
-    //   .test(/\.md$/)
-    //   .use('text-loader')
-  },
+  // chainWebpack: config => {
+  //   // config.module
+  //   //   .rule('md')
+  //   //   .test(/\.md$/)
+  //   //   .use('text-loader')
+  // },
   configureWebpack: {
     module: {
       rules: [
@@ -28,7 +28,7 @@ module.exports = {
         'CONFIG_ENV': JSON.stringify('hello'),
         FLAG: 'true', // true
         calc: '1+1', // 2
-        'process.env': (process.env),
+        'process.env': process.env,
         'npm_package_name': JSON.stringify(process.env.npm_package_name)
       })
     ]

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // Map
 // 参考 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map
 // https://mp.weixin.qq.com/s/YdBVplz7bUrcyXrPk5-oVQ
@@ -19,7 +21,7 @@ console.log('Map start.');
 
 const myMap = new Map();
 const keyObj = {};
-const keyFunc = function () {};
+const keyFunc = function() {};
 const keyString = 'a string';
 
 // 添加键
@@ -36,7 +38,7 @@ console.log(myMap.get(keyString), '--get key string');
 console.log(myMap.get(keyFunc), '--get key function');
 
 console.log(keyObj === {}); // false
-console.log(keyFunc === function () {}); // false
+console.log(keyFunc === function() {}); // false
 
 console.log(myMap.get({})); // undefined
 console.log(myMap.get(() => {})); // undefined

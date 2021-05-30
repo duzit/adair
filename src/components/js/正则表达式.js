@@ -114,4 +114,3 @@ console.log('a1b2c3d4'.replace(/\d/g, (match, index, origin) => {
   // 4 7 a1b2c3d4
   return parseInt(match) + 1;
 })); // a2b3c4d5
-

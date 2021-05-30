@@ -4,3 +4,7 @@ dist/
 **/*.min.js
 **/*-min.js
 **/*.bundle.js
+public/
+src/components/ckeditorPlugins
+src/components/js/gojs
+src/md

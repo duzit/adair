@@ -1,44 +1,41 @@
 <template>
   <div>
-    <div class="img-test">
-
-    </div>
-    <img src="@/assets/logo.png" alt="">
+    <div class="img-test" />
+    <img
+      src="@/assets/logo.png"
+      alt="">
 
     <div class="markdown-body">
-      <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
+      <VueMarkdown
+        v-highlight
+        :source="mdData" />
     </div>
   </div>
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown';
-import markdownData from '../../../md/webpack/alias.md';
+  import VueMarkdown from 'vue-markdown';
+  import markdownData from '../../../md/webpack/alias.md';
 
-
-export default {
-  name: 'alias',
-  components: {
-    VueMarkdown,
-  },
-  data() {
-    return {
-      mdData: markdownData,
-    };
-  },
-  created() {
-
-  },
-  methods: {
-
-  },
-};
+  export default {
+    name: 'Alias',
+    components: {
+      VueMarkdown,
+    },
+    data() {
+      return {
+        mdData: markdownData,
+      };
+    },
+    created() {},
+    methods: {},
+  };
 </script>
 
 <style lang="scss" scoped>
-  .img-test {
-    width: 200px;
-    height: 100px;
-    background: url("../../../assets/logo.png");
-  }
+.img-test {
+  width: 200px;
+  height: 100px;
+  background: url('../../../assets/logo.png');
+}
 </style>

@@ -4,6 +4,7 @@ function checkPermission(key) {
   return arr.includes(key);
 }
 
+// 判断元素是否有权限 有则显示 无则隐藏
 const permission = {
   inserted: (el, { value }) => {
     if (!value) return;

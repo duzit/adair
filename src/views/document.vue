@@ -1,24 +1,22 @@
 <template>
-  <div>
-
-  </div>
+  <div />
 </template>
 
 <script>
-export default {
-  name: 'document',
-  data() {
-    return {
+  export default {
+    name: 'Document',
+    data() {
+      return {
 
-    };
-  },
-  created() {
+      };
+    },
+    created() {
 
-  },
-  methods: {
+    },
+    methods: {
 
-  },
-};
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
