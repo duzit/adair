@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="directive">
     <label for="">自定义指令</label>
     <!-- 使用 el-input 不会自动获取焦点 -->
     <input
@@ -35,6 +35,18 @@
         拖拽
       </el-button>
     </div>
+    <h3>screenfull</h3>
+    <el-button v-screenfull.icon>
+      全屏
+    </el-button>
+    <h3>tooltip</h3>
+    <div v-tooltip:按钮="tootipParams">
+      tooltip
+    </div>
+    <h3>backtop</h3>
+    <el-button v-backtop:right="200">
+      回到顶部
+    </el-button>
   </div>
 </template>
 
@@ -61,19 +73,19 @@
         },
         // 只调用一次 指令第一次绑定到元素时调用
         bind(el) {
-
+          void el
         },
         // 所在组件Vnode更新时调用
         updated(el) {
-
+          void el
         },
         // 指令所在组件的 Vnode 及其子 Vnode 全部更新后调用
         componentUpdated(el) {
-
+          void el
         },
         // 只调用一次 指令与元素解绑时调用
         unbind(el) {
-
+          void el
         },
       },
       local2: {
@@ -108,6 +120,10 @@
         argument: '100',
         copyMsg: 'this is copy message',
         debounceTime: 1000,
+        tootipParams: {
+          placement: 'top',
+          effect: 'light',
+        }
       };
     },
     methods: {

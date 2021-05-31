@@ -1,7 +1,5 @@
 ## troubleshooting
 
-----------
-
 ### 项目启动路由跳转 dashboard ，但是不加载 dashboard 内容
 
 * 告警 Non-nested routes must include a leading slash character.
@@ -48,5 +46,13 @@ h3 {
     top: 3px;
     left: -8px;
   }
+}
+```
+
+### 自定义指令 文件中引入 Vue 报错 "[Vue warn]: You are using the runtime-only build of Vue"
+- [参考](https://codewithhugo.com/vue-warn-runtime-only-build/)
+```js
+module.exports = {
+  runtimeCompiler: true
 }
 ```

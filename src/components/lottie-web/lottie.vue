@@ -16,11 +16,11 @@
       },
       width: {
         type: Number,
-        default: 100
+        default: 0
       },
       height: {
         type: Number,
-        default: 100
+        default: 0
       },
     },
     data() {

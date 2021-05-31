@@ -5,7 +5,9 @@
         :tree-data="trees"
         @nodeCallback="handleBack" />
     </div>
-    <div class="modules-content_right">
+    <div
+      id="right"
+      class="modules-content_right">
       <h3>{{ title }}</h3>
       <component :is="currentComponent" />
     </div>
@@ -13,7 +15,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  // import { mapState } from 'vuex';
   import vWatch from '../modules/vue/vWatch.vue';
   import vDataProps from '../modules/vue/vData-Prop-Options';
   import vFilter from '../modules/vue/filter';

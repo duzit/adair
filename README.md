@@ -35,3 +35,17 @@
 * js 相关属性 方法 练习文件，原生 es6+ 新方法属性等
 ### 模块
 ![模块](./src/assets/adair.png)
+
+### troubleshooting
+- src/troubleshooting.md
+
+### eslint 集成
+- .eslintrc.js 集成时新装了一些依赖
+```json
+"babel-eslint": "^10.0.1",
+"babel-plugin-component": "^1.1.1",
+"eslint": "^5.8.0",
+"eslint-plugin-vue": "^5.0.0",
+```
+- f2elint 集成时 遇到了一些问题 后改为 eslint
+

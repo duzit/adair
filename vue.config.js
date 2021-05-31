@@ -8,6 +8,7 @@ module.exports = {
   //   //   .test(/\.md$/)
   //   //   .use('text-loader')
   // },
+  runtimeCompiler: true,
   configureWebpack: {
     module: {
       rules: [
