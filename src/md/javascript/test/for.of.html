@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for of loop</title>
+</head>
+<script>
+  Array.prototype.name = 'HuHu'; // 原型上增加属性
+  const list = ['Ben', 'Lee', 'LiLy'];
+  list.des = 'hello'; // 增加属性
+
+  // for...in key值是对应的索引，可遍历所有属性 包括原型上的
+  const forInkeys = [];
+  const forInValue = [];
+  for (const key in list) {
+    forInkeys.push(key);
+    forInValue.push(list[key]);
+  }
+  console.log(forInkeys); // ["0", "1", "2", "des", "name"]
+  console.log(forInValue); // ["Ben", "Lee", "LiLy", "hello", "HuHu"]
+
+  // for of 遍历数组本身
+  const forOfValue = [];
+  for (const item of list) {
+    forOfValue.push(item);
+  }
+  console.log(forOfValue); // ["Ben", "Lee", "LiLy"]
+
+  // 遍历 arguments
+  function sum() {
+    console.log(arguments, 'arguments'); // __proto__: Object
+    for (const iterator of arguments) {
+      console.log(iterator); // 'dog' 2 3
+    }
+  }
+
+  sum('dog', 2, 3);
+  
+  window.onload = () => {
+    const eles = document.querySelectorAll('li');
+    console.log(eles); // __proto__: NodeList
+
+    // 遍历 NodeList 
+    for (const el of eles) {
+    // for (const el of eles.entries()) {
+      console.log(el);
+    }
+  }
+  
+</script>
+<body>
+  <ul>
+    <li>杯子</li>
+    <li>显示器</li>
+    <li>PC</li>
+  </ul>
+</body>
+</html>
