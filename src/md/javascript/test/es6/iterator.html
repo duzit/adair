@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iterator</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const arr = ['Ben', 'Lee'];
+  console.log(arr[Symbol.iterator]()); // Array Iterator
+  console.log(arr[Symbol.iterator]().next()); // { value: 'Ben', done: false }
+
+  const str = 'abc';
+  console.log(str[Symbol.iterator]()); // StringIterator
+  console.log(str[Symbol.iterator]().next()); // { value: 'a', done: false }
+
+  const set = new Set(['a', 'b']);
+  console.log(set); // __proto__: Set
+  console.log(set[Symbol.iterator]()); // SetIterator
+  console.log(set[Symbol.iterator]().next()); // { value: 'a', done: false }
+
+  const map = new Map();
+  const obj = { age: 12 };
+  map.set(obj, 'objValue');
+  console.log(map); // __proto__: Map
+  console.log(map[Symbol.iterator]()); // MapIterator
+  console.log(map[Symbol.iterator]().next()); // { value: [{ age: 12}, 'objValue'], done: false }
+
+</script>
+</html>
