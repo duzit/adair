@@ -15,6 +15,8 @@ import store from './store';
 
 import 'github-markdown-css/github-markdown.css';
 import hljs from 'highlight.js';
+import 'highlight.js/scss/a11y-light.scss';
+// highlight.js/scss/a11y-dark.scss
 
 // 引入 CKEditor
 import CKEditor from 'ckeditor4-vue';

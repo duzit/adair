@@ -47,3 +47,38 @@ new Vue({
 this.$store.state.name;
 this.$store.dispath('changeName', params);
 ```
+
+```js
+parsedObj = new JsonSlurper().parseText(jsonField);
+[
+  'parsedPath':  parsedObj.path,
+  'toJson':  {
+    myObj = ['field1':'123','field2':456];
+    JsonOutput.toJson(myObj)
+    }()
+]
+```
+
+```js
+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(timestamp).getTime()
+```
+
+```json
+ {
+
+      "jsonField":"{\"path\":\"/testPath\",\"headers\":{\"h1\":[\"111\"]},\"method\":\"POST\",\"port\":12321,\"host\":\"127.0.0.1\",\"queryString\":\"a=1&b=2\",\"body\":\"[123,\\\"abc\\\",{\\\"a\\\":1,\\\"b\\\":\\\"c\\\"}]\"}"
+
+  }
+```
+
+| 姓名 | 年龄 |
+| :- | - | 
+| 本 | 12 | 
+| `lee new Date()` | 12 | 
+
+```json
+{
+  "parsedPath":"/testPath",
+  "toJson":"{\"field1\":\"123\",\"field2\":456}"
+}
+```

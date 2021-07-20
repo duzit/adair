@@ -8,7 +8,7 @@
 
 <script>
   import VueMarkdown from 'vue-markdown';
-  import markdownData from '../../../md/javascript/promise.md';
+  import markdownData from '../../../md/javascript/Promise.md';
 
   export default {
     name: 'RemindParams',

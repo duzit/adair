@@ -63,6 +63,11 @@
         storeInfo: '',
       };
     },
+    computed: mapState({
+      name: (state) => state.name,
+      age: (state) => state.age,
+      username: (state) => state.user.username,
+    }),
     created() {
       this.vuexForm.name = this.name;
       this.vuexForm.age = this.age;
@@ -72,11 +77,6 @@
     mounted() {
 
     },
-    computed: mapState({
-      name: (state) => state.name,
-      age: (state) => state.age,
-      username: (state) => state.user.username,
-    }),
     methods: {
       /**
        * 改变store内容
