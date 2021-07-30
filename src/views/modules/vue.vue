@@ -23,6 +23,7 @@
   import Vuex from '../modules/vue/vuex';
   import liftCycle from '../modules/vue/lifecycle';
   import freeze from '../modules/vue/freeze';
+  import computed from '../modules/vue/computed.vue';
 
   export default {
     name: 'Vue',
@@ -34,6 +35,7 @@
       vuex: Vuex,
       lifecycle: liftCycle,
       freeze,
+      computed
     },
     data() {
       return {
@@ -67,6 +69,10 @@
           {
             label: 'Object.freeze()',
             key: 'freeze',
+          },
+          {
+            label: 'Computed',
+            key: 'computed',
           },
         ],
       };

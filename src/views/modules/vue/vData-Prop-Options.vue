@@ -18,7 +18,10 @@
       VueMarkdown,
     },
     props: {
-      book: String,
+      book: {
+        type: String,
+        default: ''
+      },
       car: {
         type: String,
         default: 'BBA',
@@ -32,14 +35,14 @@
           name: 'Data',
           age: 20,
         },
-        _home: 'hz',
+        // _home: 'hz', // 不允许的定义方式
         $water: 'liu',
       };
     },
     created() {
       console.log(this.$data, '$data');
       console.log(this.$data.num === this.num, 'this.$data.num === this.num'); // true
-      console.log(this._home, '_home'); // undefined
+      // console.log(this._home, '_home'); // undefined
       console.log(this.$water, '$water'); // undefined
       console.log(this.$data._home, '$data._home'); // hz
       console.log(this.$data.$water, '$data.$water'); // liu
