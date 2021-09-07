@@ -77,6 +77,10 @@ const routes = [
     name: 'sometime',
     component: () => import('../views/modules/sometime.vue'),
   },
+  {
+    path: '/marked',
+    component: () => import('../views/marked'),
+  }
 ];
 
 const router = new VueRouter({
