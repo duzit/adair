@@ -1039,6 +1039,13 @@
   optionalDependencies:
     "prettier" "^1.18.2"
 
+"@vue/composition-api@^1.2.4":
+  "integrity" "sha1-S+/O/A4cVw/Qh5oti4+QHzpONdA="
+  "resolved" "https://registry.npmmirror.com/@vue/composition-api/download/@vue/composition-api-1.2.4.tgz"
+  "version" "1.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
 "@vue/preload-webpack-plugin@^1.1.0":
   "integrity" "sha1-zrkktOyzucQ4ccekKaAvhCPmIas="
   "resolved" "https://registry.npm.taobao.org/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz?cache=0&sync_timestamp=1613215046917&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fpreload-webpack-plugin%2Fdownload%2F%40vue%2Fpreload-webpack-plugin-1.1.2.tgz"
@@ -8953,6 +8960,11 @@
   "resolved" "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1628722556410&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz"
   "version" "1.14.1"
 
+"tslib@^2.3.0":
+  "integrity" "sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE="
+  "resolved" "https://registry.nlark.com/tslib/download/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
 "tslib@2.3.0":
   "integrity" "sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4="
   "resolved" "https://registry.nlark.com/tslib/download/tslib-2.3.0.tgz?cache=0&sync_timestamp=1628722556410&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.3.0.tgz"
@@ -9368,7 +9380,7 @@
   "resolved" "https://registry.nlark.com/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.0.0", "vue@^2.5.17", "vue@^2.6.11":
+"vue@^2.0.0", "vue@^2.5.17", "vue@^2.6.11", "vue@>= 2.5 < 3":
   "integrity" "sha1-5RqlJQJQ1Wmj+606ilpofWA24jU="
   "resolved" "https://registry.nlark.com/vue/download/vue-2.6.14.tgz"
   "version" "2.6.14"

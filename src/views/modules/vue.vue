@@ -9,7 +9,9 @@
       id="right"
       class="modules-content_right">
       <h3>{{ title }}</h3>
-      <component :is="currentComponent" />
+      <component
+        :is="currentComponent"
+        name="Lee" />
     </div>
   </div>
 </template>
@@ -24,6 +26,7 @@
   import liftCycle from '../modules/vue/lifecycle';
   import freeze from '../modules/vue/freeze';
   import computed from '../modules/vue/computed.vue';
+  import compositionApi from '../modules/vue/compositionapi.vue';
 
   export default {
     name: 'Vue',
@@ -35,7 +38,8 @@
       vuex: Vuex,
       lifecycle: liftCycle,
       freeze,
-      computed
+      computed,
+      compositionApi
     },
     data() {
       return {
@@ -74,6 +78,10 @@
             label: 'Computed',
             key: 'computed',
           },
+          {
+            label: 'Composition Api',
+            key: 'compositionApi'
+          }
         ],
       };
     },

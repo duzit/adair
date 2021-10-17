@@ -21,6 +21,10 @@ import 'highlight.js/scss/a11y-light.scss';
 // 引入 CKEditor
 import CKEditor from 'ckeditor4-vue';
 
+import VueCompositionApi from '@vue/composition-api';
+
+Vue.use(VueCompositionApi);
+
 // Vue.directive('focus',{
 //   inserted(el) {
 //     el.focus()
