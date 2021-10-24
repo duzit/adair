@@ -32,6 +32,13 @@
           type="textarea"
           class="item-width" />
       </el-form-item>
+      <el-form-item>
+        <el-button
+          type="primary"
+          @click="changeUsers">
+          change list users
+        </el-button>
+      </el-form-item>
     </el-form>
     <!-- markdown 内容 -->
     <div class="markdown-body">
@@ -63,16 +70,23 @@
         storeInfo: '',
       };
     },
-    computed: mapState({
-      name: (state) => state.name,
-      age: (state) => state.age,
-      username: (state) => state.user.username,
-    }),
+    // computed: mapState({
+    //   name: (state) => state.name,
+    //   age: (state) => state.age,
+    //   username: (state) => state.user.username,
+    // }),
+    computed: {
+      ...mapState({
+        name: (state) => state.name,
+        age: (state) => state.age,
+        username: (state) => state.user.username,
+      })
+    },
     created() {
       this.vuexForm.name = this.name;
       this.vuexForm.age = this.age;
       this.vuexForm.username = this.username;
-      this.storeInfo = JSON.stringify(this.vuexForm);
+      this.storeInfo = JSON.stringify(this.vuexForm, null, 2);
     },
     mounted() {
 
@@ -86,6 +100,9 @@
         this.$store.dispatch('changeUserUsername', this.vuexForm.username);
         this.storeInfo = JSON.stringify(this.vuexForm);
       },
+      changeUsers() {
+        this.$store.dispatch('setUserList', ['hello', 'moto'])
+      }
     },
   };
 </script>

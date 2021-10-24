@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import user from './modules/user';
+import list from './modules/list';
+import getters from './getters.js';
 
 Vue.use(Vuex);
 
@@ -12,7 +14,9 @@ const store = new Vuex.Store({
   },
   modules: {
     user,
+    list
   },
+  getters,
   mutations: {
     CHANGE_STORE: (state, info) => {
       state.name = info.name;
