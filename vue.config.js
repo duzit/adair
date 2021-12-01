@@ -30,7 +30,11 @@ module.exports = {
         FLAG: 'true', // true
         calc: '1+1', // 2
         'process.env': process.env,
-        'npm_package_name': JSON.stringify(process.env.npm_package_name)
+        'npm_package_name': JSON.stringify(process.env.npm_package_name),
+        hello: '"hello"',
+        OBJECT: JSON.stringify({ name: 'hello' }),
+        name: '"name"',
+        'typeof window': '"Xmind"' // 获取的值 是 object  而不是 Xmind 会与 typeof 操作符冲突貌似
       })
     ]
   }

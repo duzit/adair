@@ -3,6 +3,11 @@ const list = {
     users: ['lee', 'lina', 'ben'],
     icons: [1, 2, 3],
   },
+  getters: {
+    filterIcons: (state) => {
+      return state.icons.filter(i => i > 1)
+    }
+  },
   mutations: {
     SET_USERS_LIST: (state, list) => {
       state.users = list;

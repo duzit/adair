@@ -40,6 +40,11 @@
         </el-button>
       </el-form-item>
     </el-form>
+    <div>
+      <p>filterIcons: {{ filterIcons }}</p>
+      <p>iconsGetters: {{ JSON.stringify(iconsGetters) }}</p>
+      <p>users: {{ JSON.stringify(users) }}</p>
+    </div>
     <!-- markdown 内容 -->
     <div class="markdown-body">
       <VueMarkdown
@@ -50,7 +55,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
   import VueMarkdown from 'vue-markdown';
   import markdownData from '../../../md/vue/vuex.md';
 
@@ -80,6 +85,13 @@
         name: (state) => state.name,
         age: (state) => state.age,
         username: (state) => state.user.username,
+      }),
+      filterIcons() {
+        return this.$store.getters.filterIcons;
+      },
+      ...mapGetters({
+        iconsGetters: 'filterIcons',
+        users: 'userInfo'
       })
     },
     created() {
@@ -87,6 +99,8 @@
       this.vuexForm.age = this.age;
       this.vuexForm.username = this.username;
       this.storeInfo = JSON.stringify(this.vuexForm, null, 2);
+
+      console.log(this.$store.getters.filterIcons, 'list getters'); // [2, 3]
     },
     mounted() {
 

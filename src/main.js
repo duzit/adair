@@ -59,9 +59,10 @@ Vue.filter('toUpString', (value) => {
 Vue.use(directives);
 
 // 获取webpack配置的全局变量
-console.log(CONFIG_ENV, 122);
-console.log(FLAG, 122);
-console.log(calc, 122);
+console.log(CONFIG_ENV, 122); // hello
+console.log(FLAG, 122); // true
+console.log(calc, 122); // 2
+console.log(typeof window);
 // 获取 package.json 中参数
 console.log(process.env, 'process.env');
 console.log(npm_package_name, 'npm_package_name'); // adair
