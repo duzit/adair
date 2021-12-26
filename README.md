@@ -1,5 +1,5 @@
 # adair
-练习
+Vue2 hello world
 
 ### 引用element ui
 * 安装 npm i element-ui -S
